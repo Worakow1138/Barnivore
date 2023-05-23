@@ -4,10 +4,9 @@ from moonrise import Moonrise
 class FilterWidget(Moonrise):
 
     filter_title = "//h2[text()='Filters']"
-    filter_parent_element = "class:filter"
+    filter_parent_element = "css:#content > div.filter"
     by_letter_element = "//b[text()='By Letter:]"
     by_veganosity_element = "//b[text()='By veganosity:']"
-    country_element = "//b[text()='Country:']"
 
     def __init__(self, page):
         self.page = page.lower()
@@ -23,6 +22,11 @@ class FilterWidget(Moonrise):
             "Everything": f"//a[@href='/{self.page}?vfilter=All' and text() = 'Everything']",
             "Only Vegan": f"//a[@href='/{self.page}?vfilter=Vegan' and text() = 'Only Vegan']",
         }
+        self.country_element = {
+            "beer": "//label[contains(text(),'Country:')]",
+            "cider": "//label[contains(text(),'Country:')]",
+            "wine": "//label[contains(text(),'Region:')]",
+        }
 
 # class HeaderWidgets:
 
@@ -30,7 +34,17 @@ class FilterWidget(Moonrise):
 
 class BarnivoreMethods(Moonrise):
 
-    def select_header_link(self, header_title):
+    def verify_page_headers_present(self):
+        self.get_web_element("link:Beer")
+        self.get_web_element("link:Cider")
+        self.get_web_element("link:Wine")
+        self.get_web_element("link:Liquor")
+        self.get_web_element("link:Ask a Company")
+        self.get_web_element("link:Mobile Apps")
+        self.get_web_element("link:Contact")
+        self.get_web_element("link:FAQ")
+
+    def select_page_link(self, header_title):
         self.click_element(f"link:{header_title}")
 
     def get_url(self):

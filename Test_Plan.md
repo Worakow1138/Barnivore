@@ -2,19 +2,21 @@
 
 - [Barnivore Test Plan](#barnivore-test-plan)
   - [Introduction](#introduction)
-  - [Header Suite](#header-suite)
+  - [Smoke Tests Suite](#smoke-tests-suite)
     - [Preconditions](#preconditions)
     - [Test Cases](#test-cases)
 
 ## Introduction
 Detailed explanations of test steps for the [barnivore.com](https://www.barnivore.com/) website
 
-## Header Suite
-Verify that anticipated data is returned from each header page on the barnivore website.
+## Smoke Tests Suite
+Verify that basic functionality is covered on the barnivore website. Basic functionality is defined as the search bar being able to return results, and expected
+data from each main page being returned correctly.
 
 ### Preconditions
 1. Open a web browser to [barnivore.com](https://www.barnivore.com/)
 2. Verify that tabs for "Beer", "Cider", "Wine", "Liquor", "Ask a Company", "Mobile Apps", "Contact", and "FAQ" are present
+3. Verify that the search bar is present
 
 ### Test Cases
 1. Beer Page:

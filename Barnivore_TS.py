@@ -8,6 +8,7 @@ class BarnivoreTests(BarnivoreMethods):
 
     def suite_setup(self):
         self.open_browser("chrome", "--headless", "--no-sandbox")
+        # self.open_browser("chrome", record_test=False)
         self.moon_driver.maximize_window()
         return super().suite_setup()
     
@@ -17,30 +18,31 @@ class BarnivoreTests(BarnivoreMethods):
     
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
+        self.verify_page_headers_present()
         return super().test_setup()
     
-class HeaderSuite(BarnivoreTests):
+class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
-    def beer_header(self):
-        self.select_header_link("Beer")
+    def beer_page(self):
+        self.select_page_link("Beer")
         assert self.get_url() == "https://www.barnivore.com/beer"
         self.beer_filter_widget_present()
 
     @Moonrise.test
-    def cider_header(self):
-        self.select_header_link("Cider")
+    def cider_page(self):
+        self.select_page_link("Cider")
         assert self.get_url() == "https://www.barnivore.com/cider"
         self.cider_filter_widget_present()
 
     @Moonrise.test
-    def wine_header(self):
-        self.select_header_link("Wine")
+    def wine_page(self):
+        self.select_page_link("Wine")
         assert self.get_url() == "https://www.barnivore.com/wine"
         self.wine_filter_widget_present()
 
     @Moonrise.test
-    def liquor_header(self):
-        self.select_header_link("Liquor")
+    def liquor_page(self):
+        self.select_page_link("Liquor")
         assert self.get_url() == "https://www.barnivore.com/liquor"
         self.liquor_filter_widget_present()
