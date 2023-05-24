@@ -6,6 +6,11 @@ class FilterElements:
     filter_parent_element = "css:#content > div.filter"
     by_letter_element = "//b[text()='By Letter:]"
     by_veganosity_element = "//b[text()='By veganosity:']"
+    country_element_mapping = {
+        "beer": "//label[contains(text(),'Country:')]",
+        "cider": "//label[contains(text(),'Country:')]",
+        "wine": "//label[contains(text(),'Region:')]",
+    }
 
     def __init__(self, page):
         self.page = page.lower()
@@ -21,54 +26,67 @@ class FilterElements:
             "Everything": f"//a[@href='/{self.page}?vfilter=All' and text() = 'Everything']",
             "Only Vegan": f"//a[@href='/{self.page}?vfilter=Vegan' and text() = 'Only Vegan']",
         }
-        self.country_element_mapping = {
-            "beer": "//label[contains(text(),'Country:')]",
-            "cider": "//label[contains(text(),'Country:')]",
-            "wine": "//label[contains(text(),'Region:')]",
-        }
         self.country_element = self.country_element_mapping.get(self.page)
+
+class MainPageElements:
+
+    pdr_label = "//div[@id='footer']/p[text()='Please Drink Responsibly']"
+    vegan_beer_label = "//div[@id='footer']//a[@href='/beer/' and text()='Vegan Beer']"
+    vegan_wine_label = "//div[@id='footer']//a[@href='/wine/' and text()='Vegan Wine']"
+    vegan_liquor_label = "//div[@id='footer']//a[@href='/beer/' and text()='Vegan Beer']"
+    copyright_label = "#footer > p:nth-child(3)"
+    url_mapping = {
+        "Beer": "beer",
+        "Cider": "cider",
+        "Wine": "wine",
+        "Liquor": "liquor",
+        "Ask a Company": "askacompany",
+        "Mobile Apps": "mobile",
+        "Contact": "contact",
+        "FAQ": "faq"
+    }
 
 class HomePageElements:
 
     search_bar = "#big-search > input.ui-autocomplete-input"
     search_button = "#big-search > input[type=submit]:nth-child(2)"
 
-class BeerPageElements:
+class BeerPageElements(MainPageElements):
 
     header_title = "Beer"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class CiderPageElements:
+class CiderPageElements(MainPageElements):
 
     header_title = "Cider"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class WinePageElements:
+class WinePageElements(MainPageElements):
 
     header_title = "Wine"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class LiquorPageElements:
+class LiquorPageElements(MainPageElements):
 
     header_title = "Liquor"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class AskACompanyElements:
+class AskACompanyElements(MainPageElements):
 
     header_title = "Ask a Company"
 
-class MobileAppElements:
+class MobileAppElements(MainPageElements):
 
     header_title = "Mobile Apps"
 
-class ContactElements:
+class ContactElements(MainPageElements):
 
     header_title = "Contact"
 
-class FAQElements:
+class FAQElements(MainPageElements):
 
     header_title = "FAQ"

@@ -9,7 +9,7 @@ class BarnivoreTests(BarnivoreMethods):
 
     def suite_setup(self):
         self.open_browser("chrome", "--headless", "--no-sandbox")
-        # self.open_browser("chrome", record_test=False)
+        # self.open_browser("chrome", persist=True)
         self.moon_driver.maximize_window()
         return super().suite_setup()
     
@@ -28,28 +28,60 @@ class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
     def beer_page(self):
-        beer_page = BeerPageElements()
-        self.click_element(f"link:{beer_page.header_title}")
-        self.main_page_is_loaded(beer_page.header_title)
-        self.filter_widget_checks(beer_page.filter_widget)
+        page_to_test = BeerPageElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.filter_widget_checks(page_to_test.filter_widget)
+        self.footer_checks()
 
     @Moonrise.test
     def cider_page(self):
-        cider_page = CiderPageElements()
-        self.click_element(f"link:{cider_page.header_title}")
-        self.main_page_is_loaded(cider_page.header_title)
-        self.filter_widget_checks(cider_page.filter_widget)
+        page_to_test = CiderPageElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.filter_widget_checks(page_to_test.filter_widget)
+        self.footer_checks()
 
     @Moonrise.test
     def wine_page(self):
-        wine_page = WinePageElements()
-        self.click_element(f"link:{wine_page.header_title}")
-        self.main_page_is_loaded(wine_page.header_title)
-        self.filter_widget_checks(wine_page.filter_widget)
+        page_to_test = WinePageElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.filter_widget_checks(page_to_test.filter_widget)
+        self.footer_checks()
 
     @Moonrise.test
     def liquor_page(self):
-        liquor_page = LiquorPageElements()
-        self.click_element(f"link:{liquor_page.header_title}")
-        self.main_page_is_loaded(liquor_page.header_title)
-        self.filter_widget_checks(liquor_page.filter_widget)
+        page_to_test = LiquorPageElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.filter_widget_checks(page_to_test.filter_widget)
+        self.footer_checks()
+
+    @Moonrise.test
+    def ask_a_company_page(self):
+        page_to_test = AskACompanyElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.footer_checks()
+
+    @Moonrise.test
+    def mobile_apps_test(self):
+        page_to_test = AskACompanyElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.footer_checks()
+
+    @Moonrise.test
+    def contact_test(self):
+        page_to_test = AskACompanyElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.footer_checks()
+
+    @Moonrise.test
+    def faq_test(self):
+        page_to_test = AskACompanyElements()
+        self.click_element(f"link:{page_to_test.header_title}")
+        self.main_page_is_loaded(page_to_test)
+        self.footer_checks()

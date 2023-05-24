@@ -29,5 +29,4 @@ data from each main page being returned correctly.
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
-- "Contents copyright © 2023 Thrust Labs. All rights reserved.
-Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page"
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page

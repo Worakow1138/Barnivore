@@ -17,9 +17,8 @@ class BarnivoreMethods(Moonrise):
         self.get_web_element(HomePageElements.search_bar)
         self.get_web_element(HomePageElements.search_button)
 
-    def main_page_is_loaded(self, page_title):
-        page_title = page_title.lower()
-        assert self.moon_driver.current_url == f"https://www.barnivore.com/{page_title}"
+    def main_page_is_loaded(self, page):
+        assert self.moon_driver.current_url == f"https://www.barnivore.com/{page.url_mapping.get(page.header_title)}"
     
     def filter_widget_checks(self, filter_widget):
         self.get_web_element(filter_widget.filter_title)
@@ -30,3 +29,10 @@ class BarnivoreMethods(Moonrise):
             self.get_web_element(veganosity)
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
+
+    def footer_checks(self):
+        self.get_web_element(MainPageElements.pdr_label)
+        self.get_web_element(MainPageElements.vegan_beer_label)
+        self.get_web_element(MainPageElements.vegan_wine_label)
+        self.get_web_element(MainPageElements.vegan_liquor_label)
+        self.get_web_element(MainPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
