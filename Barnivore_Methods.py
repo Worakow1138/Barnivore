@@ -26,11 +26,9 @@ class BarnivoreMethods(Moonrise):
         self.get_web_element(MainPageElements.search_bar)
         self.get_web_element(MainPageElements.search_button)
 
-    def select_page_link(self, header_title):
-        self.click_element(f"link:{header_title}")
-
-    def get_url(self):
-        return self.moon_driver.current_url
+    def main_page_is_loaded(self, page_title):
+        page_title = page_title.lower()
+        assert self.moon_driver.current_url == f"https://www.barnivore.com/{page_title}"
     
     def filter_widget_checks(self, header_page):
         filter_widget = FilterElements(header_page)
