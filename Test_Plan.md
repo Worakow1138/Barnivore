@@ -16,7 +16,7 @@ data from each main page being returned correctly.
 ### Preconditions
 1. Open a web browser to [barnivore.com](https://www.barnivore.com/)
 2. Verify that tabs for "Beer", "Cider", "Wine", "Liquor", "Ask a Company", "Mobile Apps", "Contact", and "FAQ" are present
-3. Verify that the search bar is present
+3. Verify that the search bar and search buttons are present
 
 ### Test Cases
 1. Beer Page:

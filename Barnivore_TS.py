@@ -19,6 +19,7 @@ class BarnivoreTests(BarnivoreMethods):
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
         self.verify_page_headers_present()
+        self.verify_search_bar_present()
         return super().test_setup()
     
 class SmokeSuite(BarnivoreTests):

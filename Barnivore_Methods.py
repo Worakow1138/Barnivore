@@ -28,9 +28,10 @@ class FilterWidget(Moonrise):
             "wine": "//label[contains(text(),'Region:')]",
         }
 
-# class HeaderWidgets:
+class MainPageElements:
 
-    # header_titles = 
+    search_bar = "#big-search > input.ui-autocomplete-input"
+    search_button = "#big-search > input[type=submit]:nth-child(2)"
 
 class BarnivoreMethods(Moonrise):
 
@@ -43,6 +44,10 @@ class BarnivoreMethods(Moonrise):
         self.get_web_element("link:Mobile Apps")
         self.get_web_element("link:Contact")
         self.get_web_element("link:FAQ")
+
+    def verify_search_bar_present(self):
+        self.get_web_element(MainPageElements.search_bar)
+        self.get_web_element(MainPageElements.search_button)
 
     def select_page_link(self, header_title):
         self.click_element(f"link:{header_title}")
