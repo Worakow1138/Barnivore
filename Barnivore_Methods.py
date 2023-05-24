@@ -1,7 +1,7 @@
 from moonrise import Moonrise
 
 
-class FilterWidget(Moonrise):
+class FilterElements:
 
     filter_title = "//h2[text()='Filters']"
     filter_parent_element = "css:#content > div.filter"
@@ -56,7 +56,7 @@ class BarnivoreMethods(Moonrise):
         return self.moon_driver.current_url
     
     def filter_widget_checks(self, header_page):
-        filter_widget = FilterWidget(header_page)
+        filter_widget = FilterElements(header_page)
         self.get_web_element(filter_widget.filter_title)
         self.get_web_element(filter_widget.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
