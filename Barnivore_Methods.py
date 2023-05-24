@@ -4,18 +4,18 @@ from Barnivore_Elements import *
 class BarnivoreMethods(Moonrise):
 
     def verify_page_headers_present(self):
-        self.get_web_element(f"link:{BeerPageElements.header_title}")
-        self.get_web_element(f"link:{CiderPageElements.header_title}")
-        self.get_web_element(f"link:{WinePageElements.header_title}")
-        self.get_web_element(f"link:{LiquorPageElements.header_title}")
-        self.get_web_element(f"link:{AskACompanyElements.header_title}")
-        self.get_web_element(f"link:{MobileAppElements.header_title}")
-        self.get_web_element(f"link:{ContactElements.header_title}")
-        self.get_web_element(f"link:{FAQElements.header_title}")
+        self.get_web_element(f"link:{BeerPage.header_title}")
+        self.get_web_element(f"link:{CiderPage.header_title}")
+        self.get_web_element(f"link:{WinePage.header_title}")
+        self.get_web_element(f"link:{LiquorPage.header_title}")
+        self.get_web_element(f"link:{AskACompanyPage.header_title}")
+        self.get_web_element(f"link:{MobileAppPage.header_title}")
+        self.get_web_element(f"link:{ContactPage.header_title}")
+        self.get_web_element(f"link:{FAQPage.header_title}")
 
     def verify_search_bar_present(self):
-        self.get_web_element(HomePageElements.search_bar)
-        self.get_web_element(HomePageElements.search_button)
+        self.get_web_element(HomePage.search_bar)
+        self.get_web_element(HomePage.search_button)
 
     def main_page_is_loaded(self, page):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{page.url_mapping.get(page.header_title)}"

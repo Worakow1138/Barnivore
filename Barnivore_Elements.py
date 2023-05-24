@@ -46,47 +46,47 @@ class MainPageElements:
         "FAQ": "faq"
     }
 
-class HomePageElements:
+class HomePage(MainPageElements):
 
     search_bar = "#big-search > input.ui-autocomplete-input"
     search_button = "#big-search > input[type=submit]:nth-child(2)"
 
-class BeerPageElements(MainPageElements):
+class BeerPage(MainPageElements):
 
     header_title = "Beer"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class CiderPageElements(MainPageElements):
+class CiderPage(MainPageElements):
 
     header_title = "Cider"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class WinePageElements(MainPageElements):
+class WinePage(MainPageElements):
 
     header_title = "Wine"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class LiquorPageElements(MainPageElements):
+class LiquorPage(MainPageElements):
 
     header_title = "Liquor"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
 
-class AskACompanyElements(MainPageElements):
+class AskACompanyPage(MainPageElements):
 
     header_title = "Ask a Company"
 
-class MobileAppElements(MainPageElements):
+class MobileAppPage(MainPageElements):
 
     header_title = "Mobile Apps"
 
-class ContactElements(MainPageElements):
+class ContactPage(MainPageElements):
 
     header_title = "Contact"
 
-class FAQElements(MainPageElements):
+class FAQPage(MainPageElements):
 
     header_title = "FAQ"
