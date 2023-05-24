@@ -3,15 +3,6 @@ from Barnivore_Elements import *
 
 class BarnivoreMethods(Moonrise):
 
-    beer_label = BeerPageElements.header_title
-    cider_label = CiderPageElements.header_title
-    wine_label = WinePageElements.header_title
-    liquor_label = LiquorPageElements.header_title
-    ask_a_company_label = AskACompanyElements.header_title
-    mobile_label = MobileAppElements.header_title
-    contact_label = ContactElements.header_title
-    faq_label = FAQElements.header_title
-
     def verify_page_headers_present(self):
         self.get_web_element(f"link:{BeerPageElements.header_title}")
         self.get_web_element("link:Cider")
