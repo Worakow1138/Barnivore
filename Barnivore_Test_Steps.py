@@ -30,9 +30,9 @@ class BarnivoreTestSteps(Moonrise):
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
 
-    def footer_checks(self):
-        self.get_web_element(MainPageElements.pdr_label)
-        self.get_web_element(MainPageElements.vegan_beer_label)
-        self.get_web_element(MainPageElements.vegan_wine_label)
-        self.get_web_element(MainPageElements.vegan_liquor_label)
-        self.get_web_element(MainPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
+    def footer_checks(self, page):
+        self.get_web_element(page.pdr_label)
+        self.get_web_element(page.vegan_beer_label)
+        self.get_web_element(page.vegan_wine_label)
+        self.get_web_element(page.vegan_liquor_label)
+        self.get_web_element(page.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
