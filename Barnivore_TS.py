@@ -16,13 +16,14 @@ class BarnivoreTests(BarnivoreMethods):
         self.cleanup_browser()
         return super().suite_teardown()
     
+    
+class SmokeSuite(BarnivoreTests):
+
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
         self.verify_page_headers_present()
         self.verify_search_bar_present()
         return super().test_setup()
-    
-class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
     def beer_page(self):
