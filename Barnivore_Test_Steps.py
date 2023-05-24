@@ -1,7 +1,7 @@
 from moonrise import Moonrise
 from Barnivore_Elements import *
 
-class BarnivoreMethods(Moonrise):
+class BarnivoreTestSteps(Moonrise):
 
     def verify_page_headers_present(self):
         self.get_web_element(f"link:{BeerPage.header_title}")

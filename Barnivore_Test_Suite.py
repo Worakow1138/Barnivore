@@ -1,9 +1,9 @@
 from moonrise import Moonrise
-from Barnivore_Methods import BarnivoreMethods
+from Barnivore_Test_Steps import BarnivoreTestSteps
 from Barnivore_Elements import *
 
 
-class BarnivoreTests(BarnivoreMethods):
+class BarnivoreTests(BarnivoreTestSteps):
 
     Moonrise.default_timeout = 5
 
