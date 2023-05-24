@@ -21,13 +21,14 @@ class FilterElements:
             "Everything": f"//a[@href='/{self.page}?vfilter=All' and text() = 'Everything']",
             "Only Vegan": f"//a[@href='/{self.page}?vfilter=Vegan' and text() = 'Only Vegan']",
         }
-        self.country_element = {
+        self.country_element_mapping = {
             "beer": "//label[contains(text(),'Country:')]",
             "cider": "//label[contains(text(),'Country:')]",
             "wine": "//label[contains(text(),'Region:')]",
         }
+        self.country_element = self.country_element_mapping.get(self.page)
 
-class MainPageElements:
+class HomePageElements:
 
     search_bar = "#big-search > input.ui-autocomplete-input"
     search_button = "#big-search > input[type=submit]:nth-child(2)"
@@ -35,18 +36,26 @@ class MainPageElements:
 class BeerPageElements:
 
     header_title = "Beer"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
 
 class CiderPageElements:
 
     header_title = "Cider"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
 
 class WinePageElements:
 
     header_title = "Wine"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
 
 class LiquorPageElements:
 
     header_title = "Liquor"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
 
 class AskACompanyElements:
 

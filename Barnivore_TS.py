@@ -28,24 +28,28 @@ class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
     def beer_page(self):
-        self.click_element(f"link:{BeerPageElements.header_title}")
-        self.main_page_is_loaded(BeerPageElements.header_title)
-        self.filter_widget_checks(BeerPageElements.header_title)
+        beer_page = BeerPageElements()
+        self.click_element(f"link:{beer_page.header_title}")
+        self.main_page_is_loaded(beer_page.header_title)
+        self.filter_widget_checks(beer_page.filter_widget)
 
     @Moonrise.test
     def cider_page(self):
-        self.click_element(f"link:{CiderPageElements.header_title}")
-        self.main_page_is_loaded(CiderPageElements.header_title)
-        self.filter_widget_checks(CiderPageElements.header_title)
+        cider_page = CiderPageElements()
+        self.click_element(f"link:{cider_page.header_title}")
+        self.main_page_is_loaded(cider_page.header_title)
+        self.filter_widget_checks(cider_page.filter_widget)
 
     @Moonrise.test
     def wine_page(self):
-        self.click_element(f"link:{WinePageElements.header_title}")
-        self.main_page_is_loaded(WinePageElements.header_title)
-        self.filter_widget_checks(WinePageElements.header_title)
+        wine_page = WinePageElements()
+        self.click_element(f"link:{wine_page.header_title}")
+        self.main_page_is_loaded(wine_page.header_title)
+        self.filter_widget_checks(wine_page.filter_widget)
 
     @Moonrise.test
     def liquor_page(self):
-        self.click_element(f"link:{LiquorPageElements.header_title}")
-        self.main_page_is_loaded(LiquorPageElements.header_title)
-        self.filter_widget_checks(LiquorPageElements.header_title)
+        liquor_page = LiquorPageElements()
+        self.click_element(f"link:{liquor_page.header_title}")
+        self.main_page_is_loaded(liquor_page.header_title)
+        self.filter_widget_checks(liquor_page.filter_widget)
