@@ -27,24 +27,24 @@ class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
     def beer_page(self):
-        self.select_page_link("Beer")
+        self.select_page_link(BarnivoreTests.beer_label)
         assert self.get_url() == "https://www.barnivore.com/beer"
-        self.beer_filter_widget_present()
+        self.filter_widget_checks(BarnivoreMethods.beer_label)
 
     @Moonrise.test
     def cider_page(self):
-        self.select_page_link("Cider")
+        self.select_page_link(BarnivoreMethods.cider_label)
         assert self.get_url() == "https://www.barnivore.com/cider"
-        self.cider_filter_widget_present()
+        self.filter_widget_checks(BarnivoreMethods.cider_label)
 
     @Moonrise.test
     def wine_page(self):
-        self.select_page_link("Wine")
+        self.select_page_link(BarnivoreMethods.wine_label)
         assert self.get_url() == "https://www.barnivore.com/wine"
-        self.wine_filter_widget_present()
+        self.filter_widget_checks(BarnivoreMethods.wine_label)
 
     @Moonrise.test
     def liquor_page(self):
-        self.select_page_link("Liquor")
+        self.select_page_link(BarnivoreMethods.liquor_label)
         assert self.get_url() == "https://www.barnivore.com/liquor"
-        self.liquor_filter_widget_present()
+        self.filter_widget_checks(BarnivoreMethods.liquor_label)

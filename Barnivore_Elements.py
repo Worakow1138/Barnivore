@@ -31,3 +31,35 @@ class MainPageElements:
 
     search_bar = "#big-search > input.ui-autocomplete-input"
     search_button = "#big-search > input[type=submit]:nth-child(2)"
+
+class BeerPageElements:
+
+    header_title = "Beer"
+
+class CiderPageElements:
+
+    header_title = "Cider"
+
+class WinePageElements:
+
+    header_title = "Wine"
+
+class LiquorPageElements:
+
+    header_title = "Liquor"
+
+class AskACompanyElements:
+
+    header_title = "Ask a Company"
+
+class MobileAppElements:
+
+    header_title = "Mobile Apps"
+
+class ContactElements:
+
+    header_title = "Contact"
+
+class FAQElements:
+
+    header_title = "FAQ"

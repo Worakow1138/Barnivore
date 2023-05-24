@@ -3,8 +3,17 @@ from Barnivore_Elements import *
 
 class BarnivoreMethods(Moonrise):
 
+    beer_label = BeerPageElements.header_title
+    cider_label = CiderPageElements.header_title
+    wine_label = WinePageElements.header_title
+    liquor_label = LiquorPageElements.header_title
+    ask_a_company_label = AskACompanyElements.header_title
+    mobile_label = MobileAppElements.header_title
+    contact_label = ContactElements.header_title
+    faq_label = FAQElements.header_title
+
     def verify_page_headers_present(self):
-        self.get_web_element("link:Beer")
+        self.get_web_element(f"link:{BeerPageElements.header_title}")
         self.get_web_element("link:Cider")
         self.get_web_element("link:Wine")
         self.get_web_element("link:Liquor")
@@ -31,15 +40,3 @@ class BarnivoreMethods(Moonrise):
             self.get_web_element(letter)
         for veganosity in filter_widget.veganosity_filter_buttons.values():
             self.get_web_element(veganosity)
-
-    def beer_filter_widget_present(self):
-        self.filter_widget_checks("beer")
-
-    def cider_filter_widget_present(self):
-        self.filter_widget_checks("cider")
-
-    def wine_filter_widget_present(self):
-        self.filter_widget_checks("wine")
-
-    def liquor_filter_widget_present(self):
-        self.filter_widget_checks("liquor")
