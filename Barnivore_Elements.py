@@ -45,6 +45,14 @@ class MainPageElements:
         "Contact": "contact",
         "FAQ": "faq"
     }
+    beer_page_link = "link:Beer"
+    cider_page_link = "link:Cider"
+    wine_page_link = "link:Wine"
+    liquor_page_link = "link:Liquor"
+    ask_a_company_page_link = "link:Ask a Company"
+    mobile_apps_page_link = "link:Mobile Apps"
+    contact_page_link = "link:Contact"
+    faq_page_link = "link:FAQ"
 
 class HomePage(MainPageElements):
 

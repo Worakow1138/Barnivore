@@ -4,14 +4,14 @@ from Barnivore_Elements import *
 class BarnivoreTestSteps(Moonrise):
 
     def verify_page_headers_present(self):
-        self.get_web_element(f"link:{BeerPage.header_title}")
-        self.get_web_element(f"link:{CiderPage.header_title}")
-        self.get_web_element(f"link:{WinePage.header_title}")
-        self.get_web_element(f"link:{LiquorPage.header_title}")
-        self.get_web_element(f"link:{AskACompanyPage.header_title}")
-        self.get_web_element(f"link:{MobileAppPage.header_title}")
-        self.get_web_element(f"link:{ContactPage.header_title}")
-        self.get_web_element(f"link:{FAQPage.header_title}")
+        self.get_web_element(MainPageElements.beer_page_link)
+        self.get_web_element(MainPageElements.cider_page_link)
+        self.get_web_element(MainPageElements.wine_page_link)
+        self.get_web_element(MainPageElements.liquor_page_link)
+        self.get_web_element(MainPageElements.ask_a_company_page_link)
+        self.get_web_element(MainPageElements.mobile_apps_page_link)
+        self.get_web_element(MainPageElements.contact_page_link)
+        self.get_web_element(MainPageElements.faq_page_link)
 
     def verify_search_bar_present(self):
         self.get_web_element(HomePage.search_bar)
