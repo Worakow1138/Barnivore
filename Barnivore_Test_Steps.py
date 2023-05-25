@@ -24,7 +24,7 @@ class BarnivoreTestSteps(Moonrise):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{page.url_mapping.get(page.header_title)}"
     
     def filter_widget_checks(self, page):
-        filter_widget = FilterElements(page.header_title)
+        filter_widget = page.filter_widget
         self.get_web_element(filter_widget.filter_title)
         self.get_web_element(filter_widget.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
@@ -33,6 +33,9 @@ class BarnivoreTestSteps(Moonrise):
             self.get_web_element(veganosity)
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
+
+    def listing_products_check(self, page):
+        self.get_web_element(page.listing)
 
     def footer_checks(self, page):
         self.get_web_element(page.pdr_label)

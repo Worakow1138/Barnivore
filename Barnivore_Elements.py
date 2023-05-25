@@ -54,6 +54,10 @@ class MainPageElements:
     contact_page_link = "link:Contact"
     faq_page_link = "link:FAQ"
 
+    def __init__(self, page):
+        self.page = page.lower()
+        self.listing = f"//*[@id='content']/h1[contains(text(),'Listing {self.page}s')]"
+
 class HomePage(MainPageElements):
 
     search_bar = "#big-search > input.ui-autocomplete-input"
@@ -62,31 +66,51 @@ class HomePage(MainPageElements):
 class BeerPage(MainPageElements):
 
     header_title = "Beer"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
+        super().__init__(self.header_title)
 
 class CiderPage(MainPageElements):
 
     header_title = "Cider"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
+        super().__init__(self.header_title)
 
 class WinePage(MainPageElements):
 
     header_title = "Wine"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
+        super().__init__(self.header_title)
 
 class LiquorPage(MainPageElements):
 
     header_title = "Liquor"
+    def __init__(self):
+        self.filter_widget = FilterElements(self.header_title)
+        super().__init__(self.header_title)
 
 class AskACompanyPage(MainPageElements):
 
     header_title = "Ask a Company"
+    def __init__(self):
+        super().__init__(self.header_title)
 
 class MobileAppPage(MainPageElements):
 
     header_title = "Mobile Apps"
+    def __init__(self):
+        super().__init__(self.header_title)
 
 class ContactPage(MainPageElements):
 
     header_title = "Contact"
+    def __init__(self):
+        super().__init__(self.header_title)
 
 class FAQPage(MainPageElements):
 
     header_title = "FAQ"
+    def __init__(self):
+        super().__init__(self.header_title)
