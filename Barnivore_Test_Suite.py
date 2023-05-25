@@ -10,7 +10,7 @@ class BarnivoreTests(BarnivoreTestSteps):
     def suite_setup(self):
         self.open_browser("chrome", "--headless", "--no-sandbox")
         # self.open_browser("chrome", persist=True)
-        self.moon_driver.maximize_window()
+        self.moon_driver.set_window_size(1920, 1080)
         return super().suite_setup()
     
     def suite_teardown(self):
