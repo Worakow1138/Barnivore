@@ -20,6 +20,16 @@ class BarnivoreTests(BarnivoreTestSteps):
     
 class SmokeSuite(BarnivoreTests):
 
+    def suite_setup(self):
+        self.beer_page = BeerPage()
+        self.cider_page = CiderPage()
+        self.wine_page = WinePage()
+        self.liquor_page = LiquorPage()
+        self.askacompany_page = AskACompanyPage()
+        self.mobile_page = MobileAppPage()
+        self.contact_page = ContactPage()
+        return super().suite_setup()
+
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
         self.verify_page_headers_present()
@@ -27,64 +37,57 @@ class SmokeSuite(BarnivoreTests):
         return super().test_setup()
 
     @Moonrise.test
-    def beer_page(self):
-        beer = BeerPage()
-        self.load_page(beer)
-        self.page_url_check(beer)
-        self.filter_widget_checks(beer)
-        self.listing_products_check(beer)
-        self.footer_checks(beer)
+    def beer_page_test(self):
+        self.load_page(self.beer_page)
+        self.page_url_check(self.beer_page)
+        self.filter_widget_checks(self.beer_page)
+        self.listing_products_check(self.beer_page)
+        self.footer_checks(self.beer_page)
 
     @Moonrise.test
-    def cider_page(self):
-        cider = CiderPage()
-        self.load_page(cider)
-        self.page_url_check(cider)
-        self.filter_widget_checks(cider)
-        self.listing_products_check(cider)
-        self.footer_checks(cider)
+    def cider_page_test(self):
+        self.load_page(self.cider_page)
+        self.page_url_check(self.cider_page)
+        self.filter_widget_checks(self.cider_page)
+        self.listing_products_check(self.cider_page)
+        self.footer_checks(self.cider_page)
 
     @Moonrise.test
-    def wine_page(self):
-        wine = WinePage()
-        self.load_page(wine)
-        self.page_url_check(wine)
-        self.filter_widget_checks(wine)
-        self.listing_products_check(wine)
-        self.footer_checks(wine)
+    def wine_page_test(self):
+        self.load_page(self.wine_page)
+        self.page_url_check(self.wine_page)
+        self.filter_widget_checks(self.wine_page)
+        self.listing_products_check(self.wine_page)
+        self.footer_checks(self.wine_page)
 
     @Moonrise.test
-    def liquor_page(self):
-        liquor = LiquorPage()
-        self.load_page(liquor)
-        self.page_url_check(liquor)
-        self.filter_widget_checks(liquor)
-        self.listing_products_check(liquor)
-        self.footer_checks(liquor)
+    def liquor_page_test(self):
+        self.load_page(self.liquor_page)
+        self.page_url_check(self.liquor_page)
+        self.filter_widget_checks(self.liquor_page)
+        self.listing_products_check(self.liquor_page)
+        self.footer_checks(self.liquor_page)
 
     @Moonrise.test
-    def ask_a_company_page(self):
-        askacompany = AskACompanyPage()
-        self.load_page(askacompany)
-        self.page_url_check(askacompany)
-        self.footer_checks(askacompany)
+    def ask_a_company_page_test(self):
+        self.load_page(self.askacompany_page)
+        self.page_url_check(self.askacompany_page)
+        self.footer_checks(self.askacompany_page)
 
     @Moonrise.test
-    def mobile_apps_page(self):
-        mobile_page = MobileAppPage()
-        self.load_page(mobile_page)
-        self.page_url_check(mobile_page)
-        self.footer_checks(mobile_page)
+    def mobile_page_test(self):
+        self.load_page(self.mobile_page)
+        self.page_url_check(self.mobile_page)
+        self.footer_checks(self.mobile_page)
 
     @Moonrise.test
-    def contact_page(self):
-        contact_page = ContactPage()
-        self.load_page(contact_page)
-        self.page_url_check(contact_page)
-        self.footer_checks(contact_page)
+    def contact_page_test(self):
+        self.load_page(self.contact_page)
+        self.page_url_check(self.contact_page)
+        self.footer_checks(self.contact_page)
 
     @Moonrise.test
-    def faq_page(self):
+    def faq_page_test(self):
         faq_page = FAQPage()
         self.load_page(faq_page)
         self.page_url_check(faq_page)
