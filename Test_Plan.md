@@ -25,7 +25,7 @@ data from each main page being returned correctly.
 - The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
 - "Listing beers..." header is present
 - "(Diplaying products 1 - 50 of (some number) in total)" is displayed
-- A list of 50 beers is displayed in alphabetical order
+- A list of 50 beers is displayed
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page

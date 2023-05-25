@@ -36,7 +36,13 @@ class BarnivoreTestSteps(Moonrise):
 
     def listing_products_check(self, list_widget):
         self.get_web_element(list_widget.list_header)
-        assert re.search(r"Displaying products 1 - 50 of .* in total", self.get_web_element(list_widget.displaying_products).text)
+        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_web_element(list_widget.displaying_products).text)
+        assert len(self.get_web_elements(list_widget.list_items)) == 50
+
+    def mini_search_elements_check(self):
+        self.get_web_element(SearchBarElements.mini_search_bar)
+        self.get_web_element(SearchBarElements.mini_search_button)
+        assert self.get_web_element(SearchBarElements.find_booze_label).text == "Find Booze:"
 
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)

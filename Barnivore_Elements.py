@@ -57,6 +57,7 @@ class MainPageElements:
 class ListElements:
 
     displaying_products = "#content > div:nth-child(5)"
+    list_items = "#content > ul > li"
 
     def __init__(self, page_title):
         self.page_title = page_title.lower()
@@ -66,6 +67,12 @@ class HomePage(MainPageElements):
 
     search_bar = "#big-search > input.ui-autocomplete-input"
     search_button = "#big-search > input[type=submit]:nth-child(2)"
+
+class SearchBarElements:
+
+    find_booze_label = "#searchbox > form > label"
+    mini_search_bar = "#searchbox > form > input.search"
+    mini_search_button = "#searchbox > form > input[type=submit]:nth-child(3)"
 
 class BeerPage(MainPageElements):
 

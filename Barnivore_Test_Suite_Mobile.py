@@ -43,6 +43,7 @@ class SmokeSuite(BarnivoreTests):
         self.page_url_check(self.beer_page.header_title)
         self.filter_widget_checks(self.beer_page.filter_widget)
         self.listing_products_check(self.beer_page.list_widget)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
@@ -51,6 +52,7 @@ class SmokeSuite(BarnivoreTests):
         self.page_url_check(self.cider_page.header_title)
         self.filter_widget_checks(self.cider_page.filter_widget)
         self.listing_products_check(self.cider_page.list_widget)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
@@ -59,6 +61,7 @@ class SmokeSuite(BarnivoreTests):
         self.page_url_check(self.wine_page.header_title)
         self.filter_widget_checks(self.wine_page.filter_widget)
         self.listing_products_check(self.wine_page.list_widget)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
@@ -67,30 +70,35 @@ class SmokeSuite(BarnivoreTests):
         self.page_url_check(self.liquor_page.header_title)
         self.filter_widget_checks(self.liquor_page.filter_widget)
         self.listing_products_check(self.liquor_page.list_widget)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
     def ask_a_company_page_test(self):
         self.load_page(self.askacompany_page.header_title)
         self.page_url_check(self.askacompany_page.header_title)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
     def mobile_page_test(self):
         self.load_page(self.mobile_page.header_title)
         self.page_url_check(self.mobile_page.header_title)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
     def contact_page_test(self):
         self.load_page(self.contact_page.header_title)
         self.page_url_check(self.contact_page.header_title)
+        self.mini_search_elements_check()
         self.footer_checks()
 
     @Moonrise.test
     def faq_page_test(self):
         self.load_page(self.faq_page.header_title)
         self.page_url_check(self.faq_page.header_title)
+        self.mini_search_elements_check()
         self.footer_checks()
 
 if __name__ == "__main__":
