@@ -63,7 +63,7 @@ class ListElements:
         self.page_title = page_title.lower()
         self.list_header = f"//*[@id='content']/h1[contains(text(),'Listing {self.page_title}s')]"
 
-class HomePage(MainPageElements):
+class HomePage:
 
     search_bar = "#big-search > input.ui-autocomplete-input"
     search_button = "#big-search > input[type=submit]:nth-child(2)"
@@ -74,53 +74,53 @@ class SearchBarElements:
     mini_search_bar = "#searchbox > form > input.search"
     mini_search_button = "#searchbox > form > input[type=submit]:nth-child(3)"
 
-class BeerPage(MainPageElements):
+class BeerPage:
 
     header_title = "Beer"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
 
-class CiderPage(MainPageElements):
+class CiderPage:
 
     header_title = "Cider"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
 
-class WinePage(MainPageElements):
+class WinePage:
 
     header_title = "Wine"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
 
-class LiquorPage(MainPageElements):
+class LiquorPage:
 
     header_title = "Liquor"
     def __init__(self):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
 
-class AskACompanyPage(MainPageElements):
+class AskACompanyPage:
 
     header_title = "Ask a Company"
     def __init__(self):
         self.list_widget = ListElements(self.header_title)
 
-class MobileAppPage(MainPageElements):
+class MobileAppPage:
 
     header_title = "Mobile Apps"
     def __init__(self):
         self.list_widget = ListElements(self.header_title)
 
-class ContactPage(MainPageElements):
+class ContactPage:
 
     header_title = "Contact"
     def __init__(self):
         self.list_widget = ListElements(self.header_title)
 
-class FAQPage(MainPageElements):
+class FAQPage:
 
     header_title = "FAQ"
     def __init__(self):
