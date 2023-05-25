@@ -34,7 +34,7 @@ class BarnivoreTestSteps(Moonrise):
             self.get_web_element(filter_widget.country_element)
 
     def listing_products_check(self, list_widget):
-        self.get_web_element(list_widget)
+        self.get_web_element(list_widget.list_header)
 
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)
