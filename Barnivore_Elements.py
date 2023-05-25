@@ -54,9 +54,9 @@ class MainPageElements:
     contact_page_link = "link:Contact"
     faq_page_link = "link:FAQ"
 
-    def __init__(self, page):
-        self.page = page.lower()
-        self.listing = f"//*[@id='content']/h1[contains(text(),'Listing {self.page}s')]"
+    def __init__(self, page_title):
+        self.page_title = page_title.lower()
+        self.list_header = f"//*[@id='content']/h1[contains(text(),'Listing {self.page_title}s')]"
 
 class HomePage(MainPageElements):
 

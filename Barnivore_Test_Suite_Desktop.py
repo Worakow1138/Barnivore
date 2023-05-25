@@ -28,6 +28,7 @@ class SmokeSuite(BarnivoreTests):
         self.askacompany_page = AskACompanyPage()
         self.mobile_page = MobileAppPage()
         self.contact_page = ContactPage()
+        self.faq_page = FAQPage()
         return super().suite_setup()
 
     def test_setup(self):
@@ -38,57 +39,59 @@ class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
     def beer_page_test(self):
-        self.load_page(self.beer_page)
-        self.page_url_check(self.beer_page)
-        self.filter_widget_checks(self.beer_page)
-        self.listing_products_check(self.beer_page)
-        self.footer_checks(self.beer_page)
+        self.load_page(self.beer_page.header_title)
+        self.page_url_check(self.beer_page.header_title)
+        self.filter_widget_checks(self.beer_page.filter_widget)
+        self.listing_products_check(self.beer_page.list_header)
+        self.footer_checks()
 
     @Moonrise.test
     def cider_page_test(self):
-        self.load_page(self.cider_page)
-        self.page_url_check(self.cider_page)
-        self.filter_widget_checks(self.cider_page)
-        self.listing_products_check(self.cider_page)
-        self.footer_checks(self.cider_page)
+        self.load_page(self.cider_page.header_title)
+        self.page_url_check(self.cider_page.header_title)
+        self.filter_widget_checks(self.cider_page.filter_widget)
+        self.listing_products_check(self.cider_page.list_header)
+        self.footer_checks()
 
     @Moonrise.test
     def wine_page_test(self):
-        self.load_page(self.wine_page)
-        self.page_url_check(self.wine_page)
-        self.filter_widget_checks(self.wine_page)
-        self.listing_products_check(self.wine_page)
-        self.footer_checks(self.wine_page)
+        self.load_page(self.wine_page.header_title)
+        self.page_url_check(self.wine_page.header_title)
+        self.filter_widget_checks(self.wine_page.filter_widget)
+        self.listing_products_check(self.wine_page.list_header)
+        self.footer_checks()
 
     @Moonrise.test
     def liquor_page_test(self):
-        self.load_page(self.liquor_page)
-        self.page_url_check(self.liquor_page)
-        self.filter_widget_checks(self.liquor_page)
-        self.listing_products_check(self.liquor_page)
-        self.footer_checks(self.liquor_page)
+        self.load_page(self.liquor_page.header_title)
+        self.page_url_check(self.liquor_page.header_title)
+        self.filter_widget_checks(self.liquor_page.filter_widget)
+        self.listing_products_check(self.liquor_page.list_header)
+        self.footer_checks()
 
     @Moonrise.test
     def ask_a_company_page_test(self):
-        self.load_page(self.askacompany_page)
-        self.page_url_check(self.askacompany_page)
-        self.footer_checks(self.askacompany_page)
+        self.load_page(self.askacompany_page.header_title)
+        self.page_url_check(self.askacompany_page.header_title)
+        self.footer_checks()
 
     @Moonrise.test
     def mobile_page_test(self):
-        self.load_page(self.mobile_page)
-        self.page_url_check(self.mobile_page)
-        self.footer_checks(self.mobile_page)
+        self.load_page(self.mobile_page.header_title)
+        self.page_url_check(self.mobile_page.header_title)
+        self.footer_checks()
 
     @Moonrise.test
     def contact_page_test(self):
-        self.load_page(self.contact_page)
-        self.page_url_check(self.contact_page)
-        self.footer_checks(self.contact_page)
+        self.load_page(self.contact_page.header_title)
+        self.page_url_check(self.contact_page.header_title)
+        self.footer_checks()
 
     @Moonrise.test
     def faq_page_test(self):
-        faq_page = FAQPage()
-        self.load_page(faq_page)
-        self.page_url_check(faq_page)
-        self.footer_checks(faq_page)
+        self.load_page(self.faq_page.header_title)
+        self.page_url_check(self.faq_page.header_title)
+        self.footer_checks()
+
+if __name__ == "__main__":
+    SmokeSuite(("beer_page_test",))    

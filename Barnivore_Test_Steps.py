@@ -17,14 +17,13 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(HomePage.search_bar)
         self.get_web_element(HomePage.search_button)
 
-    def load_page(self, page):
-        self.click_element(f"link:{page.header_title}")
+    def load_page(self, header_title):
+        self.click_element(f"link:{header_title}")
 
-    def page_url_check(self, page):
-        assert self.moon_driver.current_url == f"https://www.barnivore.com/{page.url_mapping.get(page.header_title)}"
+    def page_url_check(self, header_title):
+        assert self.moon_driver.current_url == f"https://www.barnivore.com/{MainPageElements.url_mapping.get(header_title)}"
     
-    def filter_widget_checks(self, page):
-        filter_widget = page.filter_widget
+    def filter_widget_checks(self, filter_widget):
         self.get_web_element(filter_widget.filter_title)
         self.get_web_element(filter_widget.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
@@ -34,12 +33,12 @@ class BarnivoreTestSteps(Moonrise):
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
 
-    def listing_products_check(self, page):
-        self.get_web_element(page.listing)
+    def listing_products_check(self, list_widget):
+        self.get_web_element(list_widget)
 
-    def footer_checks(self, page):
-        self.get_web_element(page.pdr_label)
-        self.get_web_element(page.vegan_beer_label)
-        self.get_web_element(page.vegan_wine_label)
-        self.get_web_element(page.vegan_liquor_label)
-        self.get_web_element(page.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
+    def footer_checks(self):
+        self.get_web_element(MainPageElements.pdr_label)
+        self.get_web_element(MainPageElements.vegan_beer_label)
+        self.get_web_element(MainPageElements.vegan_wine_label)
+        self.get_web_element(MainPageElements.vegan_liquor_label)
+        self.get_web_element(MainPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
