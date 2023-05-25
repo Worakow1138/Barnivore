@@ -12,21 +12,21 @@ class FilterElements:
         "wine": "//label[contains(text(),'Region:')]",
     }
 
-    def __init__(self, page):
-        self.page = page.lower()
+    def __init__(self, page_title):
+        self.page_title = page_title.lower()
         self.letter_filter_buttons = {
-            "0-9": f"//a[@href='/{self.page}/0-9' and text()='0-9']",
-            "a-f": f"//a[@href='/{self.page}' and text() = 'A-F']",
-            "g-l": f"//a[@href='/{self.page}/g-l' and text() = 'G-L']",
-            "m-r": f"//a[@href='/{self.page}/m-r' and text() = 'M-R']",
-            "s-t": f"//a[@href='/{self.page}/s-t' and text() = 'S-T']",
-            "u-z": f"//a[@href='/{self.page}/u-z' and text() = 'U-Z']"
+            "0-9": f"//a[@href='/{self.page_title}/0-9' and text()='0-9']",
+            "a-f": f"//a[@href='/{self.page_title}' and text() = 'A-F']",
+            "g-l": f"//a[@href='/{self.page_title}/g-l' and text() = 'G-L']",
+            "m-r": f"//a[@href='/{self.page_title}/m-r' and text() = 'M-R']",
+            "s-t": f"//a[@href='/{self.page_title}/s-t' and text() = 'S-T']",
+            "u-z": f"//a[@href='/{self.page_title}/u-z' and text() = 'U-Z']"
         }
         self.veganosity_filter_buttons = {
-            "Everything": f"//a[@href='/{self.page}?vfilter=All' and text() = 'Everything']",
-            "Only Vegan": f"//a[@href='/{self.page}?vfilter=Vegan' and text() = 'Only Vegan']",
+            "Everything": f"//a[@href='/{self.page_title}?vfilter=All' and text() = 'Everything']",
+            "Only Vegan": f"//a[@href='/{self.page_title}?vfilter=Vegan' and text() = 'Only Vegan']",
         }
-        self.country_element = self.country_element_mapping.get(self.page)
+        self.country_element = self.country_element_mapping.get(self.page_title)
 
 class MainPageElements:
 
