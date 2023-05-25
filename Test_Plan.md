@@ -2,16 +2,15 @@
 
 - [Barnivore Test Plan](#barnivore-test-plan)
   - [Introduction](#introduction)
-  - [Smoke Tests Suite](#smoke-tests-suite)
+  - [Basic Page Tests Suite](#basic-page-tests-suite)
     - [Preconditions](#preconditions)
     - [Test Cases](#test-cases)
 
 ## Introduction
 Detailed explanations of test steps for the [barnivore.com](https://www.barnivore.com/) website
 
-## Smoke Tests Suite
-Verify that basic functionality is covered on the barnivore website. Basic functionality is defined as the search bar being able to return results, and expected
-data from each main page being returned correctly.
+## Basic Page Tests Suite
+Verify that basic functionality is covered on the main barnivore pages. Basic functionality is defined as expected data from each main page being returned correctly.
 
 ### Preconditions
 1. Open a web browser to [barnivore.com](https://www.barnivore.com/)

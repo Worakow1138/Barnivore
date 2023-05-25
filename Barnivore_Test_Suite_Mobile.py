@@ -18,7 +18,7 @@ class BarnivoreTests(BarnivoreTestSteps):
         return super().suite_teardown()
     
     
-class SmokeSuite(BarnivoreTests):
+class BasicPageTests(BarnivoreTests):
 
     def suite_setup(self):
         self.beer_page = BeerPage()
@@ -102,4 +102,4 @@ class SmokeSuite(BarnivoreTests):
         self.footer_checks()
 
 if __name__ == "__main__":
-    SmokeSuite(("beer_page_test",))    
+    BasicPageTests(("beer_page_test",))    
