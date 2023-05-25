@@ -28,60 +28,52 @@ class SmokeSuite(BarnivoreTests):
 
     @Moonrise.test
     def beer_page(self):
-        page_to_test = BeerPage()
-        self.click_element(page_to_test.beer_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.filter_widget_checks(page_to_test.filter_widget)
-        self.footer_checks(page_to_test)
+        self.load_page(BeerPage)
+        self.page_url_check(BeerPage)
+        self.filter_widget_checks(BeerPage)
+        self.footer_checks(BeerPage)
 
     @Moonrise.test
     def cider_page(self):
-        page_to_test = CiderPage()
-        self.click_element(page_to_test.cider_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.filter_widget_checks(page_to_test.filter_widget)
-        self.footer_checks(page_to_test)
+        self.load_page(CiderPage)
+        self.page_url_check(CiderPage)
+        self.filter_widget_checks(CiderPage)
+        self.footer_checks(CiderPage)
 
     @Moonrise.test
     def wine_page(self):
-        page_to_test = WinePage()
-        self.click_element(page_to_test.wine_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.filter_widget_checks(page_to_test.filter_widget)
-        self.footer_checks(page_to_test)
+        self.load_page(WinePage)
+        self.page_url_check(WinePage)
+        self.filter_widget_checks(WinePage)
+        self.footer_checks(WinePage)
 
     @Moonrise.test
     def liquor_page(self):
-        page_to_test = LiquorPage()
-        self.click_element(page_to_test.liquor_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.filter_widget_checks(page_to_test.filter_widget)
-        self.footer_checks(page_to_test)
+        self.load_page(LiquorPage)
+        self.page_url_check(LiquorPage)
+        self.filter_widget_checks(LiquorPage)
+        self.footer_checks(LiquorPage)
 
     @Moonrise.test
     def ask_a_company_page(self):
-        page_to_test = AskACompanyPage()
-        self.click_element(page_to_test.ask_a_company_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.footer_checks(page_to_test)
+        self.load_page(AskACompanyPage)
+        self.page_url_check(AskACompanyPage)
+        self.footer_checks(AskACompanyPage)
 
     @Moonrise.test
     def mobile_apps_page(self):
-        page_to_test = MobileAppPage()
-        self.click_element(page_to_test.mobile_apps_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.footer_checks(page_to_test)
+        self.load_page(MobileAppPage)
+        self.page_url_check(MobileAppPage)
+        self.footer_checks(MobileAppPage)
 
     @Moonrise.test
     def contact_page(self):
-        page_to_test = ContactPage()
-        self.click_element(page_to_test.contact_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.footer_checks(page_to_test)
+        self.load_page(ContactPage)
+        self.page_url_check(ContactPage)
+        self.footer_checks(ContactPage)
 
     @Moonrise.test
     def faq_page(self):
-        page_to_test = FAQPage()
-        self.click_element(page_to_test.faq_page_link)
-        self.main_page_is_loaded(page_to_test)
-        self.footer_checks(page_to_test)
+        self.load_page(FAQPage)
+        self.page_url_check(FAQPage)
+        self.footer_checks(FAQPage)

@@ -62,26 +62,18 @@ class HomePage(MainPageElements):
 class BeerPage(MainPageElements):
 
     header_title = "Beer"
-    def __init__(self):
-        self.filter_widget = FilterElements(self.header_title)
 
 class CiderPage(MainPageElements):
 
     header_title = "Cider"
-    def __init__(self):
-        self.filter_widget = FilterElements(self.header_title)
 
 class WinePage(MainPageElements):
 
     header_title = "Wine"
-    def __init__(self):
-        self.filter_widget = FilterElements(self.header_title)
 
 class LiquorPage(MainPageElements):
 
     header_title = "Liquor"
-    def __init__(self):
-        self.filter_widget = FilterElements(self.header_title)
 
 class AskACompanyPage(MainPageElements):
 

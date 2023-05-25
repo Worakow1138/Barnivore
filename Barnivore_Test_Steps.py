@@ -17,10 +17,14 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(HomePage.search_bar)
         self.get_web_element(HomePage.search_button)
 
-    def main_page_is_loaded(self, page):
+    def load_page(self, page):
+        self.click_element(f"link:{page.header_title}")
+
+    def page_url_check(self, page):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{page.url_mapping.get(page.header_title)}"
     
-    def filter_widget_checks(self, filter_widget):
+    def filter_widget_checks(self, page):
+        filter_widget = FilterElements(page.header_title)
         self.get_web_element(filter_widget.filter_title)
         self.get_web_element(filter_widget.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
