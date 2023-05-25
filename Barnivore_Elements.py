@@ -56,6 +56,8 @@ class MainPageElements:
 
 class ListElements:
 
+    displaying_products = "#content > div:nth-child(5)"
+
     def __init__(self, page_title):
         self.page_title = page_title.lower()
         self.list_header = f"//*[@id='content']/h1[contains(text(),'Listing {self.page_title}s')]"

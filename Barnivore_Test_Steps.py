@@ -1,5 +1,6 @@
 from moonrise import Moonrise
 from Barnivore_Elements import *
+import re
 
 class BarnivoreTestSteps(Moonrise):
 
@@ -35,10 +36,11 @@ class BarnivoreTestSteps(Moonrise):
 
     def listing_products_check(self, list_widget):
         self.get_web_element(list_widget.list_header)
+        assert re.search(r"Displaying products 1 - 50 of .* in total", self.get_web_element(list_widget.displaying_products).text)
 
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)
         self.get_web_element(MainPageElements.vegan_beer_label)
         self.get_web_element(MainPageElements.vegan_wine_label)
         self.get_web_element(MainPageElements.vegan_liquor_label)
-        self.get_web_element(MainPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
+        assert self.get_web_element(MainPageElements.copyright_label).text == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
