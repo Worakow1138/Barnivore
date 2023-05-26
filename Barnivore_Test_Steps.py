@@ -72,6 +72,25 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(ContactPage.barnivore_contact_email)
         self.get_web_element(ContactPage.ask_a_company_link)
 
+    def faq_text_checks(self):
+        content_text = self.get_text(MainPageElements.main_content_element)
+        assert FAQPage.can_you_check_text in content_text
+        assert FAQPage.where_info_text in content_text
+        assert FAQPage.vegan_friendly_text in content_text
+        assert FAQPage.add_filter_text in content_text
+        assert FAQPage.diatomaceous_earth_text in content_text
+        assert FAQPage.country_text in content_text
+        assert FAQPage.glue_text in content_text
+        assert FAQPage.sugar_text in content_text
+        assert FAQPage.cross_contamination_text in content_text
+        assert FAQPage.terms_of_use_text in content_text
+
+        self.get_web_element(FAQPage.ask_a_company_link)
+        self.get_web_element(FAQPage.want_to_help_link)
+        self.get_web_element(FAQPage.contact_page_link)
+        self.get_web_element(FAQPage.get_in_touch_link)
+        self.get_web_element(FAQPage.terms_of_use_link)
+
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)
         self.get_web_element(MainPageElements.vegan_beer_label)
