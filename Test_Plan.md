@@ -80,7 +80,9 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 6. Mobile Apps Page:
 - Select the "Mobile Apps" header
 - The ["Mobile Apps"](https://www.barnivore.com/mobile) page is loaded
-- 
+- "Barnivore on the go" text is present
+- Links for Patreon page and Twitter are present
+- Links for full-text views of beer, cider, wine, and liquor pages are present
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
