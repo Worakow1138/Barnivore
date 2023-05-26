@@ -77,6 +77,7 @@ class BasicPageTests(BarnivoreTests):
     def ask_a_company_page_test(self):
         self.load_page(self.askacompany_page.header_title)
         self.page_url_check(self.askacompany_page.header_title)
+        self.company_text_checks(self.askacompany_page)
         self.mini_search_elements_check()
         self.footer_checks()
 
@@ -100,6 +101,3 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.faq_page.header_title)
         self.mini_search_elements_check()
         self.footer_checks()
-
-if __name__ == "__main__":
-    BasicPageTests(("beer_page_test",))    
