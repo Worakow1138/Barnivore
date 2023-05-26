@@ -215,18 +215,28 @@ class MobileAppPage:
 class ContactPage:
 
     header_title = "Contact"
-    contact_page_text = """
-    Contact Us
-    Team Barnivore can be reached by emailing contact@barnivore.com.
-    Want to know if a drink is vegan?
-    Do these things:
-    Use the search box
-    We log all failed searches and look into what's missing.
-    Contact the company yourself
-    It's optional, but it's certainly faster! If you get some information for a check or a double check, please email the info to us and we'll add it to the list so everyone can enjoy it. We have easy instructions and an email template you can cut and paste available here.
-    """.strip().replace("    ","")
     barnivore_contact_email = "//a[@href='mailto:contact@barnivore.com' and text()='contact@barnivore.com']"
     ask_a_company_link = "//a[@href='/askacompany' and text()='available here.']"
+
+    def __init__(self, mobile=False):
+        self.mobile = mobile
+        if self.mobile:
+            self.contact_page_text = """
+            Contact Us
+            Team Barnivore can be reached by emailing contact@barnivore.com.
+            """
+        else:
+            self.contact_page_text = """
+            Contact Us
+            Team Barnivore can be reached by emailing contact@barnivore.com.
+            Want to know if a drink is vegan?
+            Do these things:
+            Use the search box
+            We log all failed searches and look into what's missing.
+            Contact the company yourself
+            It's optional, but it's certainly faster! If you get some information for a check or a double check, please email the info to us and we'll add it to the list so everyone can enjoy it. We have easy instructions and an email template you can cut and paste available here.
+            """
+        self.contact_page_text = self.contact_page_text.strip().replace("            ","")
 
 class FAQPage:
 
