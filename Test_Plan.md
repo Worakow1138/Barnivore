@@ -65,3 +65,14 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+5. Ask a Company Page:
+- Select the "Ask a Company" header
+- The ["Ask a Company"](https://www.barnivore.com/askacompany) page is loaded
+- Expected text appears in "The Question" and "The Response" areas of the page
+- Language selectors for the question, non-vegan response, and vegan response areas are present
+- Brand Name and Your Name inputs are present
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
