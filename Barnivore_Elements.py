@@ -33,6 +33,7 @@ class MainPageElements:
     vegan_wine_label = "//div[@id='footer']//a[@href='/wine/' and text()='Vegan Wine']"
     vegan_liquor_label = "//div[@id='footer']//a[@href='/beer/' and text()='Vegan Beer']"
     copyright_label = "#footer > p:nth-child(3)"
+    main_content_element = "div#content"
     url_mapping = {
         "Beer": "beer",
         "Cider": "cider",
@@ -103,7 +104,6 @@ class LiquorPage:
 class AskACompanyPage:
 
     header_title = "Ask a Company"
-    main_content_element = "div#content"
     question_element = "#questions > div.bodycopy"
     vegan_response_element = "#vegan_responses > div.bodycopy"
     non_vegan_response_element = "#nonvegan_responses > div.bodycopy"
@@ -189,8 +189,23 @@ class AskACompanyPage:
 class MobileAppPage:
 
     header_title = "Mobile Apps"
-    def __init__(self):
-        self.list_widget = ListElements(self.header_title)
+    mobile_page_text = """
+    Barnivore on the go
+    An official Barnivore app is in the works! For details, check out our Patreon page.
+    In the meantime, some developers have put some things together for you.
+    Note that these apps use Barnivore data, but they're written by third parties and we don't have any connection to them. The information in the apps may be older than what's in Barnivore, and we don't have any input or control over how well they might work.
+    To find one, go to your app store of choice and search for "vegan alcohol" or something similar, and you should find something. Maybe check it against a few recent Barnivore entries before you lock in to your home page :)
+    Want to go old school? Technically, a printout is a mobile-friendly format, and we've got printable lists of beer, cider, wine, and liquor for you.
+    We are working, ever so slowly, on our own official app, so stay tuned and wait for announcements on Twitter and Patreon.
+    """.strip().replace("    ","")
+    large_patreon_link = "//a[@href='https://www.patreon.com/barnivore' and text()='Patreon page']"
+    small_patreon_link = "//a[@href='https://www.patreon.com/barnivore' and text()='Patreon']"
+    twitter_link = "//a[@href='https://twitter.com/barnivore/' and text()='Twitter']"
+    beer_link = "//a[@href='/printable/beer' and text()='beer']"
+    cider_link = "//a[@href='/printable/cider' and text()='cider']"
+    wine_link = "//a[@href='/printable/wine' and text()='wine']"
+    liquor_link = "//a[@href='/printable/liquor' and text()='liquor']"
+
 
 class ContactPage:
 
