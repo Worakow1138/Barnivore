@@ -4,8 +4,6 @@ class FilterElements:
 
     filter_title = "//h2[text()='Filters']"
     filter_parent_element = "css:#content > div.filter"
-    by_letter_element = "//b[text()='By Letter:]"
-    by_veganosity_element = "//b[text()='By veganosity:']"
     country_element_mapping = {
         "beer": "//label[contains(text(),'Country:')]",
         "cider": "//label[contains(text(),'Country:')]",

@@ -25,8 +25,8 @@ class BarnivoreTestSteps(Moonrise):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{MainPageElements.url_mapping.get(header_title)}"
     
     def filter_widget_checks(self, filter_widget):
-        self.get_web_element(filter_widget.filter_title)
-        self.get_web_element(filter_widget.filter_parent_element)
+        self.get_web_element(FilterElements.filter_title)
+        self.get_web_element(FilterElements.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
             self.get_web_element(letter)
         for veganosity in filter_widget.veganosity_filter_buttons.values():
@@ -36,8 +36,8 @@ class BarnivoreTestSteps(Moonrise):
 
     def listing_products_check(self, list_widget):
         self.get_web_element(list_widget.list_header)
-        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_web_element(list_widget.displaying_products).text)
-        assert len(self.get_web_elements(list_widget.list_items)) == 50
+        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(ListElements.displaying_products))
+        assert len(self.get_web_elements(ListElements.list_items)) == 50
 
     def mini_search_elements_check(self):
         self.get_web_element(SearchBarElements.mini_search_bar)
@@ -45,20 +45,20 @@ class BarnivoreTestSteps(Moonrise):
         assert self.get_web_element(SearchBarElements.find_booze_label).text == "Find Booze:"
 
     def company_text_checks(self, page):
-        content_text = self.get_text(page.main_content_element)
-        assert page.ask_a_company_paragraph in content_text
-        assert page.the_question_title in content_text
-        assert page.the_response_title in content_text
+        content_text = self.get_text(AskACompanyPage.main_content_element)
+        assert AskACompanyPage.ask_a_company_paragraph in content_text
+        assert AskACompanyPage.the_question_title in content_text
+        assert AskACompanyPage.the_response_title in content_text
 
-        assert page.the_question_text in self.get_text(page.question_element)
-        assert page.vegan_response in self.get_text(page.vegan_response_element)
-        assert page.non_vegan_response in self.get_text(page.non_vegan_response_element)
+        assert page.the_question_text in self.get_text(AskACompanyPage.question_element)
+        assert page.vegan_response in self.get_text(AskACompanyPage.vegan_response_element)
+        assert page.non_vegan_response in self.get_text(AskACompanyPage.non_vegan_response_element)
 
-        self.get_web_element(page.question_language_selector)
-        self.get_web_element(page.vegan_response_language_selector)
-        self.get_web_element(page.non_vegan_response_language_selector)
-        self.get_web_element(page.brand_name_input)
-        self.get_web_element(page.sender_name_input)
+        self.get_web_element(AskACompanyPage.question_language_selector)
+        self.get_web_element(AskACompanyPage.vegan_response_language_selector)
+        self.get_web_element(AskACompanyPage.non_vegan_response_language_selector)
+        self.get_web_element(AskACompanyPage.brand_name_input)
+        self.get_web_element(AskACompanyPage.sender_name_input)
 
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)
