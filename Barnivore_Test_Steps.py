@@ -65,4 +65,4 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(MainPageElements.vegan_beer_label)
         self.get_web_element(MainPageElements.vegan_wine_label)
         self.get_web_element(MainPageElements.vegan_liquor_label)
-        assert self.get_web_element(MainPageElements.copyright_label).text == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
+        assert self.get_text(MainPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
