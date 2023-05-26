@@ -226,5 +226,65 @@ class ContactPage:
 class FAQPage:
 
     header_title = "FAQ"
-    def __init__(self):
-        self.list_widget = ListElements(self.header_title)
+    can_you_check_text = """
+    Do you know/Can you check if [product X] is vegan?
+    Generally speaking, if a product isn't already on the list, we don't know any more about it than you do, and the only thing we can do is contact the company and ask them.
+    We encourage people to do this themselves (it takes about the same amount of time as it takes to ask us) and pass on the information so we can update the list - it's not because we're lazy, but more because the more people that ask a company about their ingredients, the better the chance that a) we'll be able to see if the responses differ, which indicates the credibility of the company, and b) companies will notice that lots of people actually care what they put into their bodies, and they might actually change their products to reflect this.
+    You can get the instructions on how to help out (including a sample question to ask) over on our ask a company page.
+    """.strip().replace("    ","")
+    where_info_text = """
+    Where do you get your information?
+    From you! In some cases we'll contact companies directly, and sometimes they even get in touch with us, but generally the stuff on the site came from readers like you who got in touch with a company they cared about, asked a few questions, and then forwarded the response to us.
+    You can get the instructions on how to do that (including a sample question to ask) over on our contact page.
+    The story doesn't end there however — after a while, the information gets out of date, or someone decides they just don't trust the answer that's on the site. That's where the double check comes into play, which is a powerful thing, because sometimes people... well, they don't lie, but they don't always know what they're talking about. That, and processes and recipes can change over time (and sometimes for the better!) It really makes a difference when people take the time to contact a company that's already in the list, just to be sure.
+    """.strip().replace("    ","")
+    vegan_friendly_text = """
+    What do you mean by "Vegan Friendly"?
+    We're glad you asked! In keeping with the user-submitted theme described above, we look at the question that was asked, the answer that came back, and judge the entry accordingly. We know we're not the sole decider of what counts as vegan, and that's where you come in...
+    In some cases, the answer listed might not be enough for your liking. In that case, we recommend you move on to another alcohol, or better still, get in touch with the company, ask the questions that are bugging you, and then forward us the answers!
+    This isn't a cop-out, just a reasonable compromise, in our opinion. We publish as much information as we can about each company, and if we get a reply that's clearly not good enough, we'll follow up ourselves before we add it, but the reality is that keeping up with user submissions can seriously cut into our drinking time (along with our every other part of the day time, you guys are awesome with your submissions!)
+    """.strip().replace("    ","")
+    add_filter_text = """
+    Can you add a filter to just show the non-vegan drinks?
+    We get why you'd want that, but here's the thing: while we've got a lot of listings, we don't have anywhere near a complete set of alcohol products produced worldwide (want to help with that?)
+    If we showed a list of all the drinks we knew weren't vegan, yes, it'd help you see what to avoid, but it'd also suggest to a lot of readers that if it's not on the non-vegan list, it must be vegan, when the reality is we might just not know.
+    And hey, while you're searching the vegan list, you might just find a new thing you wouldn't have otherwise tried, supporting more vegan-friendly companies. Which is cool.
+    """.strip().replace("    ","")
+    diatomaceous_earth_text = """
+    Is Diatomaceous earth vegan?
+    We rely on two backup sources for our guidelines on Diatomaceous earth and veganism: the first is Wikipedia, which actually clarifies (heh, "clarifies") that it's fossilized algae (specifically diatoms, which is where the name comes from.)
+    Of course, we wouldn't recommend Wikipedia as a primary source for anything as important as this, so we also rely on the fine folks at the Vegetarian Resource Group, who've invested a lot of time and money into determining what is and what isn't vegan-friendly in the wide world of food. According to their research, DE is considered vegan.
+    """.strip().replace("    ","")
+    country_text = """
+    Can a drink be vegan in one country and not in another?
+    Unfortunately, yes. Some beverages (beers and liquors, primarily) are licensed to various regions and are then manufactured by different companies in those countries, and their filtration methods might vary. We see this in Australia a lot for some reason. Wherever we know about it, we make every effort to mention this practice, but as our information is based on what's sent to us we don't check beyond that.
+    To reduce your risks, you have a few options: the first is to drink locally, as the information we receive is usually from a head office and not a licensee. The second, which goes for everything in Barnivore, is to double check for yourself, mentioning specifically where you live (and please pass on any info you find to us so we can help others!
+    """.strip().replace("    ", "")
+    glue_text = """
+    What about the glue used on the bottle labels? Is that vegan?
+    We don't specifically ask about label glue. As we say in "What do you mean by 'vegan friendly'," we picked a basic level of criteria to watch for, focusing for the most part on ingredients. All information we have on any product, including the full responses from the companies, are shown with each listing, so you can make your own decision.
+    The general consensus has been that label glue was something not enough companies would even know about, and including it in the "standard question" would result in fewer responses of any kind to be returned. We didn't feel like this was a compromise; there are many vegans out there who don't worry about these things, and there are vegans who do. We're not the vegan police, and while this is the definition we've opted to go with, you may have another opinion and we respect that and invite you to investigate further.
+    If label glue is a concern for you, there are a few options: you can drink from cans or opt for draft beer, or you can check with the companies you're interested in, and then share the information with the rest of the Barnivore community.
+    """.strip().replace("    ","")
+    sugar_text = """
+    How about if the sugar is filtered with bone char?
+    Same as above, basically. Again, if you want to know more about a company, we try to make it as easy as possible for you to reach out to them.
+    """.strip().replace("    ","")
+    cross_contamination_text = """
+    What about cross contamination?
+    Some companies will make multiple products on the same equipment, and some of those products may not be vegan. We treat this scenario the same as the "may contain" warnings in ingredients, which are generally there to warn people in case of allergies, and give those cases a pass.
+    Yes, this means that there may be trace amounts of whatever was in the pipes the day before (assuming the cleaning process didn't get it all,) but we don't believe it's anyone's intent to sneak animal ingredients into your drink (vs something like isinglass, which is just gross.) If this concerns you from a purity perspective, we encourage you to frequent companies with a fully vegan product line.
+    """.strip().replace("    ","")
+    terms_of_use_text = """
+    Can I use your information on my site/app/book?
+    Most probably. There are just a few things we want to be careful about. Check out our Terms of Use section for details.
+    Still have questions? Get in touch!
+    """.strip().replace("    ","")
+
+    ask_a_company_link = "//a[@href='/askacompany' and text()='ask a company page']"
+    want_to_help_link = "//a[@href='/askacompany' and text()='want to help with that?']"
+
+    contact_page_link = "//a[@href='/contact' and text()='contact page']"
+    get_in_touch_link = "//a[@href='/contact' and text()='Get in touch!']"
+
+    terms_of_use_link = "//a[@href='/terms' and text()='Terms of Use']"
