@@ -67,6 +67,11 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(MobileAppPage.wine_link)
         self.get_web_element(MobileAppPage.liquor_link)
 
+    def contact_text_checks(self):
+        assert ContactPage.contact_page_text in self.get_text(MainPageElements.main_content_element)
+        self.get_web_element(ContactPage.barnivore_contact_email)
+        self.get_web_element(ContactPage.ask_a_company_link)
+
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)
         self.get_web_element(MainPageElements.vegan_beer_label)
