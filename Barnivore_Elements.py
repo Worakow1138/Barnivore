@@ -69,9 +69,14 @@ class HomePage:
 
 class SearchBarElements:
 
-    find_booze_label = "#searchbox > form > label"
-    mini_search_bar = "#searchbox > form > input.search"
-    mini_search_button = "#searchbox > form > input[type=submit]:nth-child(3)"
+    def __init__(self, mobile=False):
+        if mobile:
+            self.mobile = "-mobile"
+        else:
+            self.mobile = ""
+        self.find_booze_label = f"#searchbox{self.mobile} > form > label"
+        self.mini_search_bar = f"#searchbox{self.mobile} > form > input.search"
+        self.mini_search_button = f"#searchbox{self.mobile} > form > input[type=submit]:nth-child(3)"
 
 class BeerPage:
 
