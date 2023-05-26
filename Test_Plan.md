@@ -76,3 +76,12 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+6. Mobile Apps Page:
+- Select the "Mobile Apps" header
+- The ["Mobile Apps"](https://www.barnivore.com/mobile) page is loaded
+- 
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
