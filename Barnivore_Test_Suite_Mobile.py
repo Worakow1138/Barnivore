@@ -29,12 +29,12 @@ class BasicPageTests(BarnivoreTests):
         self.mobile_page = MobileAppPage()
         self.contact_page = ContactPage()
         self.faq_page = FAQPage()
+        self.mobile_search_bar = SearchBarElements(True)
         return super().suite_setup()
 
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
-        self.verify_page_headers_present()
-        self.verify_search_bar_present()
+        self.mini_search_elements_check(self.mobile_search_bar)
         return super().test_setup()
 
     @Moonrise.test
@@ -43,7 +43,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.beer_page.header_title)
         self.filter_widget_checks(self.beer_page.filter_widget)
         self.listing_products_check(self.beer_page.list_widget)
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -52,7 +52,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.cider_page.header_title)
         self.filter_widget_checks(self.cider_page.filter_widget)
         self.listing_products_check(self.cider_page.list_widget)
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -61,7 +61,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.wine_page.header_title)
         self.filter_widget_checks(self.wine_page.filter_widget)
         self.listing_products_check(self.wine_page.list_widget)
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -70,7 +70,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.liquor_page.header_title)
         self.filter_widget_checks(self.liquor_page.filter_widget)
         self.listing_products_check(self.liquor_page.list_widget)
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -78,7 +78,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.askacompany_page.header_title)
         self.page_url_check(self.askacompany_page.header_title)
         self.company_text_checks(self.askacompany_page)
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -86,7 +86,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.mobile_page.header_title)
         self.page_url_check(self.mobile_page.header_title)
         self.mobile_text_checks()
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -94,7 +94,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.contact_page.header_title)
         self.page_url_check(self.contact_page.header_title)
         self.contact_text_checks()
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
     @Moonrise.test
@@ -102,5 +102,5 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.faq_page.header_title)
         self.page_url_check(self.faq_page.header_title)
         self.faq_text_checks()
-        self.mini_search_elements_check()
+        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()  
