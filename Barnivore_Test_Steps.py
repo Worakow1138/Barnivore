@@ -45,7 +45,7 @@ class BarnivoreTestSteps(Moonrise):
         assert self.get_web_element(SearchBarElements.find_booze_label).text == "Find Booze:"
 
     def company_text_checks(self, page):
-        content_text = self.get_text(AskACompanyPage.main_content_element)
+        content_text = self.get_text(MainPageElements.main_content_element)
         assert AskACompanyPage.ask_a_company_paragraph in content_text
         assert AskACompanyPage.the_question_title in content_text
         assert AskACompanyPage.the_response_title in content_text
@@ -59,6 +59,13 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(AskACompanyPage.non_vegan_response_language_selector)
         self.get_web_element(AskACompanyPage.brand_name_input)
         self.get_web_element(AskACompanyPage.sender_name_input)
+
+    def mobile_text_checks(self):
+        assert MobileAppPage.mobile_page_text in self.get_text(MainPageElements.main_content_element)
+        self.get_web_element(MobileAppPage.beer_link)
+        self.get_web_element(MobileAppPage.cider_link)
+        self.get_web_element(MobileAppPage.wine_link)
+        self.get_web_element(MobileAppPage.liquor_link)
 
     def footer_checks(self):
         self.get_web_element(MainPageElements.pdr_label)
