@@ -85,6 +85,7 @@ class BasicPageTests(BarnivoreTests):
     def mobile_page_test(self):
         self.load_page(self.mobile_page.header_title)
         self.page_url_check(self.mobile_page.header_title)
+        self.mobile_text_checks()
         self.mini_search_elements_check()
         self.footer_checks()
 
