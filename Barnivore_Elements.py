@@ -68,7 +68,8 @@ class HomePage:
     header_title = "Home"
 
     def __init__(self, mobile=False):
-        if mobile:
+        self.mobile = mobile
+        if self.mobile:
             self.search_widget = SearchBarElements(mobile)
         else:
             self.search_bar = "#big-search > input.ui-autocomplete-input"
