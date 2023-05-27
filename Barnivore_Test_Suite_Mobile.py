@@ -43,8 +43,8 @@ class BasicPageTests(BarnivoreTests):
     @Moonrise.test
     def home_page_test(self):
         self.page_url_check(self.home_page.header_title)
-        self.mini_search_elements_check(self.home_page.search_widget)
-
+        self.verify_search_bar_present(self.home_page)
+    
     @Moonrise.test
     def beer_page_test(self):
         self.load_page(self.beer_page.header_title)
