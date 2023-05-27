@@ -26,7 +26,7 @@ class FilterElements:
         }
         self.country_element = self.country_element_mapping.get(self.page_title)
 
-class MainPageElements:
+class CommonPageElements:
 
     pdr_label = "//div[@id='footer']/p[text()='Please Drink Responsibly']"
     vegan_beer_label = "//div[@id='footer']//a[@href='/beer/' and text()='Vegan Beer']"
