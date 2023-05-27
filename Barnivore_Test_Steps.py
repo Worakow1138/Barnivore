@@ -4,9 +4,9 @@ import re
 
 class BarnivoreTestSteps(Moonrise):
 
-    def verify_search_bar_present(self):
-        self.get_web_element(HomePage.search_bar)
-        self.get_web_element(HomePage.search_button)
+    def verify_search_bar_present(self, home_page: HomePage):
+        self.get_web_element(home_page.search_bar)
+        self.get_web_element(home_page.search_button)
 
     def load_page(self, header_title):
         self.click_element(f"link:{header_title}")
