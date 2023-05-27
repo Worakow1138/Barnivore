@@ -97,7 +97,7 @@ class BasicPageTests(BarnivoreTests):
     def mobile_page_test(self):
         self.load_page(self.mobile_page.header_title)
         self.page_url_check(self.mobile_page.header_title)
-        self.mobile_text_checks()
+        self.mobile_text_checks(self.mobile_page)
         self.mini_search_elements_check(self.mobile_page.search_widget)
         self.footer_checks()
 
@@ -113,7 +113,7 @@ class BasicPageTests(BarnivoreTests):
     def faq_page_test(self):
         self.load_page(self.faq_page.header_title)
         self.page_url_check(self.faq_page.header_title)
-        self.faq_text_checks()
+        self.faq_text_checks(self.faq_page)
         self.mini_search_elements_check(self.faq_page.search_widget)
         self.footer_checks()  
 
