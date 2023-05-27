@@ -81,30 +81,34 @@ class SearchBarElements:
 class BeerPage:
 
     header_title = "Beer"
-    def __init__(self):
+    def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
+        self.search_widget = SearchBarElements(mobile)
 
 class CiderPage:
 
     header_title = "Cider"
-    def __init__(self):
+    def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
+        self.search_widget = SearchBarElements(mobile)
 
 class WinePage:
 
     header_title = "Wine"
-    def __init__(self):
+    def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
+        self.search_widget = SearchBarElements(mobile)
 
 class LiquorPage:
 
     header_title = "Liquor"
-    def __init__(self):
+    def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
         self.list_widget = ListElements(self.header_title)
+        self.search_widget = SearchBarElements(mobile)
 
 class AskACompanyPage:
 
@@ -134,7 +138,9 @@ class AskACompanyPage:
     IF THE PRODUCTS ARE NOT VEGAN:
     """.strip().replace("    ","")
 
-    def __init__(self, language="English", brand_name = "[BRAND NAME]", your_name = "[YOUR NAME]"):
+    def __init__(self, mobile=False, language="English", brand_name = "[BRAND NAME]", your_name = "[YOUR NAME]"):
+        self.search_widget = SearchBarElements(mobile)
+
         self.brand_name = brand_name
         self.your_name = your_name
 
@@ -211,6 +217,8 @@ class MobileAppPage:
     wine_link = "//a[@href='/printable/wine' and text()='wine']"
     liquor_link = "//a[@href='/printable/liquor' and text()='liquor']"
 
+    def __init__(self, mobile=False):
+        self.search_widget = SearchBarElements(mobile)
 
 class ContactPage:
 
@@ -219,6 +227,7 @@ class ContactPage:
     ask_a_company_link = "//a[@href='/askacompany' and text()='available here.']"
 
     def __init__(self, mobile=False):
+        self.search_widget = SearchBarElements(mobile)
         self.mobile = mobile
         if self.mobile:
             self.contact_page_text = """
@@ -303,3 +312,6 @@ class FAQPage:
     get_in_touch_link = "//a[@href='/contact' and text()='Get in touch!']"
 
     terms_of_use_link = "//a[@href='/terms' and text()='Terms of Use']"
+
+    def __init__(self, mobile=False):
+        self.search_widget = SearchBarElements(mobile)
