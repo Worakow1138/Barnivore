@@ -16,6 +16,13 @@ class BarnivoreTestSteps(Moonrise):
 
     def page_url_check(self, header_title):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(header_title)}"
+
+    def home_text_checks(self, home_page: HomePage):
+        self.get_web_element(home_page.home_title)
+        first_column, second_column = self.get_web_elements(home_page.column_elements)[0], self.get_web_elements(home_page.column_elements)[1]
+        assert home_page.first_column_text == first_column.text
+        assert home_page.second_column_text == second_column.text
+        self.get_web_element(home_page.ask_a_company_link)
     
     def filter_widget_checks(self, filter_widget: FilterElements):
         self.get_web_element(filter_widget.filter_title)
