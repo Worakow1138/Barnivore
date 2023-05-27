@@ -15,8 +15,8 @@ class BarnivoreTestSteps(Moonrise):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(header_title)}"
     
     def filter_widget_checks(self, filter_widget: FilterElements):
-        self.get_web_element(FilterElements.filter_title)
-        self.get_web_element(FilterElements.filter_parent_element)
+        self.get_web_element(filter_widget.filter_title)
+        self.get_web_element(filter_widget.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
             self.get_web_element(letter)
         for veganosity in filter_widget.veganosity_filter_buttons.values():
@@ -26,8 +26,8 @@ class BarnivoreTestSteps(Moonrise):
 
     def listing_products_check(self, list_widget: ListElements):
         self.get_web_element(list_widget.list_header)
-        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(ListElements.displaying_products))
-        assert len(self.get_web_elements(ListElements.list_items)) == 50
+        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(list_widget.displaying_products))
+        assert len(self.get_web_elements(list_widget.list_items)) == 50
 
     def mini_search_elements_check(self, search_widget: SearchBarElements):
         self.get_web_element(search_widget.mini_search_bar)
@@ -36,51 +36,51 @@ class BarnivoreTestSteps(Moonrise):
 
     def company_text_checks(self, page: AskACompanyPage):
         content_text = self.get_text(CommonPageElements.main_content_element)
-        assert AskACompanyPage.ask_a_company_paragraph in content_text
-        assert AskACompanyPage.the_question_title in content_text
-        assert AskACompanyPage.the_response_title in content_text
+        assert page.ask_a_company_paragraph in content_text
+        assert page.the_question_title in content_text
+        assert page.the_response_title in content_text
 
-        assert page.the_question_text in self.get_text(AskACompanyPage.question_element)
-        assert page.vegan_response in self.get_text(AskACompanyPage.vegan_response_element)
-        assert page.non_vegan_response in self.get_text(AskACompanyPage.non_vegan_response_element)
+        assert page.the_question_text in self.get_text(page.question_element)
+        assert page.vegan_response in self.get_text(page.vegan_response_element)
+        assert page.non_vegan_response in self.get_text(page.non_vegan_response_element)
 
-        self.get_web_element(AskACompanyPage.question_language_selector)
-        self.get_web_element(AskACompanyPage.vegan_response_language_selector)
-        self.get_web_element(AskACompanyPage.non_vegan_response_language_selector)
-        self.get_web_element(AskACompanyPage.brand_name_input)
-        self.get_web_element(AskACompanyPage.sender_name_input)
+        self.get_web_element(page.question_language_selector)
+        self.get_web_element(page.vegan_response_language_selector)
+        self.get_web_element(page.non_vegan_response_language_selector)
+        self.get_web_element(page.brand_name_input)
+        self.get_web_element(page.sender_name_input)
 
-    def mobile_text_checks(self):
-        assert MobileAppPage.mobile_page_text in self.get_text(CommonPageElements.main_content_element)
-        self.get_web_element(MobileAppPage.beer_link)
-        self.get_web_element(MobileAppPage.cider_link)
-        self.get_web_element(MobileAppPage.wine_link)
-        self.get_web_element(MobileAppPage.liquor_link)
+    def mobile_text_checks(self, page: MobileAppPage):
+        assert page.mobile_page_text in self.get_text(CommonPageElements.main_content_element)
+        self.get_web_element(page.beer_link)
+        self.get_web_element(page.cider_link)
+        self.get_web_element(page.wine_link)
+        self.get_web_element(page.liquor_link)
 
     def contact_text_checks(self, contact_page: ContactPage):
         assert contact_page.contact_page_text in self.get_text(CommonPageElements.main_content_element)
-        self.get_web_element(ContactPage.barnivore_contact_email)
+        self.get_web_element(contact_page.barnivore_contact_email)
         if contact_page.ask_a_company_link:
             self.get_web_element(contact_page.ask_a_company_link)
 
-    def faq_text_checks(self):
+    def faq_text_checks(self, page: FAQPage):
         content_text = self.get_text(CommonPageElements.main_content_element)
-        assert FAQPage.can_you_check_text in content_text
-        assert FAQPage.where_info_text in content_text
-        assert FAQPage.vegan_friendly_text in content_text
-        assert FAQPage.add_filter_text in content_text
-        assert FAQPage.diatomaceous_earth_text in content_text
-        assert FAQPage.country_text in content_text
-        assert FAQPage.glue_text in content_text
-        assert FAQPage.sugar_text in content_text
-        assert FAQPage.cross_contamination_text in content_text
-        assert FAQPage.terms_of_use_text in content_text
+        assert page.can_you_check_text in content_text
+        assert page.where_info_text in content_text
+        assert page.vegan_friendly_text in content_text
+        assert page.add_filter_text in content_text
+        assert page.diatomaceous_earth_text in content_text
+        assert page.country_text in content_text
+        assert page.glue_text in content_text
+        assert page.sugar_text in content_text
+        assert page.cross_contamination_text in content_text
+        assert page.terms_of_use_text in content_text
 
-        self.get_web_element(FAQPage.ask_a_company_link)
-        self.get_web_element(FAQPage.want_to_help_link)
-        self.get_web_element(FAQPage.contact_page_link)
-        self.get_web_element(FAQPage.get_in_touch_link)
-        self.get_web_element(FAQPage.terms_of_use_link)
+        self.get_web_element(page.ask_a_company_link)
+        self.get_web_element(page.want_to_help_link)
+        self.get_web_element(page.contact_page_link)
+        self.get_web_element(page.get_in_touch_link)
+        self.get_web_element(page.terms_of_use_link)
 
     def footer_checks(self):
         self.get_web_element(CommonPageElements.pdr_label)
