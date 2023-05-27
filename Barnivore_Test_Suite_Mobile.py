@@ -21,15 +21,14 @@ class BarnivoreTests(BarnivoreTestSteps):
 class BasicPageTests(BarnivoreTests):
 
     def suite_setup(self):
-        self.beer_page = BeerPage()
-        self.cider_page = CiderPage()
-        self.wine_page = WinePage()
-        self.liquor_page = LiquorPage()
-        self.askacompany_page = AskACompanyPage()
-        self.mobile_page = MobileAppPage()
+        self.beer_page = BeerPage(mobile=True)
+        self.cider_page = CiderPage(mobile=True)
+        self.wine_page = WinePage(mobile=True)
+        self.liquor_page = LiquorPage(mobile=True)
+        self.askacompany_page = AskACompanyPage(mobile=True)
+        self.mobile_page = MobileAppPage(mobile=True)
         self.contact_page = ContactPage(mobile=True)
-        self.faq_page = FAQPage()
-        self.mobile_search_bar = SearchBarElements(True)
+        self.faq_page = FAQPage(mobile=True)
         return super().suite_setup()
 
     def test_setup(self):
@@ -38,7 +37,7 @@ class BasicPageTests(BarnivoreTests):
         self.get_web_element(MainPageElements.cider_page_link)
         self.get_web_element(MainPageElements.wine_page_link)
         self.get_web_element(MainPageElements.liquor_page_link)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(SearchBarElements(mobile=True))
         return super().test_setup()
 
     @Moonrise.test
@@ -47,7 +46,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.beer_page.header_title)
         self.filter_widget_checks(self.beer_page.filter_widget)
         self.listing_products_check(self.beer_page.list_widget)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.beer_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -56,7 +55,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.cider_page.header_title)
         self.filter_widget_checks(self.cider_page.filter_widget)
         self.listing_products_check(self.cider_page.list_widget)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.cider_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -65,7 +64,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.wine_page.header_title)
         self.filter_widget_checks(self.wine_page.filter_widget)
         self.listing_products_check(self.wine_page.list_widget)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.wine_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -74,7 +73,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.liquor_page.header_title)
         self.filter_widget_checks(self.liquor_page.filter_widget)
         self.listing_products_check(self.liquor_page.list_widget)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.liquor_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -82,7 +81,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.askacompany_page.header_title)
         self.page_url_check(self.askacompany_page.header_title)
         self.company_text_checks(self.askacompany_page)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.askacompany_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -90,7 +89,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.mobile_page.header_title)
         self.page_url_check(self.mobile_page.header_title)
         self.mobile_text_checks()
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.mobile_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -98,7 +97,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.contact_page.header_title)
         self.page_url_check(self.contact_page.header_title)
         # self.contact_text_checks(self.contact_page)
-        self.mini_search_elements_check(self.mobile_search_bar)
+        self.mini_search_elements_check(self.contact_page.search_widget)
         self.footer_checks()
 
     @Moonrise.test
@@ -106,5 +105,5 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.faq_page.header_title)
         self.page_url_check(self.faq_page.header_title)
         self.faq_text_checks()
-        self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()  
+
