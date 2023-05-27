@@ -4,16 +4,6 @@ import re
 
 class BarnivoreTestSteps(Moonrise):
 
-    def verify_page_headers_present(self):
-        self.get_web_element(MainPageElements.beer_page_link)
-        self.get_web_element(MainPageElements.cider_page_link)
-        self.get_web_element(MainPageElements.wine_page_link)
-        self.get_web_element(MainPageElements.liquor_page_link)
-        self.get_web_element(MainPageElements.ask_a_company_page_link)
-        self.get_web_element(MainPageElements.mobile_apps_page_link)
-        self.get_web_element(MainPageElements.contact_page_link)
-        self.get_web_element(MainPageElements.faq_page_link)
-
     def verify_search_bar_present(self):
         self.get_web_element(HomePage.search_bar)
         self.get_web_element(HomePage.search_button)
@@ -67,10 +57,11 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(MobileAppPage.wine_link)
         self.get_web_element(MobileAppPage.liquor_link)
 
-    def contact_text_checks(self):
-        assert ContactPage.contact_page_text in self.get_text(MainPageElements.main_content_element)
+    def contact_text_checks(self, contact_class = ContactPage()):
+        assert contact_class.contact_page_text in self.get_text(MainPageElements.main_content_element)
         self.get_web_element(ContactPage.barnivore_contact_email)
-        self.get_web_element(ContactPage.ask_a_company_link)
+        if not contact_class.mobile:
+            self.get_web_element(contact_class.ask_a_company_link)
 
     def faq_text_checks(self):
         content_text = self.get_text(MainPageElements.main_content_element)
