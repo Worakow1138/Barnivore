@@ -33,7 +33,14 @@ class BasicPageTests(BarnivoreTests):
 
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
-        self.verify_page_headers_present()
+        self.get_web_element(MainPageElements.beer_page_link)
+        self.get_web_element(MainPageElements.cider_page_link)
+        self.get_web_element(MainPageElements.wine_page_link)
+        self.get_web_element(MainPageElements.liquor_page_link)
+        self.get_web_element(MainPageElements.ask_a_company_page_link)
+        self.get_web_element(MainPageElements.mobile_apps_page_link)
+        self.get_web_element(MainPageElements.contact_page_link)
+        self.get_web_element(MainPageElements.faq_page_link)
         self.verify_search_bar_present()
         return super().test_setup()
 
