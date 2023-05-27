@@ -109,5 +109,6 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.faq_page.header_title)
         self.page_url_check(self.faq_page.header_title)
         self.faq_text_checks()
+        self.mini_search_elements_check(self.faq_page.search_widget)
         self.footer_checks()
 
