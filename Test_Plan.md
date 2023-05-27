@@ -18,7 +18,15 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 3. Verify that the search bar and search buttons are present
 
 ### Test Cases
-1. Beer Page:
+1. Home Page:
+- The ["Home"](https://www.barnivore.com/) page is loaded
+- The Home search bar and search buttons are displayed
+- Expected text for the Home page is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+2. Beer Page:
 - Select the "Beer" header
 - The ["Beer"](https://www.barnivore.com/beer) page is loaded
 - The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
@@ -30,7 +38,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-2. Cider Page:
+3. Cider Page:
 - Select the "Cider" header
 - The ["Cider"](https://www.barnivore.com/cider) page is loaded
 - The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
@@ -42,7 +50,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-3. Wine Page:
+4. Wine Page:
 - Select the "Wine" header
 - The ["Wine"](https://www.barnivore.com/wine) page is loaded
 - The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
@@ -54,7 +62,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-4. Liquor Page:
+5. Liquor Page:
 - Select the "Liquor" header
 - The ["Liquor"](https://www.barnivore.com/liquor) page is loaded
 - The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
@@ -66,7 +74,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-5. Ask a Company Page:
+6. Ask a Company Page:
 - Select the "Ask a Company" header
 - The ["Ask a Company"](https://www.barnivore.com/askacompany) page is loaded
 - Expected text appears in "The Question" and "The Response" areas of the page
@@ -77,7 +85,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-6. Mobile Apps Page:
+7. Mobile Apps Page:
 - Select the "Mobile Apps" header
 - The ["Mobile Apps"](https://www.barnivore.com/mobile) page is loaded
 - "Barnivore on the go" text is present
@@ -88,7 +96,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-7. Contact Page:
+8. Contact Page:
 - Select the "Contact" header
 - The ["Contact"](https://www.barnivore.com/contact) page is loaded
 - The "Contact Us" text is present
@@ -99,7 +107,7 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-8. FAQ Page:
+9. FAQ Page:
 - Select the "FAQ" header
 - The ["FAQ"](https://www.barnivore.com/faq) page is loaded
 - All "FAQ" text is present
