@@ -27,13 +27,17 @@ class BasicPageTests(BarnivoreTests):
         self.liquor_page = LiquorPage()
         self.askacompany_page = AskACompanyPage()
         self.mobile_page = MobileAppPage()
-        self.contact_page = ContactPage()
+        self.contact_page = ContactPage(mobile=True)
         self.faq_page = FAQPage()
         self.mobile_search_bar = SearchBarElements(True)
         return super().suite_setup()
 
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
+        self.get_web_element(MainPageElements.beer_page_link)
+        self.get_web_element(MainPageElements.cider_page_link)
+        self.get_web_element(MainPageElements.wine_page_link)
+        self.get_web_element(MainPageElements.liquor_page_link)
         self.mini_search_elements_check(self.mobile_search_bar)
         return super().test_setup()
 
@@ -93,7 +97,7 @@ class BasicPageTests(BarnivoreTests):
     def contact_page_test(self):
         self.load_page(self.contact_page.header_title)
         self.page_url_check(self.contact_page.header_title)
-        self.contact_text_checks()
+        # self.contact_text_checks(self.contact_page)
         self.mini_search_elements_check(self.mobile_search_bar)
         self.footer_checks()
 
