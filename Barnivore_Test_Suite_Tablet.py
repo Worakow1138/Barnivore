@@ -21,6 +21,7 @@ class BarnivoreTests(BarnivoreTestSteps):
 class BasicPageTests(BarnivoreTests):
 
     def suite_setup(self):
+        self.home_page = HomePage()
         self.beer_page = BeerPage()
         self.cider_page = CiderPage()
         self.wine_page = WinePage()
@@ -41,9 +42,13 @@ class BasicPageTests(BarnivoreTests):
         self.get_web_element(CommonPageElements.mobile_apps_page_link)
         self.get_web_element(CommonPageElements.contact_page_link)
         self.get_web_element(CommonPageElements.faq_page_link)
-        self.verify_search_bar_present()
         return super().test_setup()
 
+    @Moonrise.test
+    def home_page_test(self):
+        self.page_url_check(self.home_page.header_title)
+        self.verify_search_bar_present(self.home_page)
+    
     @Moonrise.test
     def beer_page_test(self):
         self.load_page(self.beer_page.header_title)
