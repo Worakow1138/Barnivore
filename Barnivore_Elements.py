@@ -56,7 +56,7 @@ class MainPageElements:
 class ListElements:
 
     displaying_products = "#content > div:nth-child(5)"
-    list_items = "#content > ul > li"
+    list_items = "ul.products > li"
 
     def __init__(self, page_title):
         self.page_title = page_title.lower()
