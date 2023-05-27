@@ -57,11 +57,11 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(MobileAppPage.wine_link)
         self.get_web_element(MobileAppPage.liquor_link)
 
-    def contact_text_checks(self, contact_class = ContactPage()):
-        assert contact_class.contact_page_text in self.get_text(MainPageElements.main_content_element)
+    def contact_text_checks(self, contact_page: ContactPage):
+        assert contact_page.contact_page_text in self.get_text(MainPageElements.main_content_element)
         self.get_web_element(ContactPage.barnivore_contact_email)
-        if not contact_class.mobile:
-            self.get_web_element(contact_class.ask_a_company_link)
+        if contact_page.ask_a_company_link:
+            self.get_web_element(contact_page.ask_a_company_link)
 
     def faq_text_checks(self):
         content_text = self.get_text(MainPageElements.main_content_element)
