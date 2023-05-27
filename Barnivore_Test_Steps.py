@@ -14,7 +14,7 @@ class BarnivoreTestSteps(Moonrise):
     def page_url_check(self, header_title):
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{MainPageElements.url_mapping.get(header_title)}"
     
-    def filter_widget_checks(self, filter_widget):
+    def filter_widget_checks(self, filter_widget: FilterElements):
         self.get_web_element(FilterElements.filter_title)
         self.get_web_element(FilterElements.filter_parent_element)
         for letter in filter_widget.letter_filter_buttons.values():
@@ -24,17 +24,17 @@ class BarnivoreTestSteps(Moonrise):
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
 
-    def listing_products_check(self, list_widget):
+    def listing_products_check(self, list_widget: ListElements):
         self.get_web_element(list_widget.list_header)
         assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(ListElements.displaying_products))
         assert len(self.get_web_elements(ListElements.list_items)) == 50
 
-    def mini_search_elements_check(self, search_class = SearchBarElements()):
-        self.get_web_element(search_class.mini_search_bar)
-        self.get_web_element(search_class.mini_search_button)
-        assert self.get_text(search_class.find_booze_label) == "Find Booze:"
+    def mini_search_elements_check(self, search_widget: SearchBarElements):
+        self.get_web_element(search_widget.mini_search_bar)
+        self.get_web_element(search_widget.mini_search_button)
+        assert self.get_text(search_widget.find_booze_label) == "Find Booze:"
 
-    def company_text_checks(self, page):
+    def company_text_checks(self, page: AskACompanyPage):
         content_text = self.get_text(MainPageElements.main_content_element)
         assert AskACompanyPage.ask_a_company_paragraph in content_text
         assert AskACompanyPage.the_question_title in content_text
