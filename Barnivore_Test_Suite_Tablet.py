@@ -100,7 +100,7 @@ class BasicPageTests(BarnivoreTests):
     def contact_page_test(self):
         self.load_page(self.contact_page.header_title)
         self.page_url_check(self.contact_page.header_title)
-        self.contact_text_checks()
+        self.contact_text_checks(self.contact_page)
         self.mini_search_elements_check(self.contact_page.search_widget)
         self.footer_checks()
 
