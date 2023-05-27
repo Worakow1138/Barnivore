@@ -35,6 +35,7 @@ class CommonPageElements:
     copyright_label = "#footer > p:nth-child(3)"
     main_content_element = "div#content"
     url_mapping = {
+        "Home": "",
         "Beer": "beer",
         "Cider": "cider",
         "Wine": "wine",
@@ -64,8 +65,15 @@ class ListElements:
 
 class HomePage:
 
-    search_bar = "#big-search > input.ui-autocomplete-input"
-    search_button = "#big-search > input[type=submit]:nth-child(2)"
+    header_title = "Home"
+
+    def __init__(self, mobile=False):
+        if mobile:
+            self.search_widget = SearchBarElements(mobile)
+        else:
+            self.search_bar = "#big-search > input.ui-autocomplete-input"
+            self.search_button = "#big-search > input[type=submit]:nth-child(2)"
+
 
 class SearchBarElements:
 
