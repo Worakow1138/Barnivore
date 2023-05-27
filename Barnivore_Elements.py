@@ -66,6 +66,21 @@ class ListElements:
 class HomePage:
 
     header_title = "Home"
+    home_title = "//*[@id='home']/h1[text()='Is your booze vegan?']"
+    column_elements = "div.column"
+    first_column_text = """
+    It might seem weird at first, but your favourite drink might have more than just alcohol in it.
+    Brewmasters, winemakers, and distillers may include animal ingredients in their products directly, or they might use them in the processing and filtration.
+    When making the product, dairy, honey, and other things are ingredients in the final recipe.
+    When filtering the drinks prior to bottling, companies can use things like isinglass (from fish bladder,) gelatin, egg whites, and sea shells, among other things. These products grab onto the impurities and make it easier to catch them in the filters, though there are many animal-free alternatives in use.
+    """.strip().replace("    ","")
+    second_column_text = """
+    The Barnivore Vegan Alcohol Directory is here to help.
+    These ingredients don't usually show up on the label, so the only way to find out is to ask.
+    Our 57,397 entries have been checked and often double or triple checked by the Barnivore community and are gathered here for you to enjoy, and maybe submit a check of your own.
+    (and yes, there have been cases of whole chickens being included in beer. It's based on "cock ale," a 17th century recipe that breweries occasionally recreate in small batches - until someone reminds them that meat beer is pretty gross.)
+    """.strip().replace("    ","")
+    ask_a_company_link = "//a[@href='/askacompany' and text()='submit a check of your own']"
 
     def __init__(self, mobile=False):
         self.mobile = mobile
