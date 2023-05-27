@@ -224,17 +224,17 @@ class ContactPage:
 
     header_title = "Contact"
     barnivore_contact_email = "//a[@href='mailto:contact@barnivore.com' and text()='contact@barnivore.com']"
-    ask_a_company_link = "//a[@href='/askacompany' and text()='available here.']"
+    ask_a_company_link = None
 
     def __init__(self, mobile=False):
         self.search_widget = SearchBarElements(mobile)
-        self.mobile = mobile
-        if self.mobile:
+        if mobile:
             self.contact_page_text = """
             Contact Us
             Team Barnivore can be reached by emailing contact@barnivore.com.
             """
         else:
+            self.ask_a_company_link = "//a[@href='/askacompany' and text()='available here.']"
             self.contact_page_text = """
             Contact Us
             Team Barnivore can be reached by emailing contact@barnivore.com.
