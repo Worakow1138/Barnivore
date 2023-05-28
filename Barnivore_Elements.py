@@ -83,12 +83,10 @@ class HomePage:
     ask_a_company_link = "//a[@href='/askacompany' and text()='submit a check of your own']"
 
     def __init__(self, mobile=False):
-        self.mobile = mobile
-        if self.mobile:
-            self.search_widget = SearchBarElements(mobile)
-        else:
-            self.search_bar = "#big-search > input.ui-autocomplete-input"
-            self.search_button = "#big-search > input[type=submit]:nth-child(2)"
+        self.search_widget = SearchBarElements(mobile)
+        if not mobile:
+            self.search_widget.search_bar = "#big-search > input.ui-autocomplete-input"
+            self.search_widget.search_button = "#big-search > input[type=submit]:nth-child(2)"
 
 
 class SearchBarElements:
@@ -99,8 +97,8 @@ class SearchBarElements:
         else:
             self.mobile = ""
         self.find_booze_label = f"#searchbox{self.mobile} > form > label"
-        self.mini_search_bar = f"#searchbox{self.mobile} > form > input.search"
-        self.mini_search_button = f"#searchbox{self.mobile} > form > input[type=submit]:nth-child(3)"
+        self.search_bar = f"#searchbox{self.mobile} > form > input.search"
+        self.search_button = f"#searchbox{self.mobile} > form > input[type=submit]:nth-child(3)"
 
 class BeerPage:
 
