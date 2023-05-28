@@ -4,12 +4,9 @@ import re
 
 class BarnivoreTestSteps(Moonrise):
 
-    def verify_search_bar_present(self, home_page: HomePage):
-        if home_page.mobile:
-            self.mini_search_elements_check(home_page.search_widget)
-        else:
-            self.get_web_element(home_page.search_bar)
-            self.get_web_element(home_page.search_button)
+    def verify_search_bar_present(self, search_widget: SearchBarElements):
+        self.get_web_element(search_widget.search_bar)
+        self.get_web_element(search_widget.search_button)
 
     def load_page(self, header_title):
         self.click_element(f"link:{header_title}")
@@ -39,9 +36,9 @@ class BarnivoreTestSteps(Moonrise):
         assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(list_widget.displaying_products))
         assert len(self.get_web_elements(list_widget.list_items)) == 50
 
-    def mini_search_elements_check(self, search_widget: SearchBarElements):
-        self.get_web_element(search_widget.mini_search_bar)
-        self.get_web_element(search_widget.mini_search_button)
+    def search_elements_check(self, search_widget: SearchBarElements):
+        self.get_web_element(search_widget.search_bar)
+        self.get_web_element(search_widget.search_button)
         assert self.get_text(search_widget.find_booze_label) == "Find Booze:"
 
     def company_text_checks(self, page: AskACompanyPage):
