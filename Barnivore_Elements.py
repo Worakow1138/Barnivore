@@ -60,6 +60,16 @@ class ListElements:
     list_items = "ul.products > li"
     list_header = "#content > h1"
 
+    def __init__(self, mobile=False):
+        if mobile:
+            self.label_index = 2
+            self.product_index = 0
+            self.company_index = 1
+        else:
+            self.label_index = 0
+            self.product_index = 1
+            self.company_index = 2
+
 class HomePage:
 
     header_title = "Home"
@@ -89,7 +99,7 @@ class SearchResultsPage:
 
     def __init__(self, mobile=False):
         self.search_widget = SearchBarElements(mobile)
-        self.list_widget = ListElements()
+        self.list_widget = ListElements(mobile)
 
 class SearchBarElements:
 
@@ -107,7 +117,7 @@ class BeerPage:
     header_title = "Beer"
     def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
-        self.list_widget = ListElements()
+        self.list_widget = ListElements(mobile)
         self.search_widget = SearchBarElements(mobile)
 
 class CiderPage:
@@ -115,7 +125,7 @@ class CiderPage:
     header_title = "Cider"
     def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
-        self.list_widget = ListElements()
+        self.list_widget = ListElements(mobile)
         self.search_widget = SearchBarElements(mobile)
 
 class WinePage:
@@ -123,7 +133,7 @@ class WinePage:
     header_title = "Wine"
     def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
-        self.list_widget = ListElements()
+        self.list_widget = ListElements(mobile)
         self.search_widget = SearchBarElements(mobile)
 
 class LiquorPage:
@@ -131,7 +141,7 @@ class LiquorPage:
     header_title = "Liquor"
     def __init__(self, mobile=False):
         self.filter_widget = FilterElements(self.header_title)
-        self.list_widget = ListElements()
+        self.list_widget = ListElements(mobile)
         self.search_widget = SearchBarElements(mobile)
 
 class AskACompanyPage:
