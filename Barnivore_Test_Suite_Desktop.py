@@ -128,75 +128,63 @@ class CompanySearchTests(BarnivoreTests):
     
     def test_setup(self):
         self.navigate_to_page("barnivore.com")
+        self.get_web_element(CommonPageElements.beer_page_link)
+        self.get_web_element(CommonPageElements.cider_page_link)
+        self.get_web_element(CommonPageElements.wine_page_link)
+        self.get_web_element(CommonPageElements.liquor_page_link)
+        self.get_web_element(CommonPageElements.ask_a_company_page_link)
+        self.get_web_element(CommonPageElements.mobile_apps_page_link)
+        self.get_web_element(CommonPageElements.contact_page_link)
+        self.get_web_element(CommonPageElements.faq_page_link)
+        self.get_web_element(self.home_page.search_widget.search_bar)
+        self.get_web_element(self.home_page.search_widget.search_button)
         return super().test_setup()
+    
+    def company_search_test_steps(self, company_name, home_page: HomePage, search_page: SearchResultsPage):
+        self.search_for_product(home_page.search_widget, company_name)
+        assert self.get_text(search_page.list_widget.list_header) == f"Search results for {company_name}"
+        self.search_elements_check(search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, search_page.list_widget)
+        self.results_have_links_to_products(search_page.list_widget)
+        self.results_have_correct_labels(search_page.list_widget)
     
     @Moonrise.test
     def diageo(self):
-        company_name = "Diageo"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Diageo", self.home_page, self.search_page)
         
 
     @Moonrise.test
     def anheuser_busch(self):
-        company_name = "Anheuser-Busch"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Anheuser-Busch", self.home_page, self.search_page)
 
     @Moonrise.test
     def pernod_ricard(self):
-        company_name = "Pernod Ricard"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Pernod Ricard", self.home_page, self.search_page)
 
     @Moonrise.test
     def constellation_brands(self):
-        company_name = "Constellation Brands"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Constellation Brands", self.home_page, self.search_page)
 
     @Moonrise.test
     def victory_brewing_company(self):
-        company_name = "Victory Brewing Company"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Victory Brewing Company", self.home_page, self.search_page)
 
     @Moonrise.test
     def brown_forman(self):
-        company_name = "Brown-Forman"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Brown-Forman", self.home_page, self.search_page)
 
     @Moonrise.test
     def sabmiller(self):
-        company_name = "SABMiller"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("SABMiller", self.home_page, self.search_page)
 
     @Moonrise.test
     def bacardi(self):
-        company_name = "Bacardi"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Bacardi", self.home_page, self.search_page)
 
     @Moonrise.test
     def molson_coors_brewing_company(self):
-        company_name = "Molson Coors Brewing Company"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Molson Coors Brewing Company", self.home_page, self.search_page)
 
     @Moonrise.test
     def beam_suntory(self):
-        company_name = "Beam Suntory"
-        self.search_for_product(self.home_page.search_widget, company_name)
-        self.search_elements_check(self.search_page.search_widget, company_name)
-        self.results_are_from_company(company_name, self.search_page.list_widget)
+        self.company_search_test_steps("Beam Suntory", self.home_page, self.search_page)
