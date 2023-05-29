@@ -147,6 +147,7 @@ class CompanySearchTests(BarnivoreTests):
         self.results_are_from_company(company_name, search_page.list_widget)
         self.results_have_links_to_products(search_page.list_widget)
         self.results_have_correct_labels(search_page.list_widget)
+        self.footer_checks()
     
     @Moonrise.test
     def diageo(self):

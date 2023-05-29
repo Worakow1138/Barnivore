@@ -142,3 +142,6 @@ Verify that the Search tool can be used to find multiple results that target a s
 - All products possess a link to their product page
 - All products have a label of either "Vegan Friendly", "Not Vegan Friendly", or "Unknown"
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
