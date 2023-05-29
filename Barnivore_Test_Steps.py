@@ -37,10 +37,11 @@ class BarnivoreTestSteps(Moonrise):
         assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(page.list_widget.displaying_products))
         assert len(self.get_web_elements(page.list_widget.list_items)) == 50
 
-    def search_elements_check(self, search_widget: SearchBarElements):
+    def search_elements_check(self, search_widget: SearchBarElements, value=""):
         self.get_web_element(search_widget.search_bar)
         self.get_web_element(search_widget.search_button)
         assert self.get_text(search_widget.find_booze_label) == "Find Booze:"
+        assert self.get_web_element(search_widget.search_bar).get_attribute("value") == value
 
     def company_text_checks(self, page: AskACompanyPage):
         content_text = self.get_text(CommonPageElements.main_content_element)
@@ -96,3 +97,11 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(CommonPageElements.vegan_wine_label)
         self.get_web_element(CommonPageElements.vegan_liquor_label)
         assert self.get_text(CommonPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
+
+    def search_for_product(self, search_widget: SearchBarElements, product):
+        self.input_text(search_widget.search_bar, product)
+        self.click_element(search_widget.search_button)
+
+    def results_are_from_company(self, company_name, list_widget: ListElements):
+        for product in self.get_web_elements(list_widget.list_items):
+            assert company_name in product.text.split("\n")[list_widget.company_index]
