@@ -119,3 +119,84 @@ class BasicPageTests(BarnivoreTests):
         self.search_elements_check(self.faq_page.search_widget)
         self.footer_checks()  
 
+class CompanySearchTests(BarnivoreTests):
+
+    def suite_setup(self):
+        self.home_page = HomePage(mobile=True)
+        self.search_page = SearchResultsPage(mobile=True)
+        return super().suite_setup()
+    
+    def test_setup(self):
+        self.navigate_to_page("barnivore.com")
+        return super().test_setup()
+    
+    @Moonrise.test
+    def diageo(self):
+        company_name = "Diageo"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+        
+
+    @Moonrise.test
+    def anheuser_busch(self):
+        company_name = "Anheuser-Busch"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def pernod_ricard(self):
+        company_name = "Pernod Ricard"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def constellation_brands(self):
+        company_name = "Constellation Brands"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def victory_brewing_company(self):
+        company_name = "Victory Brewing Company"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def brown_forman(self):
+        company_name = "Brown-Forman"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def sabmiller(self):
+        company_name = "SABMiller"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def bacardi(self):
+        company_name = "Bacardi"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def molson_coors_brewing_company(self):
+        company_name = "Molson Coors Brewing Company"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
+
+    @Moonrise.test
+    def beam_suntory(self):
+        company_name = "Beam Suntory"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        self.search_elements_check(self.search_page.search_widget, company_name)
+        self.results_are_from_company(company_name, self.search_page.list_widget)
