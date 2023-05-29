@@ -3,8 +3,11 @@
 - [Barnivore Test Plan](#barnivore-test-plan)
   - [Introduction](#introduction)
   - [Basic Page Tests Suite](#basic-page-tests-suite)
-    - [Preconditions](#preconditions)
-    - [Test Cases](#test-cases)
+    - [Basic Page Preconditions](#basic-page-preconditions)
+    - [Basic Page Test Cases](#basic-page-test-cases)
+  - [Company Search Tests Suite](#company-search-test-suite)
+    - [Company Search Preconditions](#company-search-preconditions)
+    - [Company Search Test Cases](#company-search-test-cases)
 
 ## Introduction
 Detailed explanations of test steps for the [barnivore.com](https://www.barnivore.com/) website
@@ -12,12 +15,12 @@ Detailed explanations of test steps for the [barnivore.com](https://www.barnivor
 ## Basic Page Tests Suite
 Verify that basic functionality is covered on the main barnivore pages. Basic functionality is defined as expected data from each main page being returned correctly.
 
-### Preconditions
+### Basic Page Preconditions
 1. Open a web browser to [barnivore.com](https://www.barnivore.com/)
 2. Verify that tabs for "Beer", "Cider", "Wine", "Liquor", "Ask a Company", "Mobile Apps", "Contact", and "FAQ" are present
 3. Verify that the search bar and search buttons are present
 
-### Test Cases
+### Basic Page Test Cases
 1. Home Page:
 - The ["Home"](https://www.barnivore.com/) page is loaded
 - The Home search bar and search buttons are displayed
@@ -118,3 +121,24 @@ Verify that basic functionality is covered on the main barnivore pages. Basic fu
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+## Company Search Test Suite
+Verify that the Search tool can be used to find multiple results that target a single company
+
+### Company Search Preconditions
+1. Open a web browser to [barnivore.com](https://www.barnivore.com/)
+2. Verify that tabs for "Beer", "Cider", "Wine", "Liquor", "Ask a Company", "Mobile Apps", "Contact", and "FAQ" are present
+3. Verify that the search bar and search buttons are present
+4. Possess a list of companies known to produce alcoholic beverages
+
+### Company Search Test Cases
+1. (All Company Search Tests follow this format, regardless of data)
+- Enter the company name into the search box
+- Select the "Search" button
+- "Search results for (company name)" is in the Header
+- The Search bar is preloaded with the company name
+- A list of products is diplayed
+- All products are producted by the company searched for
+- All products possess a link to their product page
+- All products have a label of either "Vegan Friendly", "Not Vegan Friendly", or "Unknown"
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
