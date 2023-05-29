@@ -104,13 +104,14 @@ class BarnivoreTestSteps(Moonrise):
 
     def results_are_from_company(self, company_name, list_widget: ListElements):
         for product in self.get_web_elements(list_widget.list_items):
-            assert company_name in product.text.split("\n")[list_widget.company_index]
+            assert company_name in list_widget.get_company_name(product)
 
     def results_have_correct_labels(self, list_widget: ListElements):
         for product in self.get_web_elements(list_widget.list_items):
-            assert product.text.split("\n")[list_widget.label_index] == "Vegan Friendly" or product.text.split("\n")[list_widget.label_index] == "Not Vegan Friendly" or product.text.split("\n")[list_widget.label_index] == "Unknown"
+            label = list_widget.get_label(product)
+            assert label == "Vegan Friendly" or label == "Not Vegan Friendly" or label == "Unknown"
+            assert list_widget.colors.get(label) == product.get_attribute("class"), f"{list_widget.get_product_name(product)} did not match"
 
     def results_have_links_to_products(self, list_widget: ListElements):
         for product in self.get_web_elements(list_widget.list_items):
-            product_name = product.text.split("\n")[list_widget.product_index]
-            self.get_web_element(f"link:{product_name}")
+            self.get_web_element(f"link:{list_widget.get_product_name(product)}")
