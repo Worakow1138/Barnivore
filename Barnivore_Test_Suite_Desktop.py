@@ -56,7 +56,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.beer_page.header_title)
         self.page_url_check(self.beer_page.header_title)
         self.filter_widget_checks(self.beer_page.filter_widget)
-        self.listing_products_check(self.beer_page.list_widget)
+        self.listing_products_check(self.beer_page)
         self.search_elements_check(self.beer_page.search_widget)
         self.footer_checks()
 
@@ -65,7 +65,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.cider_page.header_title)
         self.page_url_check(self.cider_page.header_title)
         self.filter_widget_checks(self.cider_page.filter_widget)
-        self.listing_products_check(self.cider_page.list_widget)
+        self.listing_products_check(self.cider_page)
         self.search_elements_check(self.cider_page.search_widget)
         self.footer_checks()
 
@@ -74,7 +74,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.wine_page.header_title)
         self.page_url_check(self.wine_page.header_title)
         self.filter_widget_checks(self.wine_page.filter_widget)
-        self.listing_products_check(self.wine_page.list_widget)
+        self.listing_products_check(self.wine_page)
         self.search_elements_check(self.wine_page.search_widget)
         self.footer_checks()
 
@@ -83,7 +83,7 @@ class BasicPageTests(BarnivoreTests):
         self.load_page(self.liquor_page.header_title)
         self.page_url_check(self.liquor_page.header_title)
         self.filter_widget_checks(self.liquor_page.filter_widget)
-        self.listing_products_check(self.liquor_page.list_widget)
+        self.listing_products_check(self.liquor_page)
         self.search_elements_check(self.liquor_page.search_widget)
         self.footer_checks()
 
