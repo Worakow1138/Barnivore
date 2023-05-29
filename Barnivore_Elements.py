@@ -59,16 +59,32 @@ class ListElements:
     displaying_products = "#content > div:nth-child(5)"
     list_items = "ul.products > li"
     list_header = "#content > h1"
+    colors = {
+        "Vegan Friendly": "Green",
+        "Not Vegan Friendly": "Red",
+        "Unknown": "Yellow"
+    }
 
     def __init__(self, mobile=False):
-        if mobile:
-            self.label_index = 2
-            self.product_index = 0
-            self.company_index = 1
+        self.mobile = mobile
+
+    def get_product_name(self, product):
+        if self.mobile:
+            return product.text.split("\n")[0]
         else:
-            self.label_index = 0
-            self.product_index = 1
-            self.company_index = 2
+            return product.text.split("\n")[1]
+
+    def get_company_name(self, product):
+        if self.mobile:
+            return product.text.split("\n")[1]
+        else:
+            return product.text.split("\n")[2]
+
+    def get_label(self, product):
+        if self.mobile:
+            return product.text.split("\n")[2]
+        else:
+            return product.text.split("\n")[0]
 
 class HomePage:
 
