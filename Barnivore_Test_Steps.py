@@ -1,6 +1,7 @@
 from moonrise import Moonrise
 from Barnivore_Elements import *
 import re
+from typing import Union
 
 class BarnivoreTestSteps(Moonrise):
 
@@ -31,10 +32,10 @@ class BarnivoreTestSteps(Moonrise):
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
 
-    def listing_products_check(self, list_widget: ListElements):
-        self.get_web_element(list_widget.list_header)
-        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(list_widget.displaying_products))
-        assert len(self.get_web_elements(list_widget.list_items)) == 50
+    def listing_products_check(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage]):
+        assert self.get_web_element(page.list_widget.list_header).text == f"Listing {page.header_title.lower()}s A-F"
+        assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(page.list_widget.displaying_products))
+        assert len(self.get_web_elements(page.list_widget.list_items)) == 50
 
     def search_elements_check(self, search_widget: SearchBarElements):
         self.get_web_element(search_widget.search_bar)
