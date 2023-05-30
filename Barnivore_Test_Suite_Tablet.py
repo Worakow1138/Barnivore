@@ -188,3 +188,59 @@ class CompanySearchTests(BarnivoreTests):
     @Moonrise.test
     def beam_suntory(self):
         self.company_search_test_steps("Beam Suntory", self.home_page, self.search_page)
+
+class ProductEvaluationTests(BarnivoreTests):
+
+    def suite_setup(self):
+        self.home_page = HomePage()
+        self.search_page = SearchResultsPage()
+        return super().suite_setup()
+    
+    def test_setup(self):
+        self.company_name = "Diageo"
+        self.navigate_to_page("barnivore.com")
+        self.search_elements_check(self.home_page.search_widget)
+        self.search_for_product(self.home_page.search_widget, self.company_name)
+        self.search_elements_check(self.search_page.search_widget, self.company_name, find_booze=True)
+        self.get_web_element(self.search_page.list_widget.list_items)
+        return super().test_setup()
+    
+    @Moonrise.test
+    def vegan_friendly(self):
+        product_label = self.search_page.list_widget.vegan_friendly
+        product = self.find_first_product_of_type(self.search_page.list_widget, product_label)
+        product_name = self.search_page.list_widget.get_product_name(product)
+
+        self.load_product_page(product_name)
+        self.product_page_checks(self.search_page.product_widget, product_name, self.company_name, product_label)
+        self.results_are_from_company(self.company_name, self.search_page.list_widget)
+        self.results_have_correct_labels(self.search_page.list_widget)
+        self.search_elements_check(self.search_page.search_widget, find_booze=True)
+        self.footer_checks()
+
+    @Moonrise.test
+    def not_vegan_friendly(self):
+        product_label = self.search_page.list_widget.not_vegan_friendly
+        product = self.find_first_product_of_type(self.search_page.list_widget, product_label)
+        product_name = self.search_page.list_widget.get_product_name(product)
+        
+        self.load_product_page(product_name)
+        self.product_page_checks(self.search_page.product_widget, product_name, self.company_name, product_label)
+        self.results_are_from_company(self.company_name, self.search_page.list_widget)
+        self.results_have_correct_labels(self.search_page.list_widget)
+        self.search_elements_check(self.search_page.search_widget, find_booze=True)
+        self.footer_checks()
+
+
+    @Moonrise.test
+    def unknown_label(self):
+        product_label = self.search_page.list_widget.unknown
+        product = self.find_first_product_of_type(self.search_page.list_widget, product_label)
+        product_name = self.search_page.list_widget.get_product_name(product)
+        
+        self.load_product_page(product_name)
+        self.product_page_checks(self.search_page.product_widget, product_name, self.company_name, product_label)
+        self.results_are_from_company(self.company_name, self.search_page.list_widget)
+        self.results_have_correct_labels(self.search_page.list_widget)
+        self.search_elements_check(self.search_page.search_widget, find_booze=True)
+        self.footer_checks()
