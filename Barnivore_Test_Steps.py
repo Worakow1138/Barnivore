@@ -21,8 +21,9 @@ class BarnivoreTestSteps(Moonrise):
     def filter_widget_checks(self, filter_widget: FilterElements):
         self.get_web_element(filter_widget.filter_title)
         self.get_web_element(filter_widget.filter_parent_element)
-        for letter in filter_widget.letter_filter_buttons.values():
-            self.get_web_element(letter)
+        for filter, letter in filter_widget.letter_filter_buttons.items():
+            if filter != filter_widget.all_filter:
+                self.get_web_element(letter)
         for veganosity in filter_widget.veganosity_filter_buttons.values():
             self.get_web_element(veganosity)
         if filter_widget.country_element:
