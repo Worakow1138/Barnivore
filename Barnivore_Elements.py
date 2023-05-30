@@ -9,16 +9,27 @@ class FilterElements:
         "cider": "//label[contains(text(),'Country:')]",
         "wine": "//label[contains(text(),'Region:')]",
     }
+    region_element = "#region"
+    all_filter = "ALL"
+    zero_nine_filter = "0-9"
+    a_f_filter = "A-F"
+    g_l_filter = "G-L"
+    m_r_filter = "M-R"
+    s_t_filter = "S-T"
+    u_z_filter = "U-Z"
+    everything_filter = "Everything"
+    only_vegan_filter = "Only Vegan"
 
     def __init__(self, page_title):
         self.page_title = page_title.lower()
         self.letter_filter_buttons = {
-            "0-9": f"//a[@href='/{self.page_title}/0-9' and text()='0-9']",
-            "a-f": f"//a[@href='/{self.page_title}' and text() = 'A-F']",
-            "g-l": f"//a[@href='/{self.page_title}/g-l' and text() = 'G-L']",
-            "m-r": f"//a[@href='/{self.page_title}/m-r' and text() = 'M-R']",
-            "s-t": f"//a[@href='/{self.page_title}/s-t' and text() = 'S-T']",
-            "u-z": f"//a[@href='/{self.page_title}/u-z' and text() = 'U-Z']"
+            self.all_filter: f"//a[@href='/{self.page_title}/all' and text() = '{self.all_filter}']",
+            self.zero_nine_filter: f"//a[@href='/{self.page_title}/{self.zero_nine_filter}' and text() = '{self.zero_nine_filter}']",
+            self.a_f_filter: f"//a[@href='/{self.page_title}' and text() = '{self.a_f_filter}']",
+            self.g_l_filter: f"//a[@href='/{self.page_title}/g-l' and text() = '{self.g_l_filter}']",
+            self.m_r_filter: f"//a[@href='/{self.page_title}/m-r' and text() = '{self.m_r_filter}']",
+            self.s_t_filter: f"//a[@href='/{self.page_title}/s-t' and text() = '{self.s_t_filter}']",
+            self.u_z_filter: f"//a[@href='/{self.page_title}/u-z' and text() = '{self.u_z_filter}']"
         }
         self.veganosity_filter_buttons = {
             "Everything": f"//a[@href='/{self.page_title}?vfilter=All' and text() = 'Everything']",
