@@ -106,9 +106,34 @@ class BarnivoreTestSteps(Moonrise):
     def results_have_correct_labels(self, list_widget: ListElements):
         for product in self.get_web_elements(list_widget.list_items):
             label = list_widget.get_label(product)
-            assert label == "Vegan Friendly" or label == "Not Vegan Friendly" or label == "Unknown"
+            assert label == list_widget.vegan_friendly or label == list_widget.not_vegan_friendly or label == list_widget.unknown
             assert list_widget.colors.get(label) == product.get_attribute("class"), f"{list_widget.get_product_name(product)} did not match"
 
     def results_have_links_to_products(self, list_widget: ListElements):
         for product in self.get_web_elements(list_widget.list_items):
             self.get_web_element(f"link:{list_widget.get_product_name(product)}")
+
+    def find_first_product_of_type(self, list_widget: ListElements, product_label: str):
+        for product in self.get_web_elements(list_widget.list_items):
+            if list_widget.get_label(product) == product_label and product.get_attribute("class") == list_widget.colors.get(product_label):
+                return product
+        else:
+            print("Could not find any matching product")
+
+    def load_product_page(self, product_name: str):
+        self.click_element(f"link:{product_name}")
+        assert product_name.lower().replace(" ","-") in self.moon_driver.current_url
+
+    def product_page_checks(self, product_widget: ProductElements, product_name: str, product_company:str, product_label: str):
+        assert self.get_text(product_widget.product_header) == f"{product_name} is {product_label}"
+
+        self.get_web_element(f"//*[@id='content']/table/tbody/tr[1]/td[contains(text(), 'by {product_company}')]")
+        self.get_web_element(product_widget.address_element)
+        self.get_web_element(product_widget.phone_element)
+        self.get_web_element(product_widget.email_element)
+        self.get_web_element(product_widget.url_element)
+        self.get_web_element(product_widget.checked_by_element)
+        self.get_web_element(product_widget.double_checked_by_element)
+        self.get_web_element(product_widget.added_element)
+        self.get_web_element(product_widget.double_checked_time_element)
+        self.get_web_element("//p[contains(text(),'Company email')]")
