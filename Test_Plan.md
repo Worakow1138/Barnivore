@@ -2,12 +2,15 @@
 
 - [Barnivore Test Plan](#barnivore-test-plan)
   - [Introduction](#introduction)
-  - [Basic Page Tests Suite](#basic-page-tests-suite)
+  - [Basic Page Test Suite](#basic-page-tests-suite)
     - [Basic Page Preconditions](#basic-page-preconditions)
     - [Basic Page Test Cases](#basic-page-test-cases)
-  - [Company Search Tests Suite](#company-search-test-suite)
+  - [Company Search Test Suite](#company-search-test-suite)
     - [Company Search Preconditions](#company-search-preconditions)
     - [Company Search Test Cases](#company-search-test-cases)
+  - [Product Evaluation Test Suite](#product-evaluation-test-suite)
+    - [Product Evaluation Preconditions](#product-evaluation-preconditions)
+    - [Product Evaluation Test Cases](#product-evaluation-test-cases)
 
 ## Introduction
 Detailed explanations of test steps for the [barnivore.com](https://www.barnivore.com/) website
@@ -142,6 +145,89 @@ Verify that the Search tool can be used to find multiple results that target a s
 - All products possess a link to their product page
 - All products have a label of either "Vegan Friendly", "Not Vegan Friendly", or "Unknown"
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+## Product Evaluation Test Suite
+Verify that when products are selected from a search list, they display expected information
+
+### Product Evaluation Preconditions
+1. A company to search for that has options labeled "Vegan Friendly", "Not Vegan Friendly", and "Unknown"
+2. Open a web browser to [barnivore.com](https://www.barnivore.com/)
+3. Verify that the search bar and search buttons are present
+4. Enter the company name into the search box
+5. Select the "Search" button
+6. "Search results for (company name)" is in the Header
+7. The Search bar is preloaded with the company name
+8. A list of products is diplayed
+
+### Product Evaluation Test Cases
+1. Vegan Friendly
+- Find a product on the list marked as "Vegan Friendly"
+- Verify the product is marked with a Green square
+- Select the product link and verify that the product's page is loaded
+- Verify that the page title has the text "(product) is Vegan Friendly"
+- Verify that the text "by (company name)" is present
+- Verify that text entries for the following exist:
+  - Address:
+  - Phone:
+  - Email:
+  - URL:
+  - Checked by:
+  - Double checked by:
+  - Added:
+  - Double Checked:
+- Verify that at least one "Company email" paragraph exists
+- Verify that a list of products all from the company are present
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+2. Not Vegan Friendly
+- Find a product on the list marked as "Not Vegan Friendly"
+- Verify the product is marked with a Red square
+- Select the product link and verify that the product's page is loaded
+- Verify that the page title has the text "(product) is Not Vegan Friendly"
+- Verify that the text "by (company name)" is present
+- Verify that text entries for the following exist:
+  - Address:
+  - Phone:
+  - Email:
+  - URL:
+  - Checked by:
+  - Double checked by:
+  - Added:
+  - Double Checked:
+- Verify that at least one "Company email" paragraph exists
+- Verify that a list of products all from the company are present
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+3. Unknown
+- Find a product on the list marked as "Unknown"
+- Verify the product is marked with a Yello square
+- Select the product link and verify that the product's page is loaded
+- Verify that the page title has the text "(product) is Unknown"
+- Verify that the text "by (company name)" is present
+- Verify that text entries for the following exist:
+  - Address:
+  - Phone:
+  - Email:
+  - URL:
+  - Checked by:
+  - Double checked by:
+  - Added:
+  - Double Checked:
+- Verify that at least one "Company email" paragraph exists
+- Verify that a list of products all from the company are present
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
