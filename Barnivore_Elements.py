@@ -59,10 +59,13 @@ class ListElements:
     displaying_products = "#content > div:nth-child(5)"
     list_items = "ul.products > li"
     list_header = "#content > h1"
+    vegan_friendly = "Vegan Friendly"
+    not_vegan_friendly = "Not Vegan Friendly"
+    unknown = "Unknown"
     colors = {
-        "Vegan Friendly": "Green",
-        "Not Vegan Friendly": "Red",
-        "Unknown": "Yellow"
+        vegan_friendly: "Green",
+        not_vegan_friendly: "Red",
+        unknown: "Yellow"
     }
 
     def __init__(self, mobile=False):
@@ -116,6 +119,19 @@ class SearchResultsPage:
     def __init__(self, mobile=False):
         self.search_widget = SearchBarElements(mobile)
         self.list_widget = ListElements(mobile)
+        self.product_widget = ProductElements()
+
+class ProductElements:
+
+    product_header = "#content > h1"
+    address_element = "//td[text()='Address:']/../td[2]"
+    phone_element = "//td[text()='Phone:']/../td[2]"
+    email_element = "//td[text()='Email:']/../td[2]"
+    url_element = "//td[text()='URL:']/../td[2]"
+    checked_by_element = "//td[text()='Checked by:']/../td[2]"
+    double_checked_by_element = "//td[text()='Double checked by:']/../td[2]"
+    added_element = "//td[text()='Added:']/../td[2]"
+    double_checked_time_element = "//td[text()='Double Checked:']/../td[2]"
 
 class SearchBarElements:
 
