@@ -5,10 +5,6 @@ from typing import Union
 
 class BarnivoreTestSteps(Moonrise):
 
-    def verify_search_bar_present(self, search_widget: SearchBarElements):
-        self.get_web_element(search_widget.search_bar)
-        self.get_web_element(search_widget.search_button)
-
     def load_page(self, header_title):
         self.click_element(f"link:{header_title}")
 
@@ -37,10 +33,11 @@ class BarnivoreTestSteps(Moonrise):
         assert re.search("(Displaying products 1 - 50 of .* in total)", self.get_text(page.list_widget.displaying_products))
         assert len(self.get_web_elements(page.list_widget.list_items)) == 50
 
-    def search_elements_check(self, search_widget: SearchBarElements, value=""):
+    def search_elements_check(self, search_widget: SearchBarElements, value="", find_booze=False):
         self.get_web_element(search_widget.search_bar)
         self.get_web_element(search_widget.search_button)
-        assert self.get_text(search_widget.find_booze_label) == "Find Booze:"
+        if find_booze:
+            assert self.get_text(search_widget.find_booze_label) == "Find Booze:"
         assert self.get_web_element(search_widget.search_bar).get_attribute("value") == value
 
     def company_text_checks(self, page: AskACompanyPage):

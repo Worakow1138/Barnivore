@@ -43,7 +43,7 @@ class BasicPageTests(BarnivoreTests):
     @Moonrise.test
     def home_page_test(self):
         self.page_url_check(self.home_page.header_title)
-        self.verify_search_bar_present(self.home_page.search_widget)
+        self.search_elements_check(self.home_page.search_widget)
         self.home_text_checks(self.home_page)
         self.footer_checks()
     
@@ -53,7 +53,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.beer_page.header_title)
         self.filter_widget_checks(self.beer_page.filter_widget)
         self.listing_products_check(self.beer_page)
-        self.search_elements_check(self.beer_page.search_widget)
+        self.search_elements_check(self.beer_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -62,7 +62,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.cider_page.header_title)
         self.filter_widget_checks(self.cider_page.filter_widget)
         self.listing_products_check(self.cider_page)
-        self.search_elements_check(self.cider_page.search_widget)
+        self.search_elements_check(self.cider_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -71,7 +71,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.wine_page.header_title)
         self.filter_widget_checks(self.wine_page.filter_widget)
         self.listing_products_check(self.wine_page)
-        self.search_elements_check(self.wine_page.search_widget)
+        self.search_elements_check(self.wine_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -80,7 +80,7 @@ class BasicPageTests(BarnivoreTests):
         self.page_url_check(self.liquor_page.header_title)
         self.filter_widget_checks(self.liquor_page.filter_widget)
         self.listing_products_check(self.liquor_page)
-        self.search_elements_check(self.liquor_page.search_widget)
+        self.search_elements_check(self.liquor_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -89,7 +89,7 @@ class BasicPageTests(BarnivoreTests):
         self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.askacompany_page.header_title)}")
         self.page_url_check(self.askacompany_page.header_title)
         self.company_text_checks(self.askacompany_page)
-        self.search_elements_check(self.askacompany_page.search_widget)
+        self.search_elements_check(self.askacompany_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -98,7 +98,7 @@ class BasicPageTests(BarnivoreTests):
         self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.mobile_page.header_title)}")
         self.page_url_check(self.mobile_page.header_title)
         self.mobile_text_checks(self.mobile_page)
-        self.search_elements_check(self.mobile_page.search_widget)
+        self.search_elements_check(self.mobile_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -107,7 +107,7 @@ class BasicPageTests(BarnivoreTests):
         self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.contact_page.header_title)}")
         self.page_url_check(self.contact_page.header_title)
         self.contact_text_checks(self.contact_page)
-        self.search_elements_check(self.contact_page.search_widget)
+        self.search_elements_check(self.contact_page.search_widget, find_booze=True)
         self.footer_checks()
 
     @Moonrise.test
@@ -116,7 +116,7 @@ class BasicPageTests(BarnivoreTests):
         self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.faq_page.header_title)}")
         self.page_url_check(self.faq_page.header_title)
         self.faq_text_checks(self.faq_page)
-        self.search_elements_check(self.faq_page.search_widget)
+        self.search_elements_check(self.faq_page.search_widget, find_booze=True)
         self.footer_checks()  
 
 class CompanySearchTests(BarnivoreTests):
@@ -132,14 +132,13 @@ class CompanySearchTests(BarnivoreTests):
         self.get_web_element(CommonPageElements.cider_page_link)
         self.get_web_element(CommonPageElements.wine_page_link)
         self.get_web_element(CommonPageElements.liquor_page_link)
-        self.get_web_element(self.home_page.search_widget.search_bar)
-        self.get_web_element(self.home_page.search_widget.search_button)
+        self.search_elements_check(self.home_page.search_widget)
         return super().test_setup()
     
     def company_search_test_steps(self, company_name, home_page: HomePage, search_page: SearchResultsPage):
         self.search_for_product(home_page.search_widget, company_name)
         assert self.get_text(search_page.list_widget.list_header) == f"Search results for {company_name}"
-        self.search_elements_check(search_page.search_widget, company_name)
+        self.search_elements_check(search_page.search_widget, company_name, find_booze=True)
         self.results_are_from_company(company_name, search_page.list_widget)
         self.results_have_links_to_products(search_page.list_widget)
         self.results_have_correct_labels(search_page.list_widget)
