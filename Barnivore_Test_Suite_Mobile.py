@@ -141,7 +141,7 @@ class CompanySearchTests(BarnivoreTests):
         self.search_elements_check(search_page.search_widget, company_name, find_booze=True)
         self.results_are_from_company(company_name, search_page.list_widget)
         self.results_have_links_to_products(search_page.list_widget)
-        self.results_have_correct_labels(search_page.list_widget)
+        self.results_have_correct_labels(search_page.list_widget, self.get_web_elements(search_page.list_widget.list_items))
         self.footer_checks()
     
     @Moonrise.test
@@ -210,7 +210,7 @@ class ProductEvaluationTests(BarnivoreTests):
         self.load_product_page(product_name)
         self.product_page_checks(self.search_page.product_widget, product_name, self.company_name, product_label)
         self.results_are_from_company(self.company_name, self.search_page.list_widget)
-        self.results_have_correct_labels(self.search_page.list_widget)
+        self.results_have_correct_labels(self.search_page.list_widget, self.get_web_elements(self.search_page.list_widget.list_items))
         self.search_elements_check(self.search_page.search_widget, find_booze=True)
         self.footer_checks()
 
@@ -223,7 +223,7 @@ class ProductEvaluationTests(BarnivoreTests):
         self.load_product_page(product_name)
         self.product_page_checks(self.search_page.product_widget, product_name, self.company_name, product_label)
         self.results_are_from_company(self.company_name, self.search_page.list_widget)
-        self.results_have_correct_labels(self.search_page.list_widget)
+        self.results_have_correct_labels(self.search_page.list_widget, self.get_web_elements(self.search_page.list_widget.list_items))
         self.search_elements_check(self.search_page.search_widget, find_booze=True)
         self.footer_checks()
 
@@ -237,6 +237,6 @@ class ProductEvaluationTests(BarnivoreTests):
         self.load_product_page(product_name)
         self.product_page_checks(self.search_page.product_widget, product_name, self.company_name, product_label)
         self.results_are_from_company(self.company_name, self.search_page.list_widget)
-        self.results_have_correct_labels(self.search_page.list_widget)
+        self.results_have_correct_labels(self.search_page.list_widget, self.get_web_elements(self.search_page.list_widget.list_items))
         self.search_elements_check(self.search_page.search_widget, find_booze=True)
         self.footer_checks()
