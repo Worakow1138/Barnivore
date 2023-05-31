@@ -32,8 +32,8 @@ class FilterElements:
             self.u_z_filter: f"//a[@href='/{self.page_title}/u-z' and text() = '{self.u_z_filter}']"
         }
         self.veganosity_filter_buttons = {
-            "Everything": f"//a[@href='/{self.page_title}?vfilter=All' and text() = 'Everything']",
-            "Only Vegan": f"//a[@href='/{self.page_title}?vfilter=Vegan' and text() = 'Only Vegan']",
+            self.everything_filter: f"//a[@href='/{self.page_title}?vfilter=All' and text() = '{self.everything_filter}']",
+            self.only_vegan_filter: f"//a[@href='/{self.page_title}?vfilter=Vegan' and text() = '{self.only_vegan_filter}']",
         }
         self.country_element = self.country_element_mapping.get(self.page_title)
 
