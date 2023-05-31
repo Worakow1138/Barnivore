@@ -138,3 +138,41 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(product_widget.added_element)
         self.get_web_element(product_widget.double_checked_time_element)
         self.get_web_element("//p[contains(text(),'Company email')]")
+
+    def list_in_alphabetical_order(self, list_widget: ListElements, products: list):
+        product_list = []
+        for product in products:
+            product_list.append(list_widget.get_product_name(product).lower())
+        sorted_list = sorted(product_list)
+        assert product_list == sorted_list, f"List is not in alphabetical order, go to {self.moon_driver.current_url} to confirm"
+
+    def products_from_country(self, list_widget: ListElements, country_name: str, products: list):
+        for product in products:
+            assert country_name in list_widget.get_company_name(product), f"{list_widget.get_product_name(product)} does not have {country_name} in title"
+
+    def results_are_vegan(self, list_widget: ListElements, products: list):
+        for product in products:
+            assert list_widget.get_label(product) == list_widget.vegan_friendly
+
+    def filtered_headers_check(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage], filter: str = "", country_name: str = None, vegan_only: bool = False):
+        header_title = page.header_title.lower()
+        vegan_str = ""
+        if vegan_only:
+            vegan_str = "vegan"
+        if country_name and filter == FilterElements.all_filter:
+            assert self.get_text(page.list_widget.list_header) == f"Listing {filter.lower()} {vegan_str} {header_title}s from {country_name}".replace("  ", " ") 
+        elif country_name:
+            assert self.get_text(page.list_widget.list_header) == f"Listing {vegan_str} {header_title}s {filter} from {country_name}".replace("  ", " ")
+        else:
+            assert self.get_text(page.list_widget.list_header) == f"Listing {vegan_str} {header_title}s {filter}".replace("  ", " ")
+
+        subheader_text = self.get_text(page.list_widget.displaying_products)
+        if "all" in subheader_text:
+            assert re.search(f"(Displaying all .* products)", subheader_text)
+        else:
+            assert re.search(f"(Displaying products .* - .* of .* in total)", subheader_text)
+
+    def results_are_within_filtered_range(self, list_widget: ListElements, filter: str, products: list):
+        for product in products:
+            assert list_widget.get_product_name(product) >= filter.split("-")[0]
+            assert list_widget.get_product_name(product) <= filter.split("-")[1]
