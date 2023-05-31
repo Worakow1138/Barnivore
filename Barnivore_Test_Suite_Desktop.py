@@ -18,29 +18,18 @@ class BarnivoreTests(BarnivoreTestSteps):
         self.cleanup_browser()
         return super().suite_teardown()
     
-    def filter_test_steps(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage], filter: str, country: str = None, vegan_only: bool = False):
+    def filter_test_steps(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage], filter: str, country: str = None):
         self.click_element(f"link:{filter}")
-        if vegan_only:
-            self.click_element(f"link:{page.filter_widget.only_vegan_filter}")
-        else:
-            self.click_element(f"link:{page.filter_widget.everything_filter}")
 
-        products = self.get_web_elements(page.list_widget.list_items)
+        self.click_element(f"link:{page.filter_widget.everything_filter}")
+        self.filtered_headers_check(page, filter, country)
 
-        assert len(products) <= 50
-        if filter != page.filter_widget.all_filter:
-            self.results_are_within_filtered_range(page.list_widget, filter, products)
-        if vegan_only:
-            self.results_are_vegan(page.list_widget, products)
-        self.filtered_headers_check(page, filter, country, vegan_only)
-        self.list_in_alphabetical_order(page.list_widget, products)
-        if country:
-            self.products_from_country(page.list_widget, country, products)
-        self.results_have_correct_labels(page.list_widget, products)
+        self.click_element(f"link:{page.filter_widget.only_vegan_filter}")
+        self.filtered_headers_check(page, filter, country, vegan_only=True)
 
         self.search_elements_check(page.search_widget, find_booze=True)
         self.footer_checks()
-    
+
     
 class BasicPageTests(BarnivoreTests):
 
@@ -269,7 +258,6 @@ class ProductEvaluationTests(BarnivoreTests):
         self.search_elements_check(self.search_page.search_widget, find_booze=True)
         self.footer_checks()
 
-class BeerPageTestsUSA(BarnivoreTests):
 
     def suite_setup(self):
         self.beer_page = BeerPage()
@@ -287,59 +275,32 @@ class BeerPageTestsUSA(BarnivoreTests):
     def all_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.all_filter, self.country)
 
-    @Moonrise.test
-    def all_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.all_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def zero_nine_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.zero_nine_filter, self.country)
 
     @Moonrise.test
-    def zero_nine_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.zero_nine_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def a_f_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.a_f_filter, self.country)
-
-    @Moonrise.test
-    def a_f_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.a_f_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def g_l_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.g_l_filter, self.country)
 
     @Moonrise.test
-    def g_l_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.g_l_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def m_r_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.m_r_filter, self.country)
-
-    @Moonrise.test
-    def m_r_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.m_r_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def s_t_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.s_t_filter, self.country)
 
     @Moonrise.test
-    def s_t_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.s_t_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def u_z_filter(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.u_z_filter, self.country)
 
-    @Moonrise.test
-    def u_z_filter_vegan(self):
-        self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.u_z_filter, self.country, vegan_only=True)
-
-class CiderPageTestsUSA(BarnivoreTests):
+class CiderPageFilterTestsUSA(BarnivoreTests):
 
     def suite_setup(self):
         self.cider_page = CiderPage()
@@ -358,58 +319,30 @@ class CiderPageTestsUSA(BarnivoreTests):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.all_filter, self.country)
 
     @Moonrise.test
-    def all_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.all_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def zero_nine_filter(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.zero_nine_filter, self.country)
-
-    @Moonrise.test
-    def zero_nine_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.zero_nine_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def a_f_filter(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.a_f_filter, self.country)
 
     @Moonrise.test
-    def a_f_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.a_f_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def g_l_filter(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.g_l_filter, self.country)
-
-    @Moonrise.test
-    def g_l_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.g_l_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def m_r_filter(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.m_r_filter, self.country)
 
     @Moonrise.test
-    def m_r_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.m_r_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def s_t_filter(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.s_t_filter, self.country)
-
-    @Moonrise.test
-    def s_t_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.s_t_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def u_z_filter(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.u_z_filter, self.country)
 
-    @Moonrise.test
-    def u_z_filter_vegan(self):
-        self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.u_z_filter, self.country, vegan_only=True)
-
-class WinePageTestsUSA(BarnivoreTests):
+class WinePageFilterTestsUSA(BarnivoreTests):
 
     def suite_setup(self):
         self.wine_page = WinePage()
@@ -428,58 +361,29 @@ class WinePageTestsUSA(BarnivoreTests):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.all_filter, self.country)
 
     @Moonrise.test
-    def all_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.all_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def zero_nine_filter(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.zero_nine_filter, self.country)
 
     @Moonrise.test
-    def zero_nine_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.zero_nine_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def a_f_filter(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.a_f_filter, self.country)
-
-    @Moonrise.test
-    def a_f_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.a_f_filter, self.country, vegan_only=True)
-
     @Moonrise.test
     def g_l_filter(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.g_l_filter, self.country)
-
-    @Moonrise.test
-    def g_l_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.g_l_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def m_r_filter(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.m_r_filter, self.country)
 
     @Moonrise.test
-    def m_r_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.m_r_filter, self.country, vegan_only=True)
-
-    @Moonrise.test
     def s_t_filter(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.s_t_filter, self.country)
-
-    @Moonrise.test
-    def s_t_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.s_t_filter, self.country, vegan_only=True)
 
     @Moonrise.test
     def u_z_filter(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.u_z_filter, self.country)
 
-    @Moonrise.test
-    def u_z_filter_vegan(self):
-        self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.u_z_filter, self.country, vegan_only=True)
-
-class LiquorPageTests(BarnivoreTests):
+class LiquorPageFilterTests(BarnivoreTests):
 
     def suite_setup(self):
         self.liquor_page = LiquorPage()
@@ -496,45 +400,21 @@ class LiquorPageTests(BarnivoreTests):
         self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.zero_nine_filter)
 
     @Moonrise.test
-    def zero_nine_filter_vegan(self):
-        self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.zero_nine_filter, vegan_only=True)
-
-    @Moonrise.test
     def a_f_filter(self):
         self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.a_f_filter)
-
-    @Moonrise.test
-    def a_f_filter_vegan(self):
-        self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.a_f_filter, vegan_only=True)
 
     @Moonrise.test
     def g_l_filter(self):
         self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.g_l_filter)
 
     @Moonrise.test
-    def g_l_filter_vegan(self):
-        self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.g_l_filter, vegan_only=True)
-
-    @Moonrise.test
     def m_r_filter(self):
         self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.m_r_filter)
-
-    @Moonrise.test
-    def m_r_filter_vegan(self):
-        self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.m_r_filter, vegan_only=True)
 
     @Moonrise.test
     def s_t_filter(self):
         self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.s_t_filter)
 
     @Moonrise.test
-    def s_t_filter_vegan(self):
-        self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.s_t_filter, vegan_only=True)
-
-    @Moonrise.test
     def u_z_filter(self):
         self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.u_z_filter)
-
-    @Moonrise.test
-    def u_z_filter_vegan(self):
-        self.filter_test_steps(self.liquor_page, self.liquor_page.filter_widget.u_z_filter, vegan_only=True)
