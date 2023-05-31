@@ -11,6 +11,9 @@
   - [Product Evaluation Test Suite](#product-evaluation-test-suite)
     - [Product Evaluation Preconditions](#product-evaluation-preconditions)
     - [Product Evaluation Test Cases](#product-evaluation-test-cases)
+  - [Alcohol Type Page USA Test Suite](#alcohol-type-page-usa-test-suite)
+    - [Alcohol Type Page USA Preconditions](#alcohol-type-page-usa-preconditions)
+    - [Alcohol Type Page USA Test Cases](#alcohol-type-page-test-cases)
 
 ## Introduction
 Detailed explanations of test steps for the [barnivore.com](https://www.barnivore.com/) website
@@ -226,6 +229,226 @@ Verify that when products are selected from a search list, they display expected
   - Double Checked:
 - Verify that at least one "Company email" paragraph exists
 - Verify that a list of products all from the company are present
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+## Alcohol Type Page USA Test Suite
+Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correctly filter available product data
+
+### Alcohol Type Page USA Preconditions
+1. Open a web browser to [barnivore.com](https://www.barnivore.com/)
+2. Load the "Beer", "Cider", "Wine", or "Liquor" page
+3. The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
+4. "USA" is selected from the region dropdown
+
+### Alcohol Type Page Test Cases
+1. All Filter
+- Select the "All" filter
+- Select the "Everything" filter
+- The header displays "Listing all beers from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+2. All Filter Only Vegan
+- Select the "All" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing all beers from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+3. 0-9 Filter
+- Select the "0-9" filter
+- Select the "Everything" filter
+- The header displays "Listing beers 0-9 from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+4. 0-9 Filter Only Vegan
+- Select the "0-9" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing vegan beers 0-9 from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+5. A-F Filter
+- Select the "A-F" filter
+- Select the "Everything" filter
+- The header displays "Listing beers A-F from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+6. A-F Filter Only Vegan
+- Select the "A-F" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing vegan beers A-F from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+7. G-L Filter
+- Select the "G-L" filter
+- Select the "Everything" filter
+- The header displays "Listing beers G-L from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+8. G-L Filter Only Vegan
+- Select the "G-L" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing vegan beers G-L from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+9. M-R Filter
+- Select the "M-R" filter
+- Select the "Everything" filter
+- The header displays "Listing beers M-R from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+10. M-R Filter Only Vegan
+- Select the "M-R" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing vegan beers M-R from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+11. S-T Filter
+- Select the "S-T" filter
+- Select the "Everything" filter
+- The header displays "Listing beers S-T from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+12. S-T Filter Only Vegan
+- Select the "S-T" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing vegan beers S-T from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+13. U-Z Filter
+- Select the "U-Z" filter
+- Select the "Everything" filter
+- The header displays "Listing beers U-Z from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
+- All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
+- "Find Booze:" with a search bar and search button is displayed
+- "Please Drink Responsibly" is at the bottom of the page
+- Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+- "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+14. U-Z Filter Only Vegan
+- Select the "U-Z" filter
+- Select the "Only Vegan" filter
+- The header displays "Listing vegan beers U-Z from USA"
+- The subheader displays "(Displaying products 1-50 of (total number) in total)"
+- A list of products is displayed, no greater than 50
+- No entry in the list starts with a character outside the filtered scope
+- The list of products is in alphebetical order
+- The list of products all indicated that they are from the USA in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
