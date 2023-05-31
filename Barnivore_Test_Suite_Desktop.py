@@ -258,6 +258,7 @@ class ProductEvaluationTests(BarnivoreTests):
         self.search_elements_check(self.search_page.search_widget, find_booze=True)
         self.footer_checks()
 
+class BeerPageFilterTestsUSA(BarnivoreTests):
 
     def suite_setup(self):
         self.beer_page = BeerPage()
