@@ -29,10 +29,10 @@ class BarnivoreTestSteps(Moonrise):
         if filter_widget.country_element:
             self.get_web_element(filter_widget.country_element)
 
-    def listing_products_check(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage], first_number = 1, second_number = 50):
+    def listing_products_check(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage]):
         assert self.get_web_element(page.list_widget.list_header).text == f"Listing {page.header_title.lower()}s A-F"
-        assert re.search(f"(Displaying products {first_number} - {second_number} of .* in total)", self.get_text(page.list_widget.displaying_products))
-        assert len(self.get_web_elements(page.list_widget.list_items)) <= 50
+        assert re.search(f"(Displaying products 1 - 50 of .* in total)", self.get_text(page.list_widget.displaying_products))
+        assert len(self.get_web_elements(page.list_widget.list_items)) == 50
 
     def search_elements_check(self, search_widget: SearchBarElements, value="", find_booze=False):
         self.get_web_element(search_widget.search_bar)
@@ -104,8 +104,8 @@ class BarnivoreTestSteps(Moonrise):
         for product in self.get_web_elements(list_widget.list_items):
             assert company_name in list_widget.get_company_name(product)
 
-    def results_have_correct_labels(self, list_widget: ListElements):
-        for product in self.get_web_elements(list_widget.list_items):
+    def results_have_correct_labels(self, list_widget: ListElements, products: list):
+        for product in products:
             label = list_widget.get_label(product)
             assert label == list_widget.vegan_friendly or label == list_widget.not_vegan_friendly or label == list_widget.unknown
             assert list_widget.colors.get(label) == product.get_attribute("class"), f"{list_widget.get_product_name(product)} did not match"
