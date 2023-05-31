@@ -174,5 +174,5 @@ class BarnivoreTestSteps(Moonrise):
 
     def results_are_within_filtered_range(self, list_widget: ListElements, filter: str, products: list):
         for product in products:
-            assert list_widget.get_product_name(product) >= filter.split("-")[0]
-            assert list_widget.get_product_name(product) <= filter.split("-")[1]
+            assert list_widget.get_product_name(product)[0] >= filter.split("-")[0]
+            assert list_widget.get_product_name(product)[0] <= filter.split("-")[1], list_widget.get_product_name(product)
