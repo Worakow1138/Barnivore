@@ -220,9 +220,14 @@ class AskACompanyPage:
 
         self.brand_name = brand_name
         self.your_name = your_name
+        self.language = language
+
+        self.set_language(self.language)
+
+    def set_text(self):
 
         self.the_question_dict = {
-        "English": """Hi, I'm helping to update a global online directory (over 54,000 entries so far) of vegan-friendly alcohol, http://www.barnivore.com/, and I was hoping you could provide some information about """+brand_name+""".
+        "English": """Hi, I'm helping to update a global online directory (over 54,000 entries so far) of vegan-friendly alcohol, http://www.barnivore.com/, and I was hoping you could provide some information about """+self.brand_name+""".
         Does """+self.brand_name+""" contain any animal ingredients (such as milk/lactose/casein, eggs, cochineal, honey, animal-derived enzymes, etc) or are animal products used in the processing/filtration of the product (such as isinglass, gelatin, etc)?
         Also, is your product manufactured or bottled anywhere else in the world (by a sub-licensee, for instance) that might use a different processing system, thus making them unsuitable for vegans?
         Thanks,
@@ -237,6 +242,28 @@ class AskACompanyPage:
         Je vous remercie,
         """+self.your_name+"""
         (Thanks, Marie-Sarah, Monique, and Greg!)
+        """,
+        "Hebrew": """שלום, אני חלק מצוות שמעדכן מאגר אינטרנטי של משקאות חריפים שמתאימים לטבעונים או צמחונים, וקיוויתי שתוכלו לספק לי מידע על """+self.brand_name+""".
+        האם ב"""+self.brand_name+""" מצויים רכיבים מן החי (כגון חלב, ביצים, דבש וכד') או האם נעשה בהם שימוש בתהליכי עיבוד או סינון של המוצר (כגון איזינגלס, ג'לטין וכד')?
+        בנוסף, אשמח לדעת האם במקום אחר בעולם, יכול להיות שהמוצר שלכם מעובד בצורה שונה?
+        בתודה,
+        """+self.your_name+"""
+        (Thanks, Nir, Tal, and Sami!)
+        """,
+        "Danish": """Hej. Jeg hjælper med at opdatere et globalt onlinekatalog (med over 44.000 opslag indtil videre) over veganervenlig alkohol, http://www.barnivore.com/, og jeg håber, at du kan hjælpe med nogle oplysninger om """+self.brand_name+""".
+        Indeholder """+self.brand_name+""" nogen animalske ingredienser (såsom mælk/laktose/kasein, æg, karmin, honning, enzymer udvundet af dyr osv.), eller er der anvendt animalske produkter til behandling/filtrering af produktet (såsom husblas, gelatine osv.)?
+        Fremstilles eller tappes jeres produkter desuden også andre steder i verden (f.eks. af en underlicenshaver), hvor der muligvis bruges en anden behandlingsproces, som gør dem uegnede for veganere?
+        Tak for hjælpen!
+        """+self.your_name+"""
+        (Thanks, Peter and Christian!)
+        """,
+        "Ukrainian": """Добрий день!
+        Я допомагаю оновлювати загальнодоступний онлайн-каталог веганського алкоголю http://www.barnivore.com/ , котрий налічує понад 34 000 записів. Сподіваюся, що Ви можете надати детальну інформацію щодо Ваших продуктів.
+        Чи продукти """+self.brand_name+""" містять інгредієнти тваринного походження (такі як молоко, яйця, мед, тваринні ферменти тощо)? Чи під час обробки/фільтрації використовуються продукти тваринного походження (кров, кістковий мозок, активоване вугілля тваринного походження, тваринні ферменти, казеїн, хітин, яєчний альбумін, риб’ячий жир, желатин, риб’ячий клей тощо )?
+        Також мене цікавить чи Ваші продукти виготовляються або розливаються ще десь у світі (наприклад по субліцензії), де використувуюється інший тип обробки, котрий робить продукти не придатними для веганів?
+        Заздалегідь дякую за чесну та повну відповідь,
+        """+self.your_name+"""
+        (Thanks, Secret Vegan Club!)
         """
         }
 
@@ -245,33 +272,69 @@ class AskACompanyPage:
         My understanding is that there are fining alternatives that do not utilize animal products, as evidenced by the wide variety of vegan-friendly companies listed on http://www.barnivore.com. Many wineries, breweries, and distillers are now using these techniques, and I would encourage you to look into these alternatives so that we can enjoy your wines in the future.
         """+self.your_name+"""
         (Thanks, Jennifer!)
+        """,
+        "French": """Merci beaucoup pour la réponse. Je suis très déçu d'entendre que vous utilisez des produits d'origine animale dans vos produits. Bien que je comprenne que ces ingrédients peuvent ne pas être présents dans le produit final, je tiens, comme beaucoup d'autres gens, à éviter les produits qui utilisent ces ingrédients.
+        J'ai conscience qu'il existe des alternatives qui n'utilisent pas de produits d'origine animale, comme en témoigne le grand nombre de produits mentionnés sur http://www.barnivore.com; une société végétalienne. De nombreuses caves, brasseries et distilleries utilisent maintenant ces techniques, et je vous encourage à examiner ces solutions de rechange afin que nous puissions profiter de vos produits dans l'avenir.
+        Mes salutations distinguées
+        """+self.your_name+"""
+        (Thanks, Adam, Faustine and Marie!)
+        """,
+        "Hebrew": """""",
+        "Danish": """Tak for svaret. Jeg er rigtig skuffet over, at I bruger animalske produkter i jeres produkter. Selvom jeg godt forstår, at ingredienserne ikke nødvendigvis er til stede i det endelige produkt, vil jeg gerne undgå produkter, som overhovedet bruger de ingredienser, og det vil mange andre også gerne.
+        Som jeg forstår det, findes der klaringsalternativer, som ikke anvender animalske produkter, hvilket står klart ud fra de mange forskellige veganervenlige virksomheder, der står anført på http://www.barnivore.com. Mange vingårde, bryggerier og destillerier bruger i dag disse teknikker, og jeg vil opfordre jer til at undersøge alternativerne, så vi kan nyde jeres drikke i fremtiden.
+        """+self.your_name+"""
+        (Thanks, Christian!)
+        """,
+        "Ukrainian": """Дякую за відповідь. Мені дуже прикро дізнатися, що Ви використовуєте сировину тваринного походження у своїх продуктах. Хоча я розумію, що ці інгредієнти можуть не бути присутніми в кінцевому продукті, але хотілося б повністю уникнути їх використання, як це роблять інші компанії.
+        Багато винарень, броварень та ґуралень вже використовують альтернативні технології для виготовлення високоякісної продукції без сировини тваринного походження. Для ноачності Ви можете ознайомитися з різноманістністю таких компаній на www.barnivore.com . Я заохочую Вас розглянути варіанти альтернативної сировини, щоб ми(вегани) могли насолоджуватися Вашими напоями в майбутньому.
+        """+self.your_name+"""
+        (Thanks, Secret Vegan Club!)
         """
         }
         
         self.vegan_dict = {
         "English": """Thanks for letting me know, I'm very happy to learn that your products are vegan! I'm looking forward to enjoying them.
         Cheers,
-        """+your_name+"""
+        """+self.your_name+"""
         (Thanks, Tim!)
+        """,
+        "French": """Je vous remercie pour votre réponse. Je suis très content d'apprendre que vos produits sont végétaliens. Je me réjouis donc de pouvoir déguster vos boissons.
+        Cordialement
+        """+self.your_name+"""
+        (Thanks, Diane & Inge!)
+        """,
+        "Hebrew": """""",
+        "Danish": """Tak for informationen! Jeg er virkelig glad for at høre, at jeres produkter er veganske. Jeg glæder mig til at nyde dem.
+        Hilsen
+        """+self.your_name+"""
+        (Thanks, Christian!)
+        """,
+        "Ukrainian": """Дякую за відповідь! Дуже приємно чути, що Ваші продукти підходять для веганів і я можу ними насолоджуватися.
+        Будьмо,
+        """+self.your_name+"""
+        (Thanks, Secret Vegan Club!)
         """
         }
         
-        self.set_language(language)
 
     def set_language(self, language):
+        self.language = language
+        self.set_text()
         self.the_question_text = self.the_question_dict.get(language).strip().replace("        ","")
         self.non_vegan_response = self.non_vegan_dict.get(language).strip().replace("        ","")
         self.vegan_response = self.vegan_dict.get(language).strip().replace("        ","")
 
     def set_brand_name(self, new_brand_name):
-        self.the_question_text = self.the_question_text.replace(self.brand_name, new_brand_name)
         self.brand_name = new_brand_name
+        self.set_text()
+        self.the_question_text = self.the_question_dict.get(self.language).strip().replace("        ","")
 
     def set_your_name(self, new_name):
-        self.the_question_text = self.the_question_text.replace(self.your_name, new_name)
-        self.vegan_response = self.vegan_response.replace(self.your_name, new_name)
-        self.non_vegan_response = self.non_vegan_response.replace(self.your_name, new_name)
         self.your_name = new_name
+        self.set_text()
+        self.the_question_text = self.the_question_dict.get(self.language).strip().replace("        ","")
+        self.non_vegan_response = self.non_vegan_dict.get(self.language).strip().replace("        ","")
+        self.vegan_response = self.vegan_dict.get(self.language).strip().replace("        ","")
 
 
 class MobileAppPage:
