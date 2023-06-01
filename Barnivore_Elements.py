@@ -407,6 +407,22 @@ class AskACompanyPage:
         Za odgovor se vam že vnaprej najlepše zahvaljujem,
         """+self.your_name+"""
         (Thanks, Anže!)
+        """,
+        "Spanish": """Hola:
+        Estoy ayudando a actualizar una base de datos en Internet sobre bebidas alcohólicas aptas para veganos (www.barnivore.com, con más de 34.000 entradas) y me preguntaba si me podrían dar información sobre """+self.brand_name+""".
+        ¿Alguno de los productos de la marca """+self.brand_name+""" contiene ingredientes provenientes de los animales como leche, huevos, cualquier carne animal, miel, etc.? Durante la filtración, o en alguna otra fase del procesado del producto, ¿utilizan otros productos provenientes de los animales como gelatina, carbón animal (bone char) o ictiocola (procedente del pescado)? ¿Serían tan amables de proporcionarnos una lista de los ingredientes de los productos?
+        Una última pregunta: si sus productos se elaboran o se embotellan en otras partes del mundo por un fabricante/distribuidor diferente, ¿es posible que utilicen un sistema de procesado diferente que haga que los productos no sean aptos para veganos?
+        Muchas gracias por su tiempo y les agradezco de antemano su respuesta.
+        Un cordial saludo,
+        """+self.your_name+"""
+        (Thanks, Victoria!)
+        """,
+        "Swedish": """Hej!Jag hjälper till att fylla på en online-guide till vegan-vänlig alkohol och skulle uppskatta din hjälp rörande """+self.brand_name+""".
+        Innehåller """+self.brand_name+""" några animaliska produkter (exempelvis ägg, mjölk, honung osv) eller används animaliska produkter i framställningen/filtreringen av produkten (såsom husbloss, gelatin osv)?
+        Utöver detta så undrar jag även om produkten tillverkas på fler än en plats, och om tillverkningssätten kan skilja sig?
+        Tack på förhand,
+        """+self.your_name+"""
+        (Thanks, David!)
         """
         }
 
@@ -479,7 +495,15 @@ class AskACompanyPage:
         (Thanks, Anastasia!)
         """,
         "Slovak": """""",
-        "Slovenian": """"""
+        "Slovenian": """""",
+        "Spanish": """Hola:
+        Gracias por su respuesta. Es una lástima que usen productos animales en sus productos. Aunque entiendo que es probable que estos ingredientes no queden en el producto final, tanto yo como muchas otras personas preferimos evitar todos los productos que contengan estos ingredientes en cualquiera de sus formas.
+        Tengo entendido que existen alternativas para clarificar sin productos animales, según se evidencia en la gran diversidad de productos aptos para veganos catalogados en http://barnivore.com. Muchas bodegas, cervecerías y destilerías ya usan estas técnicas. Si me lo permiten, les invito a que exploren estas alternativas para que más personas puedan disfrutar de sus productos en el futuro.
+        Un saludo,
+        """+self.your_name+"""
+        (Thanks, Victoria!)
+        """,
+        "Swedish": """"""
         }
         
         self.vegan_dict = {
@@ -536,7 +560,14 @@ class AskACompanyPage:
         (Thanks, Anastasia!)
         """,
         "Slovak": """""",
-        "Slovenian": """"""
+        "Slovenian": """""",
+        "Spanish": """Hola:
+        ¡Muchas gracias por su respuesta! Me alegro mucho de que sus productos sean aptos para veganos y de poder disfrutar de ellos.
+        Un saludo,
+        """+self.your_name+"""
+        (Thanks, Victoria!)
+        """,
+        "Swedish": """"""
         }
         
 
