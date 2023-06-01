@@ -284,6 +284,14 @@ class AskACompanyPage:
         Također, proizvodi li se ili pakira vaš proizvod pod licencom negdje drugdje u svijetu gdje se možda koristi drukčiji proizvodni proces koji uključuje gore navedene sastojke?
         Hvala
         """+self.your_name+"""
+        """,
+        "Dutch": """Geachte heer/mevrouw,
+        Om er achter te komen of """+self.brand_name+""" geschikt is voor veganisten, zou ik u willen vragen of u mij wat informatie kunt geven. Uw antwoord wordt gebruikt om een online lijst van geschikte dranken actueel te houden.
+        Bevat """+self.brand_name+""" dierlijke ingrediënten zoals melk, eieren, honing enz. ? Zijn er dierlijke producten gebruikt tijdens de productie, bijvoorbeeld bij filtratie van het product ( zoals vislijm, gelatine, enz. )? En wordt uw product ook nog ergens anders op de wereld gemaakt, bijvoorbeeld door een licentiehouder die het product op een andere manier zou kunnen produceren?
+        Alvast hartelijk dank voor uw reactie,
+        Met vriendelijke groet
+        """+self.your_name+"""
+        (Thanks, Avital, Carmen Sami, and Werner!)
         """
         }
 
@@ -316,7 +324,12 @@ class AskACompanyPage:
         """+self.your_name+"""
         (Thanks, Tiago!)
         """,
-        "Croat": """"""
+        "Croat": """""",
+        "Dutch": """Bedankt voor het antwoord. Ik ben zeer teleurgesteld te horen dat jullie dierlijke producten gebruiken in jullie producten. Hoewel ik begrijp dat deze ingredienten eventueel niet in het eindproduct zitten, probeer ik producten te vermijden die deze ingredienten gebruiken, samen met vele anderen.
+        Blijkbaar zijn er goede alternatieven die geen dierlijke producten gebruiken, zoals aangetoond door het brede gamma aan veganist-vriendelijke bedrijven opgelijst op http://www.barnivore.com. Vele wijnmakerijen, brouwerijen en distilleerders gebruiken deze technieken, en ik wil u aanmoedigen om deze alternatieven te overwegen zodat wij ook van jullie drankjes kunnen genieten in de toekomst.
+        """+self.your_name+"""
+        (Thanks, Sebastian!)
+        """
         }
         
         self.vegan_dict = {
@@ -343,7 +356,12 @@ class AskACompanyPage:
         """,
         "Arabic": """""",
         "Brazilian Portuguese": """""",
-        "Croat": """"""
+        "Croat": """""",
+        "Dutch": """Bedankt om het me te laten weten, ik ben zeer blij te horen dat jullie producten veganistisch zijn! Ik kijk er al naar uit van jullie producten te genieten.
+        Schol
+        """+self.your_name+"""
+        (Thanks, Sebastian!)
+        """
         }
         
 
