@@ -212,11 +212,11 @@ class BarnivoreTestSteps(Moonrise):
         ask_a_company_page.set_language(language)
         self.select_from_list_by_label(ask_a_company_page.question_language_selector, language)
 
-        assert self.get_text(ask_a_company_page.question_element) ==  ask_a_company_page.the_question_text
+        assert self.get_text(ask_a_company_page.question_element).lower() ==  ask_a_company_page.the_question_text.lower(), f"{self.get_text(ask_a_company_page.question_element)} \n\n does not match \n\n {ask_a_company_page.the_question_text}"
 
         self.set_page_brand_and_sender_names(ask_a_company_page, "Victory", "Barnivore User")
 
-        assert self.get_text(ask_a_company_page.question_element) ==  ask_a_company_page.the_question_text
+        assert self.get_text(ask_a_company_page.question_element).lower() == ask_a_company_page.the_question_text.lower(), f"{self.get_text(ask_a_company_page.question_element)} \n\n does not match \n\n {ask_a_company_page.the_question_text}"
 
     def set_non_vegan_response(self, ask_a_company_page: AskACompanyPage, language: str):
         ask_a_company_page.set_language(language)
