@@ -292,6 +292,33 @@ class AskACompanyPage:
         Met vriendelijke groet
         """+self.your_name+"""
         (Thanks, Avital, Carmen Sami, and Werner!)
+        """,
+        "Finnish": """Hei!
+        Autan päivittämään internethakemistoa, johon on kerätty tietoa vegaanisista alkoholijuomista.
+        Toivoisinkin, että voisitte tarjota lisätietoa """+self.brand_name+""" tuotteista.
+        Sisältääkö """+self.brand_name+""" minkäänlaisia eläinperäisiä ainesosia (kuten maitoa, kananmunaa, hunajaa tms.)
+        tai käytetäänkö eläinperäisiä ainesosia (esimerkiksi gelatiinia, kalaliimaa tai vastaavaa)
+        """+self.brand_name+""" valmistamisessa tai suodattamisessa?
+        Lisäksi haluaisin tietää, että valmisetaanko """+self.brand_name+""" missään muualla maailmassa (esimerkiksi alihankkijasopimuksella), käyttäen erilaisia valmistusmenetelmiä?
+        Ystävällisin terveisin,
+        """+self.your_name+"""
+        (Thanks, Avital, Carmen Sami, and Werner!)
+        """,
+        "German": """Sehr geehrte Damen und Herren,
+        ich helfe dabei ein Verzeichnis fuer vegane Lebensmittel zu erstellen. Hierfuer bitte ich Sie mir einige Informationen über Ihr Produkt zu geben.
+        Beinhaltet Ihr Bier/Wein/Alkohol tierische Zutaten (wie Milch, Eier, Honig usw.) oder werden bei der Herstellung tierische Produkte z.B. zur Filtration benutzt (Gelatine, Fischleim, Blut, oder andere tierische Produkte)?
+        Vielen Dank im Voraus.
+        Mit freundlichen Grüßen
+        """+self.your_name+"""
+        (Thanks, Linda, Ingrid, Martina, and Raphael!)
+        """,
+        "Greek": """Γεια σας,
+        Προσπαθώ να ανανεώσω έναν online κατάλογο από αλκοολούχα ποτά που είναι φιλικά σε χορτοφάγους και θα εκτιμούσα ιδιαίτερα αν θα μπορούσατε να μου στείλετε περισσότερες πληροφορίες σχετικά με """+self.brand_name+"""
+        Περιέχει το """+self.brand_name+""" συστατικά από ζώα (όπως γάλα, αυγά, μέλι, κτλ.) ή είναι προϊόντα ζώων που χρησιμοποιούνται στην επεξεργασία του προϊόντος (όπως λεπιδόλιθος, ζελατίνη, κτλ.);
+        Επίσης, είναι το προϊόν σας κατασκευασμένο ή παρασκευασμένο σε κάποιο άλλο μέρος του κόσμου (ως εκμίσθωση για παράδειγμα) όπου χρησιμοποιείται διαφορετικό σύστημα επεξεργασίας έτσι ώστε να το κάνει ακατάλληλο για χορτοφάγους;
+        Ευχαριστώ
+        """+self.your_name+"""
+        (Thanks, Stevie!)
         """
         }
 
@@ -329,7 +356,19 @@ class AskACompanyPage:
         Blijkbaar zijn er goede alternatieven die geen dierlijke producten gebruiken, zoals aangetoond door het brede gamma aan veganist-vriendelijke bedrijven opgelijst op http://www.barnivore.com. Vele wijnmakerijen, brouwerijen en distilleerders gebruiken deze technieken, en ik wil u aanmoedigen om deze alternatieven te overwegen zodat wij ook van jullie drankjes kunnen genieten in de toekomst.
         """+self.your_name+"""
         (Thanks, Sebastian!)
-        """
+        """,
+        "Finnish": """Kiitos vastauksestanne. On kovin ikävää kuulla, että käytätte eläinperäisiä ainesosia tuotteidenne valmistuksessa. Vaikka valmiissa tuotteessa niitä ei olisikaan, haluan monien muiden ohella välttää sellaisia tuotteita, joiden valmistuksessa eläinperäisiä ainesosia ylipäätään käytetään.
+        Ymmärtääkseni on olemassa useita sellaisia vaihtoehtoisia valmistustekniikoita, joissa eläinperäisiä tuotteita ei käytetä. Osoituksena vegaanisten valmistustapojen laajamittaisesta käytöstä ovat http://www.barnivore.com -sivustolle listatut esimerkilliset viinitilat, olutpanimot ja tislaamot, joiden tuotteet ovat vegaanisia.
+        Haluaisin rohkaista myös Teitä tutustumaan näihin valmistustapoihin, jotta voimme nauttia tuotteistanne tulevaisuudessa.
+        """+self.your_name+"""
+        (Thanks, Johanna!)
+        """,
+        "German": """Vielen Dank für Ihre Rückmeldung. Ich bedauere es sehr zu hören, dass tierische Produkte für Ihre Getränke verwendet werden. Obwohl mir bewusst ist, dass diese Zutaten nichtmehr im Endprodukt enthalten sind, versuche ich, sowie viele andere, sie vollständig zu vermeiden.
+        Meines Wissens nach existieren Alternativen zur Klärung, die keinerlei tierische Produkte verwenden, wie dies allein durch die große Bandbreite vegan-freundlicher Unternehmen, die auf http://www.barnivore.com aufgelistet sind, deutlich wird. Diese Techniken werden bereits von vielen Weinkellereien, Brauereien und Destillerien benutzt - und ich möchte Sie dazu anregen, dies auch zu tun, damit unnötiges Tierleid in der Zukunft vermieden wird und wir Ihre Produkte genießen können.
+        """+self.your_name+"""
+        (Thanks, Nico!)
+        """,
+        "Greek": """"""
         }
         
         self.vegan_dict = {
@@ -361,7 +400,14 @@ class AskACompanyPage:
         Schol
         """+self.your_name+"""
         (Thanks, Sebastian!)
-        """
+        """,
+        "Finnish": """""",
+        "German": """Vielen Dank für die Informationen! Es freut mich, dass ihre Produkte vegan sind und ich sie mit ruhigem Gewissen genießen kann.
+        Zum Wohl,
+        """+self.your_name+"""
+        (Thanks, Raphael!)
+        """,
+        "Greek": """"""
         }
         
 
