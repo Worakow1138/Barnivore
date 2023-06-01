@@ -114,7 +114,7 @@ class HomePage:
     second_column_text = """
     The Barnivore Vegan Alcohol Directory is here to help.
     These ingredients don't usually show up on the label, so the only way to find out is to ask.
-    Our 57,397 entries have been checked and often double or triple checked by the Barnivore community and are gathered here for you to enjoy, and maybe submit a check of your own.
+    Our {} entries have been checked and often double or triple checked by the Barnivore community and are gathered here for you to enjoy, and maybe submit a check of your own.
     (and yes, there have been cases of whole chickens being included in beer. It's based on "cock ale," a 17th century recipe that breweries occasionally recreate in small batches - until someone reminds them that meat beer is pretty gross.)
     """.strip().replace("    ","")
     ask_a_company_link = "//a[@href='/askacompany' and text()='submit a check of your own']"
