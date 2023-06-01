@@ -387,3 +387,15 @@ class AskACompanyTests(BarnivoreTests):
     def slovenian(self):
         language = "Slovenian"
         self.set_question_language(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def spanish(self):
+        language = "Spanish"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def swedish(self):
+        language = "Swedish"
+        self.set_question_language(self.ask_a_company_page, language)
