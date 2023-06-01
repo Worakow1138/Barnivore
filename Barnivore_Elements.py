@@ -319,6 +319,26 @@ class AskACompanyPage:
         Ευχαριστώ
         """+self.your_name+"""
         (Thanks, Stevie!)
+        """,
+        "Hindi": """नमस्ते
+        मैं शाकाहारी के अनुकूल शराब की एक ऑनलाइन निर्देशिका अद्यतन करने के लिए मदद कर रहा हूँ। मैं उम्मीद कर रहा था कि तुम """+self.brand_name+""" के बारे में कुछ जानकारी प्रदान कर सकता है।
+        """+self.brand_name+""" (जैसे दूध, अंडे, शहद, आदि) के रूप में किसी भी जानवर सामग्री उत्पाद के प्रसंस्करण / छानने में इस्तेमाल पशु उत्पादों को शामिल कर रहे हैं या करता है (जैसे अभ्रक, जिलेटिन, आदि के रूप में)? इसके अलावा, निर्मित या कहीं और है कि एक अलग प्रोसेसिंग सिस्टम का उपयोग हो सकता है (उदाहरण के लिए, एक उप लाइसेंसधारी द्वारा) दुनिया में बोतल, इस प्रकार उन्हें vegans के लिए अनुपयुक्त बना अपने उत्पाद है?
+        धन्यवाद, """+self.your_name+"""
+        (Thanks, Stevie and Rajesh!)
+        """,
+        "Icelandic": """Sæl, ég er að hjálpa til við að uppfæra gagnabanka (yfir 51 þúsund færslur hingað til) af veganvænu áfengi, http://www.barnivore.com/, og ég var að vonast til að þið gætum gefið mér upplýsingar um """+self.brand_name+""".
+        Inniheldur """+self.brand_name+""" einhverjar dýraafurðir (svo sem mjólk, laktósa, casein, egg, cochineal, hunang, ensím unnin úr dýrum eða þess háttar) eða eru dýraafurðir notaðar við vinnslu eða síun vörunnar (svo sem isinglass, gelatín eða þess háttar)?
+        Enn fremur, eru vörurnar ykkar framleiddar eða settar á flösku annarsstaðar en bara á Íslandi þar sem aðrar vinnsluaðferðir gætu verið notaðar sem myndu gera þær óveganvænar?
+        Með fyrirfram þökkum,
+        """+self.your_name+"""
+        (Thanks, Siggi!)
+        """,
+        "Italian": """Salve,sto contribuendo all'aggiornamento di un elenco online di prodotti alcolici adatti a vegani e spero che possiate fornirmi qualche informazione a proposito di """+self.brand_name+""".
+        Vorrei sapere se """+self.brand_name+""" contiene ingredienti animali di qualche tipo (per esempio latte, uova, miele, ecc.), e se per la sua produzione vengono usati prodotti di derivazione animale per il trattamento o il filtraggio (per esempio caseina, colla di pesce/isinglass, gelatina, ecc.).
+        Grazie per la cortese attenzione,
+        cordiali saluti
+        """+self.your_name+"""
+        (Thanks, Marco and Sacha!)
         """
         }
 
@@ -368,7 +388,14 @@ class AskACompanyPage:
         """+self.your_name+"""
         (Thanks, Nico!)
         """,
-        "Greek": """"""
+        "Greek": """""",
+        "Hindi": """""",
+        "Icelandic": """""",
+        "Italian": """Grazie per la sua risposta. Mi dispiace molto apprendere che usate prodotti animali nei vostri prodotti. Mentre capisco che questi ingredienti potrebbero non essere presenti nel prodotto finale, desidero evitare completamente tutti i prodotti che usano questi ingredienti, come anche molte altre persone.
+        Credo che esistano metodi di processazione alternativi che non usano prodotti animali, come si puo' vedere nella grande varieta' di compagnie vegetaliane elencate su http:///www.barnivore.com. Molti vigneti, birrerie e distillerie adesso usano queste tecniche, e vorrei incoraggiarla ad informarsi su queste alternative, cosi che noi tutti possiamo godere dei suoi prodotti nel futuro.
+        """+self.your_name+"""
+        (Thanks, Jan!)
+        """
         }
         
         self.vegan_dict = {
@@ -407,7 +434,10 @@ class AskACompanyPage:
         """+self.your_name+"""
         (Thanks, Raphael!)
         """,
-        "Greek": """"""
+        "Greek": """""",
+        "Hindi": """""",
+        "Icelandic": """""",
+        "Italian": """"""
         }
         
 
