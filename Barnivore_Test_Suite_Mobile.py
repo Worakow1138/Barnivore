@@ -87,8 +87,7 @@ class BasicPageTests(BarnivoreTests):
 
     @Moonrise.test
     def ask_a_company_page_test(self):
-        # self.load_page(self.askacompany_page.header_title)
-        self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.askacompany_page.header_title)}")
+        self.load_page(self.askacompany_page.header_title)
         self.page_url_check(self.askacompany_page.header_title)
         self.company_text_checks(self.askacompany_page)
         self.search_elements_check(self.askacompany_page.search_widget, find_booze=True)
@@ -96,8 +95,7 @@ class BasicPageTests(BarnivoreTests):
 
     @Moonrise.test
     def mobile_page_test(self):
-        # self.load_page(self.mobile_page.header_title)
-        self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.mobile_page.header_title)}")
+        self.load_page(self.mobile_page.header_title)
         self.page_url_check(self.mobile_page.header_title)
         self.mobile_text_checks(self.mobile_page)
         self.search_elements_check(self.mobile_page.search_widget, find_booze=True)
@@ -105,8 +103,7 @@ class BasicPageTests(BarnivoreTests):
 
     @Moonrise.test
     def contact_page_test(self):
-        # self.load_page(self.contact_page.header_title)
-        self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.contact_page.header_title)}")
+        self.load_page(self.contact_page.header_title)
         self.page_url_check(self.contact_page.header_title)
         self.contact_text_checks(self.contact_page)
         self.search_elements_check(self.contact_page.search_widget, find_booze=True)
@@ -114,8 +111,7 @@ class BasicPageTests(BarnivoreTests):
 
     @Moonrise.test
     def faq_page_test(self):
-        # self.load_page(self.faq_page.header_title)
-        self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.faq_page.header_title)}")
+        self.load_page(self.faq_page.header_title)
         self.page_url_check(self.faq_page.header_title)
         self.faq_text_checks(self.faq_page)
         self.search_elements_check(self.faq_page.search_widget, find_booze=True)
@@ -255,9 +251,8 @@ class AskACompanyTests(BarnivoreTests):
     
     def test_setup(self):
         self.ask_a_company_page = AskACompanyPage(mobile=True)
-        # self.navigate_to_page("barnivore.com")
-        self.navigate_to_page(f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(self.ask_a_company_page.header_title)}")
-        # self.load_page(self.ask_a_company_page.header_title)
+        self.navigate_to_page("barnivore.com")
+        self.load_page(self.ask_a_company_page.header_title)
         return super().test_setup()
 
     @Moonrise.test
