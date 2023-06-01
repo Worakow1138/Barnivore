@@ -256,24 +256,33 @@ class AskACompanyTests(BarnivoreTests):
 
     @Moonrise.test
     def english(self):
-        self.set_question_language(self.ask_a_company_page, "English")
-        self.set_response_language(self.ask_a_company_page, "English")
+        language = "English"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
 
     @Moonrise.test
     def french(self):
-        self.set_question_language(self.ask_a_company_page, "French")
-        self.set_response_language(self.ask_a_company_page, "French")
+        language = "French"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
 
     @Moonrise.test
     def hebrew(self):
-        self.set_question_language(self.ask_a_company_page, "Hebrew")
+        language = "Hebrew"
+        self.set_question_language(self.ask_a_company_page, language)
 
     @Moonrise.test
     def danish(self):
-        self.set_question_language(self.ask_a_company_page, "Danish")
-        self.set_response_language(self.ask_a_company_page, "Danish")
+        language = "Danish"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
 
     @Moonrise.test
     def ukrainian(self):
-        self.set_question_language(self.ask_a_company_page, "Ukrainian")
-        self.set_response_language(self.ask_a_company_page, "Ukrainian")
+        language = "Ukrainian"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
