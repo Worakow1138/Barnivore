@@ -13,9 +13,12 @@ class BarnivoreTestSteps(Moonrise):
 
     def home_text_checks(self, home_page: HomePage):
         self.get_web_element(home_page.home_title)
-        first_column, second_column = self.get_web_elements(home_page.column_elements)[0], self.get_web_elements(home_page.column_elements)[1]
-        assert home_page.first_column_text == first_column.text
-        assert home_page.second_column_text == second_column.text
+        first_column, second_column = self.get_web_elements(home_page.column_elements)[0].text, self.get_web_elements(home_page.column_elements)[1].text
+        number_match = re.search(r'Our (\d+(?:,\d+)*) entries', second_column)
+        number = number_match.group(1)
+        home_page.second_column_text = home_page.second_column_text.replace("{}", number)
+        assert home_page.first_column_text == first_column
+        assert home_page.second_column_text == second_column
         self.get_web_element(home_page.ask_a_company_link)
     
     def filter_widget_checks(self, filter_widget: FilterElements):
