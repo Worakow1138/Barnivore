@@ -339,6 +339,43 @@ class AskACompanyPage:
         cordiali saluti
         """+self.your_name+"""
         (Thanks, Marco and Sacha!)
+        """,
+        "Japanese": """初めまして。
+        私はウェブ上でビーガン対応のアルコール飲料のリストを更新しているものです。つきましては """+self.brand_name+""" について情報をいただきたく、メール差し上げております。
+        質問：
+        * """+self.brand_name+""" は動物性の原料（例：乳製品・卵・はちみつなど）を含んでおりますか？
+        * 製造過程において動物性の原料（アイシングラスやゼラチンなど）を使用しておりますか？
+        * """+self.brand_name+""" は日本国外でライセンス生産などを行っていますか？
+        * そうであれば製造過程の違いなどによって """+self.brand_name+""" がビーガン対応になっていない可能性もありますでしょうか？
+        ご回答いただけますと大変助かります。
+        よろしくお願いいたします。
+        """+self.your_name+"""
+        (Thanks, Ken and Stevie!)
+        """,
+        "Korean": """안녕하세요?
+        저는 비건/채식주의자들이 마실 수 있는 주류 안내사이트 업데이트를 돕고 있습니다.
+        이와 관련하여 """+self.brand_name+"""에 대한 정보를 얻고자 합니다.
+        1. """+self.brand_name+"""에 동물성 재료(우유, 계란, 꿀 등)가 함유되어 있나요?
+        2. 제조/여과 과정에 동물성 제품/식품(아이징글라스, 젤라틴 등)이 사용되었나요?
+        3. 제조 장소가 여러 곳인 경우, 장소마다 제조과정에 사용되는 제품/식품이 다른 경우도 있나요? 만약 그렇다면, 비건/채식주의자에게 적합하지 않은 제품/식품을 사용하는 장소/국가를 알려주실 수 있으신지요?
+        도움에 감사 드립니다.
+        """+self.your_name+"""
+        (Thanks, Gabriel and Elisa!)
+        """,
+        "Norwegian": """Hei!
+        Jeg hjelper til med å fylle ut en guide til vegan-vennlig alkohol på nettet og håper du kan gi informasjon om """+self.brand_name+""".
+        Inneholder """+self.brand_name+""" noen animalske produkter (som feks. melk, egg, honning, osv.) eller blir animalske produkter brukt under fremstillingen eller filtreringen av produktet (som feks. husbloss/isinglass, gelatin, osv.)?
+        I tillegg lurer jeg på om produktet deres fremstilles andre steder, og om de kanskje gjør det på en annen måte enn dere?
+        På forhånd takk,
+        """+self.your_name+"""
+        (Thanks, Per!)
+        """,
+        "Polish": """Cześć - przyczyniając się do aktualizowania katalogu online wegańskiej przyjazne alkoholu i mam nadzieję, że mógłbyś podać kilka informacji na temat """+self.brand_name+""".
+        Czy """+self.brand_name+""" zawiera żadnych składników pochodzenia zwierzęcego (takich jak mleko, jaja, miód, itp) lub są produkty zwierzęce stosowane do przetwarzania / filtracji produktu (takie jak karuk żelatyna , itp)?
+        Ponadto, produkt jest wytwarzany lub butelkowane gdziekolwiek indziej na świecie ( przez sublicencjobiorcy , na przykład ), które może wykorzystać inny system przetwarzania , co czyni je nieprzydatnymi dla wegan?
+        Dzięki,
+        """+self.your_name+"""
+        (Thanks, Andrew, Stevie, and Davey!)
         """
         }
 
@@ -395,7 +432,11 @@ class AskACompanyPage:
         Credo che esistano metodi di processazione alternativi che non usano prodotti animali, come si puo' vedere nella grande varieta' di compagnie vegetaliane elencate su http:///www.barnivore.com. Molti vigneti, birrerie e distillerie adesso usano queste tecniche, e vorrei incoraggiarla ad informarsi su queste alternative, cosi che noi tutti possiamo godere dei suoi prodotti nel futuro.
         """+self.your_name+"""
         (Thanks, Jan!)
-        """
+        """,
+        "Japanese": """""",
+        "Korean": """""",
+        "Norwegian": """""",
+        "Polish": """"""
         }
         
         self.vegan_dict = {
@@ -437,7 +478,11 @@ class AskACompanyPage:
         "Greek": """""",
         "Hindi": """""",
         "Icelandic": """""",
-        "Italian": """"""
+        "Italian": """""",
+        "Japanese": """""",
+        "Korean": """""",
+        "Norwegian": """""",
+        "Polish": """"""
         }
         
 
