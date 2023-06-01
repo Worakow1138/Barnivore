@@ -17,18 +17,6 @@ class BarnivoreTests(BarnivoreTestSteps):
     def suite_teardown(self):
         self.cleanup_browser()
         return super().suite_teardown()
-    
-    def filter_test_steps(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage], filter: str, country: str = None):
-        self.click_element(f"link:{filter}")
-
-        self.click_element(f"link:{page.filter_widget.everything_filter}")
-        self.filtered_headers_check(page, filter, country)
-
-        self.click_element(f"link:{page.filter_widget.only_vegan_filter}")
-        self.filtered_headers_check(page, filter, country, vegan_only=True)
-
-        self.search_elements_check(page.search_widget, find_booze=True)
-        self.footer_checks()
 
     
 class BasicPageTests(BarnivoreTests):
@@ -263,12 +251,12 @@ class BeerPageFilterTestsUSA(BarnivoreTests):
     def suite_setup(self):
         self.beer_page = BeerPage()
         self.country = "USA"
-        return super().suite_setup()
-    
-    def test_setup(self):
+        super().suite_setup()
         self.navigate_to_page("barnivore.com")
         self.load_page(self.beer_page.header_title)
         self.filter_widget_checks(self.beer_page.filter_widget)
+    
+    def test_setup(self):
         self.select_from_list_by_label(self.beer_page.filter_widget.region_element, self.country)
         return super().test_setup()
     
@@ -306,12 +294,12 @@ class CiderPageFilterTestsUSA(BarnivoreTests):
     def suite_setup(self):
         self.cider_page = CiderPage()
         self.country = "USA"
-        return super().suite_setup()
-    
-    def test_setup(self):
+        super().suite_setup()
         self.navigate_to_page("barnivore.com")
         self.load_page(self.cider_page.header_title)
         self.filter_widget_checks(self.cider_page.filter_widget)
+    
+    def test_setup(self):
         self.select_from_list_by_label(self.cider_page.filter_widget.region_element, self.country)
         return super().test_setup()
     
@@ -348,12 +336,12 @@ class WinePageFilterTestsUSA(BarnivoreTests):
     def suite_setup(self):
         self.wine_page = WinePage()
         self.country = "USA"
-        return super().suite_setup()
-    
-    def test_setup(self):
+        super().suite_setup()
         self.navigate_to_page("barnivore.com")
         self.load_page(self.wine_page.header_title)
         self.filter_widget_checks(self.wine_page.filter_widget)
+    
+    def test_setup(self):
         self.select_from_list_by_label(self.wine_page.filter_widget.region_element, self.country)
         return super().test_setup()
     
@@ -388,13 +376,10 @@ class LiquorPageFilterTests(BarnivoreTests):
 
     def suite_setup(self):
         self.liquor_page = LiquorPage()
-        return super().suite_setup()
-    
-    def test_setup(self):
+        super().suite_setup()
         self.navigate_to_page("barnivore.com")
         self.load_page(self.liquor_page.header_title)
         self.filter_widget_checks(self.liquor_page.filter_widget)
-        return super().test_setup()
 
     @Moonrise.test
     def zero_nine_filter(self):
