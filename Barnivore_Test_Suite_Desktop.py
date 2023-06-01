@@ -190,6 +190,14 @@ class CompanySearchTests(BarnivoreTests):
     def beam_suntory(self):
         self.company_search_test_steps("Beam Suntory", self.home_page, self.search_page)
 
+    @Moonrise.test
+    def non_existent_company(self):
+        company_name = "Purple Drink, LLC"
+        self.search_for_product(self.home_page.search_widget, company_name)
+        assert self.get_text(self.search_page.list_widget.list_header) == f"Search results for {company_name}"
+        self.search_elements_check(self.search_page.search_widget, company_name, find_booze=True)
+        assert self.search_page.invalid_entry_text in self.get_text(CommonPageElements.main_content_element)
+
 class ProductEvaluationTests(BarnivoreTests):
 
     def suite_setup(self):
