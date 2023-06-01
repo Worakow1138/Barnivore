@@ -376,6 +376,37 @@ class AskACompanyPage:
         Dzięki,
         """+self.your_name+"""
         (Thanks, Andrew, Stevie, and Davey!)
+        """,
+        "Portuguese": """Eu estou a ajudar a atualizar uma base de dados online de bebidas alcoólicas adequadas a vegetarianos e veganos (http://www.barnivore.com) e gostaria de saber se me poderiam fornecer informações sobre o """+self.brand_name+""".
+        O """+self.brand_name+""" contém ingredientes de origem animal (como leite, ovos, qualquer tipo de carne ou mel)? Durante o seu processamento/filtração, são utilizados outros produtos provenientes de animais como gelatina, carvão animal (bone char) ou cola de peixe (ictiocola/isinglass, obtida do esturjão)?
+        Desde já agradeço a vossa atenção e disponibilidade.
+        Com os melhores cumprimentos,
+        """+self.your_name+"""
+        (Thanks, Marta and Nuno!)
+        """,
+        "Russian": """Здравствуйте.
+        Я пишу вам, так как помогаю в составлении списка алкогольной продукции, доступной для веганов, и надеюсь, что вы сможете предоставить мне более подробную информацию о ваших продуктах.
+        Содержат ли продукты """+self.brand_name+""" ингридиенты животного происхождения (такие как молочные продукты, яйца, животные ферменты, мёд и тому подобное) или применяются ли в процессе производства, фильтрации животные продукты (такие как рыбий клей, желатин, активированный уголь животного происхождения при очистке жидкостей или в производстве используемого сахара, животные ферменты и тому подобное)? Используются ли для этикетирования казеинсодержащие продукты?
+        Производится или разливается ли ваша продукция на заводах (например, по сублицензии), использующих разные производствнные системы, делающие продукты неподходящими для веганов?
+        Заранее благодарю за честный и полный ответ,
+        """+self.your_name+"""
+        Лист алкогольной продукции с указанием её доступности для веганов вы найдёте по адресу www.barnivore.com
+        (Thanks, Anastasia!)
+        """,
+        "Slovak": """Dobrý deň,
+        pomáham doplniť celosvetovú online databázu (má už vyše 44 000 vstupov) vegánskeho alkoholu, http://www.barnivore.com/ a dúfal som, že by ste mi mohli poskytnúť nejaké informácie o """+self.brand_name+""".
+        Obsahuje """+self.brand_name+""" nejaké ingrediencie živočíšneho pôvodu (napríklad mlieko/laktózu/kazeín, vajcia, karmín/košenilu, med a pod.) alebo sú živočíšne produkty použité pri spracovaní/filtrácii Vášho produktu (napríklad želatína, vyzina a pod.)? Taktiež, je Váš produkt vyrábaný alebo balený na inom mieste na svete (napríklad pod Vašou licenciou), kde by na jeho spracovanie mohli byť použité živočíšne produkty?
+        Ďakujem
+        """+self.your_name+"""
+        (Thanks, Jake!)
+        """,
+        "Slovenian": """Spoštovani,
+        z namenom izpopolnitve globalne baze veganom prijaznih alkoholnih pijač, bi Vas prosil-a za nekaj osnovnih informacij glede Vaše blagovne znamke """+self.brand_name+""".
+        Ali """+self.brand_name+""" vsebuje živalske sestavine (npr. mleko, jajca, med, ipd.) oziroma ali so pri procesu/filtraciji Vaših produktov uporabljene snovi živalskega izvora (npr. jajčni beljak, ribji mehur, mlečne beljakovine, želatina, itd.)?
+        Za konec me zanima tudi, ali so Vaši produkti ustekleničeni pod licenco v kakšni drugi deželi, kjer bi se lahko posluževali procesov, ki niso primerni za vegane?
+        Za odgovor se vam že vnaprej najlepše zahvaljujem,
+        """+self.your_name+"""
+        (Thanks, Anže!)
         """
         }
 
@@ -436,7 +467,19 @@ class AskACompanyPage:
         "Japanese": """""",
         "Korean": """""",
         "Norwegian": """""",
-        "Polish": """"""
+        "Polish": """""",
+        "Portuguese": """Agradeço a resposta, mas fico bastante descontente por usarem ingredientes animais nos vossos produtos. Mesmo que esses ingredientes possam não fazer parte do produto final, eu prefiro evitar produtos que usem tais ingredientes, assim como muita outras pessoas.
+        Tanto quanto sei, existem alternativas de refinamento que não utilizam produtos animais, conforme a grande variedade de companhias com produtos aptos a veganos, listadas em http://www.barnivore.com. Muitas vinícolas, cervejarias e destilarias já utilizam essas técnicas e eu espero que estejam interessados em investigar tais alternativas para que nós possamos desfrutar das vossas bebidas no futuro.
+        """+self.your_name+"""
+        (Thanks, Nuno!)
+        """,
+        "Russian": """Спасибо за ваш ответ. Я огорчён узнать, что в вашей продукции есть место животным продуктам. Хотя я понимаю, что данные ингредиент могут непосредственно и не присутствовать в конечном продукте, я, как и многие другие, избегаю таких товаров и делаю выбор в пользу полной этичности.
+        Многие винодельни, винокурни и пивоварни уже используют альтернативные технологии для создания высококачественной продукции без ингредиентов животного происхождения. Для наглядности вы можете ознакомиться с разнообразием оных на www.barnivore.com. Искренне надеюсь, что их пример вдохновит вас изменить политику вашей компании так, чтоб ещё больше людей имели возможность наслаждаться вашими фирменными напитками.
+        """+self.your_name+"""
+        (Thanks, Anastasia!)
+        """,
+        "Slovak": """""",
+        "Slovenian": """"""
         }
         
         self.vegan_dict = {
@@ -482,7 +525,18 @@ class AskACompanyPage:
         "Japanese": """""",
         "Korean": """""",
         "Norwegian": """""",
-        "Polish": """"""
+        "Polish": """""",
+        "Portuguese": """Agradeço a informação prestada e fico bastante contente por saber que os vossos produtos são aptos a veganos! Estou ansioso para desfrutá-los.
+        Cumprimentos,
+        """+self.your_name+"""
+        (Thanks, Nuno!)
+        """,
+        "Russian": """Большое спасибо за ваш ответ. Я рад слышать, что ваши продукты подходят веганам и я могу ими наслаждаться.
+        """+self.your_name+"""
+        (Thanks, Anastasia!)
+        """,
+        "Slovak": """""",
+        "Slovenian": """"""
         }
         
 
