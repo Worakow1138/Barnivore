@@ -327,3 +327,19 @@ class AskACompanyTests(BarnivoreTests):
     def greek(self):
         language = "Greek"
         self.set_question_language(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def hindi(self):
+        language = "Hindi"
+        self.set_question_language(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def icelandic(self):
+        language = "Icelandic"
+        self.set_question_language(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def italian(self):
+        language = "Italian"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
