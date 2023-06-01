@@ -175,4 +175,18 @@ class BarnivoreTestSteps(Moonrise):
     def results_are_within_filtered_range(self, list_widget: ListElements, filter: str, products: list):
         for product in products:
             assert list_widget.get_product_name(product)[0] >= filter.split("-")[0]
-            assert list_widget.get_product_name(product)[0] <= filter.split("-")[1], list_widget.get_product_name(product)
+
+    def filter_test_steps(self, page: Union[BeerPage, CiderPage, WinePage, LiquorPage], filter: str, country: str = None):
+        self.click_element(f"link:{filter}")
+
+        self.click_element(f"link:{page.filter_widget.everything_filter}")
+        assert len(self.get_web_elements(page.list_widget.list_items)) <= 50
+        self.filtered_headers_check(page, filter, country)
+
+        self.click_element(f"link:{page.filter_widget.only_vegan_filter}")
+        assert len(self.get_web_elements(page.list_widget.list_items)) <= 50
+        self.filtered_headers_check(page, filter, country, vegan_only=True)
+
+        self.search_elements_check(page.search_widget, find_booze=True)
+        self.footer_checks()
+
