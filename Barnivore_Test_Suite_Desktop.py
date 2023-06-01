@@ -363,3 +363,27 @@ class AskACompanyTests(BarnivoreTests):
     def polish(self):
         language = "Polish"
         self.set_question_language(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def portuguese(self):
+        language = "Portuguese"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def russian(self):
+        language = "Russian"
+        self.set_question_language(self.ask_a_company_page, language)
+        self.set_non_vegan_response(self.ask_a_company_page, language)
+        self.set_vegan_response(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def slovak(self):
+        language = "Slovak"
+        self.set_question_language(self.ask_a_company_page, language)
+
+    @Moonrise.test
+    def slovenian(self):
+        language = "Slovenian"
+        self.set_question_language(self.ask_a_company_page, language)
