@@ -246,6 +246,38 @@ class ProductEvaluationTests(BarnivoreTests):
         self.search_elements_check(self.search_page.search_widget, find_booze=True)
         self.footer_checks()
 
+class AskACompanyTests(BarnivoreTests):
+    
+    def test_setup(self):
+        self.ask_a_company_page = AskACompanyPage()
+        self.navigate_to_page("barnivore.com")
+        self.load_page(self.ask_a_company_page.header_title)
+        return super().test_setup()
+
+    @Moonrise.test
+    def english(self):
+        self.set_question_language(self.ask_a_company_page, "English")
+        self.set_response_language(self.ask_a_company_page, "English")
+
+    @Moonrise.test
+    def french(self):
+        self.set_question_language(self.ask_a_company_page, "French")
+        self.set_response_language(self.ask_a_company_page, "French")
+
+    @Moonrise.test
+    def hebrew(self):
+        self.set_question_language(self.ask_a_company_page, "Hebrew")
+
+    @Moonrise.test
+    def danish(self):
+        self.set_question_language(self.ask_a_company_page, "Danish")
+        self.set_response_language(self.ask_a_company_page, "Danish")
+
+    @Moonrise.test
+    def ukrainian(self):
+        self.set_question_language(self.ask_a_company_page, "Ukrainian")
+        self.set_response_language(self.ask_a_company_page, "Ukrainian")
+
 class BeerPageFilterTestsUSA(BarnivoreTests):
 
     def suite_setup(self):
