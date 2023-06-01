@@ -127,6 +127,13 @@ class HomePage:
 
 class SearchResultsPage:
 
+    invalid_entry_text = """Yikes, no matches found!
+    Want to help change that? Check out how you can help!
+    (Emailing us to ask about something that's not on the site isn't going to help - I promise we don't have a secret list that we only share with our close personal friends.)
+    (We have close personal friends though. Just no secret list.)
+    (OK this is getting weird. Go help!)
+    """.strip().replace("    ","")
+
     def __init__(self, mobile=False):
         self.search_widget = SearchBarElements(mobile)
         self.list_widget = ListElements(mobile)
