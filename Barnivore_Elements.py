@@ -264,6 +264,26 @@ class AskACompanyPage:
         Заздалегідь дякую за чесну та повну відповідь,
         """+self.your_name+"""
         (Thanks, Secret Vegan Club!)
+        """,
+        "Arabic": """تحياتي الطيبة وبعد,
+        أعمل حاليا على المساعدة في بناء مرجع على الانترنت للمشروبات الكحولية النباتية, و أرجو منكم مساعدتي في توفير بعض التفاصيل المتعلقة ب """+self.brand_name+"""
+        هل تحتوي/يحتوي """+self.brand_name+""" على أي أجزاء أو منتجات حيوانية (مثل الحليب أو البيض أو الزبدة أو العسل ... الخ)؟ و هل تستخدم المنتجات الحيوانية في تصنيع أو تصفية المنتج (مثل الجيلاتين أو غراء السمك ... الخ)؟
+        بالاضافة لذلك, هل يتم تصنيع أو تعبئة المنتج في أي منطقة أخرى في العالم (عن طريق منح الترخيص مثلا) و التي قد تعتمد طرق مختلفة للتصنيع و التعبئة, مما قد تكون غير مناسبة للنباتيين؟
+        شكرا جزيلا,
+        (Thanks, Dareen, Damir, and Stevie!)
+        """,
+        "Brazilian Portuguese": """Olá. Estou ajudando a atualizar uma base de dados na internet sobre bebidas alcoólicas que vegetarianos e veganos podem consumir, e gostaria de saber se você poderia me fornecer informações sobre a """+self.brand_name+""".
+        Seu produto, """+self.brand_name+""", contém ingredientes de origem animal como leite, ovos, qualquer tipo de carne ou mel? No processo de filtração, são utilizados outros produtos provenientes de animais como gelatina, osso carbonizados (bone char) ou cola de peixe (isinglass - obtido do esturjão)?
+        Muito obrigado.
+        """+self.your_name+"""
+        (Thanks, Tiago and Inge!)
+        """,
+        "Croat": """Poštovani,
+        U okviru izrade baze podataka alkoholnih pića prikladnih za osobe koje su odabrale vegnski način prehrane, molio bih vas nekoliko informacija o vašem proizvodu """+self.brand_name+"""
+        Sadrži li """+self.brand_name+""" sastojke životinsjkog podrijetla poput mlijeka, jaja, meda i jesu li životinsjki sastojci (npr. riblji mjehur, želatina...) korišteni u procesu proizvodnje ili filtracije pića?
+        Također, proizvodi li se ili pakira vaš proizvod pod licencom negdje drugdje u svijetu gdje se možda koristi drukčiji proizvodni proces koji uključuje gore navedene sastojke?
+        Hvala
+        """+self.your_name+"""
         """
         }
 
@@ -289,7 +309,14 @@ class AskACompanyPage:
         Багато винарень, броварень та ґуралень вже використовують альтернативні технології для виготовлення високоякісної продукції без сировини тваринного походження. Для ноачності Ви можете ознайомитися з різноманістністю таких компаній на www.barnivore.com . Я заохочую Вас розглянути варіанти альтернативної сировини, щоб ми(вегани) могли насолоджуватися Вашими напоями в майбутньому.
         """+self.your_name+"""
         (Thanks, Secret Vegan Club!)
-        """
+        """,
+        "Arabic": """""",
+        "Brazilian Portuguese": """Obrigado pela resposta. Fiquei muito desapontado em saber que vocês usam ingredientes animais em seus produtos. Ainda que eu entenda que esses ingredientes possam não fazer parte do produto final, eu prefiro evitar produtos que façam qualquer uso desses ingredientes, assim como muita gente também.
+        Aprendi que existem alternativas de refinação que não utilizam produtos animais, como pode ser conferido pela grande variedade de companhias listadas em http://www.barnivore.com. Muitas vinícolas, cervejarias e destilarias já utilizam essas técnicas, e eu te aconselho investigar essas alternativas para que nós possamos consumir suas bebidas no futuro.
+        """+self.your_name+"""
+        (Thanks, Tiago!)
+        """,
+        "Croat": """"""
         }
         
         self.vegan_dict = {
@@ -313,7 +340,10 @@ class AskACompanyPage:
         Будьмо,
         """+self.your_name+"""
         (Thanks, Secret Vegan Club!)
-        """
+        """,
+        "Arabic": """""",
+        "Brazilian Portuguese": """""",
+        "Croat": """"""
         }
         
 
