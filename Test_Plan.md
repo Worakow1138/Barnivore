@@ -11,9 +11,9 @@
   - [Product Evaluation Test Suite](#product-evaluation-test-suite)
     - [Product Evaluation Preconditions](#product-evaluation-preconditions)
     - [Product Evaluation Test Cases](#product-evaluation-test-cases)
-  - [Alcohol Type Page USA Test Suite](#alcohol-type-page-usa-test-suite)
-    - [Alcohol Type Page USA Preconditions](#alcohol-type-page-usa-preconditions)
-    - [Alcohol Type Page USA Test Cases](#alcohol-type-page-test-cases)
+  - [Data Validation Test Suite](#data-validation-test-suite)
+    - [Data Validation Preconditions](#data-validation-preconditions)
+    - [Data Validation Test Cases](#data-validation-test-cases)
 
 ## Introduction
 Detailed explanations of test steps for the [barnivore.com](https://www.barnivore.com/) website
@@ -235,25 +235,25 @@ Verify that when products are selected from a search list, they display expected
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
 
-## Alcohol Type Page USA Test Suite
-Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correctly filter available product data
+## Data Validation Test Suite
+Validatate that filters on the "Beer", "Cider", "Wine", and "Liquor" pages correctly filter available product data and that this data is presented alphabetically
 
-### Alcohol Type Page USA Preconditions
+### Data Validation Preconditions
 1. Open a web browser to [barnivore.com](https://www.barnivore.com/)
 2. Load the "Beer", "Cider", "Wine", or "Liquor" page
 3. The "Filters" widget is present with the "By Letter", "By veganosity", and "Country" options
-4. "USA" is selected from the region dropdown
+4. If applicable, a country is selected from the region dropdown
 
-### Alcohol Type Page Test Cases
+### Data Validation Test Cases
 1. All Filter
 - Select the "All" filter
 - Select the "Everything" filter
-- The header displays "Listing all beers from USA"
+- The header displays "Listing all beers from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -263,12 +263,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 2. All Filter Only Vegan
 - Select the "All" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing all beers from USA"
+- The header displays "Listing all beers from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -278,12 +278,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 3. 0-9 Filter
 - Select the "0-9" filter
 - Select the "Everything" filter
-- The header displays "Listing beers 0-9 from USA"
+- The header displays "Listing beers 0-9 from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -293,12 +293,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 4. 0-9 Filter Only Vegan
 - Select the "0-9" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing vegan beers 0-9 from USA"
+- The header displays "Listing vegan beers 0-9 from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -308,12 +308,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 5. A-F Filter
 - Select the "A-F" filter
 - Select the "Everything" filter
-- The header displays "Listing beers A-F from USA"
+- The header displays "Listing beers A-F from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -323,12 +323,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 6. A-F Filter Only Vegan
 - Select the "A-F" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing vegan beers A-F from USA"
+- The header displays "Listing vegan beers A-F from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -338,12 +338,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 7. G-L Filter
 - Select the "G-L" filter
 - Select the "Everything" filter
-- The header displays "Listing beers G-L from USA"
+- The header displays "Listing beers G-L from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -353,12 +353,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 8. G-L Filter Only Vegan
 - Select the "G-L" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing vegan beers G-L from USA"
+- The header displays "Listing vegan beers G-L from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -368,12 +368,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 9. M-R Filter
 - Select the "M-R" filter
 - Select the "Everything" filter
-- The header displays "Listing beers M-R from USA"
+- The header displays "Listing beers M-R from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -383,12 +383,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 10. M-R Filter Only Vegan
 - Select the "M-R" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing vegan beers M-R from USA"
+- The header displays "Listing vegan beers M-R from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -398,12 +398,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 11. S-T Filter
 - Select the "S-T" filter
 - Select the "Everything" filter
-- The header displays "Listing beers S-T from USA"
+- The header displays "Listing beers S-T from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -413,12 +413,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 12. S-T Filter Only Vegan
 - Select the "S-T" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing vegan beers S-T from USA"
+- The header displays "Listing vegan beers S-T from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -428,12 +428,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 13. U-Z Filter
 - Select the "U-Z" filter
 - Select the "Everything" filter
-- The header displays "Listing beers U-Z from USA"
+- The header displays "Listing beers U-Z from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
@@ -443,12 +443,12 @@ Verify that filters on the "Beer", "Cider", "Wine", or "Liquor" page page correc
 14. U-Z Filter Only Vegan
 - Select the "U-Z" filter
 - Select the "Only Vegan" filter
-- The header displays "Listing vegan beers U-Z from USA"
+- The header displays "Listing vegan beers U-Z from specified country"
 - The subheader displays "(Displaying products 1-50 of (total number) in total)"
 - A list of products is displayed, no greater than 50
 - No entry in the list starts with a character outside the filtered scope
 - The list of products is in alphebetical order
-- The list of products all indicated that they are from the USA in their company field
+- The list of products all indicated that they are from the specified country in their company field
 - All product labels are correct: "VF" is green, "NVF" is red, "U" is yellow
 - "Find Booze:" with a search bar and search button is displayed
 - "Please Drink Responsibly" is at the bottom of the page
