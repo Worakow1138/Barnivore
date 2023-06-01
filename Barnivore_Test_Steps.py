@@ -200,13 +200,13 @@ class BarnivoreTestSteps(Moonrise):
         self.search_elements_check(page.search_widget, find_booze=True)
         self.footer_checks()
 
-    def set_page_brand_and_sender_names(self, ask_a_company_page: AskACompanyPage):
+    def set_page_brand_and_sender_names(self, ask_a_company_page: AskACompanyPage, brand_name: str, name: str):
         self.get_web_element(ask_a_company_page.brand_name_input).clear()
         self.get_web_element(ask_a_company_page.sender_name_input).clear()
-        self.input_text(ask_a_company_page.brand_name_input, "Victory")
-        self.input_text(ask_a_company_page.sender_name_input, "Drinker")
-        ask_a_company_page.set_brand_name("Victory")
-        ask_a_company_page.set_your_name("Drinker")
+        self.input_text(ask_a_company_page.brand_name_input, brand_name)
+        self.input_text(ask_a_company_page.sender_name_input, name)
+        ask_a_company_page.set_brand_name(brand_name)
+        ask_a_company_page.set_your_name(name)
     
     def set_question_language(self, ask_a_company_page: AskACompanyPage, language: str):
         ask_a_company_page.set_language(language)
@@ -214,19 +214,26 @@ class BarnivoreTestSteps(Moonrise):
 
         assert self.get_text(ask_a_company_page.question_element) ==  ask_a_company_page.the_question_text
 
-        self.set_page_brand_and_sender_names(ask_a_company_page)
+        self.set_page_brand_and_sender_names(ask_a_company_page, "Victory", "Barnivore User")
 
         assert self.get_text(ask_a_company_page.question_element) ==  ask_a_company_page.the_question_text
 
-    def set_response_language(self, ask_a_company_page: AskACompanyPage, language: str):
+    def set_non_vegan_response(self, ask_a_company_page: AskACompanyPage, language: str):
         ask_a_company_page.set_language(language)
         self.select_from_list_by_label(ask_a_company_page.non_vegan_response_language_selector, language)
+
+        assert self.get_text(ask_a_company_page.non_vegan_response_element) == ask_a_company_page.non_vegan_response
+
+        self.set_page_brand_and_sender_names(ask_a_company_page, "Victory", "Barnivore User")
+
+        assert self.get_text(ask_a_company_page.non_vegan_response_element) == ask_a_company_page.non_vegan_response
+
+    def set_vegan_response(self, ask_a_company_page: AskACompanyPage, language: str):
+        ask_a_company_page.set_language(language)
         self.select_from_list_by_label(ask_a_company_page.vegan_response_language_selector, language)
 
-        assert self.get_text(ask_a_company_page.non_vegan_response_element) == ask_a_company_page.non_vegan_response
         assert self.get_text(ask_a_company_page.vegan_response_element) == ask_a_company_page.vegan_response
 
-        self.set_page_brand_and_sender_names(ask_a_company_page)
+        self.set_page_brand_and_sender_names(ask_a_company_page, "Victory", "Barnivore User")
 
-        assert self.get_text(ask_a_company_page.non_vegan_response_element) == ask_a_company_page.non_vegan_response
         assert self.get_text(ask_a_company_page.vegan_response_element) == ask_a_company_page.vegan_response
