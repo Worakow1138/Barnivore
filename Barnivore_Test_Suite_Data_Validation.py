@@ -2,7 +2,9 @@ from moonrise import Moonrise
 from Barnivore_Test_Steps import BarnivoreTestSteps
 from Barnivore_Elements import *
 
-class BarnivoreTests(BarnivoreTestSteps):
+class DataValidationTestSuite(BarnivoreTestSteps):
+    """Validatate that filters on the "Beer", "Cider", "Wine", and "Liquor" pages correctly filter available product data and that this data is presented alphabetically
+    """
 
     Moonrise.default_timeout = 5
 
@@ -15,7 +17,7 @@ class BarnivoreTests(BarnivoreTestSteps):
         self.cleanup_browser()
         return super().suite_teardown()
 
-class BeerPageTestsUSA(BarnivoreTests):
+class BeerPageTestsUSA(DataValidationTestSuite):
 
     def suite_setup(self):
         self.beer_page = BeerPage()
@@ -85,7 +87,7 @@ class BeerPageTestsUSA(BarnivoreTests):
     def u_z_filter_vegan(self):
         self.filter_test_steps(self.beer_page, self.beer_page.filter_widget.u_z_filter, self.country, vegan_only=True)
 
-class CiderPageTestsUSA(BarnivoreTests):
+class CiderPageTestsUSA(DataValidationTestSuite):
 
     def suite_setup(self):
         self.cider_page = CiderPage()
@@ -155,7 +157,7 @@ class CiderPageTestsUSA(BarnivoreTests):
     def u_z_filter_vegan(self):
         self.filter_test_steps(self.cider_page, self.cider_page.filter_widget.u_z_filter, self.country, vegan_only=True)
 
-class WinePageTestsUSA(BarnivoreTests):
+class WinePageTestsUSA(DataValidationTestSuite):
 
     def suite_setup(self):
         self.wine_page = WinePage()
@@ -225,7 +227,7 @@ class WinePageTestsUSA(BarnivoreTests):
     def u_z_filter_vegan(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.u_z_filter, self.country, vegan_only=True)
 
-class LiquorPageTestsUSA(BarnivoreTests):
+class LiquorPageTestsUSA(DataValidationTestSuite):
 
     def suite_setup(self):
         self.liquor_page = LiquorPage()

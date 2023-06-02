@@ -19,6 +19,9 @@ class BarnivoreTests(BarnivoreTestSteps):
 
     
 class BasicPageTests(BarnivoreTests):
+    """Verify that basic functionality is covered on the main barnivore pages. 
+    Basic functionality is defined as expected data from each main page being returned correctly.
+    """
 
     def suite_setup(self):
         self.home_page = HomePage()
@@ -120,6 +123,8 @@ class BasicPageTests(BarnivoreTests):
         self.footer_checks()  
 
 class CompanySearchTests(BarnivoreTests):
+    """Verify that the Search tool can be used to find multiple results that target a single company
+    """
 
     def suite_setup(self):
         self.home_page = HomePage()
@@ -198,6 +203,8 @@ class CompanySearchTests(BarnivoreTests):
         assert self.search_page.invalid_entry_text in self.get_text(CommonPageElements.main_content_element)
 
 class ProductEvaluationTests(BarnivoreTests):
+    """Verify that when products are selected from a search list, they display expected information
+    """
 
     def suite_setup(self):
         self.home_page = HomePage()
@@ -254,6 +261,8 @@ class ProductEvaluationTests(BarnivoreTests):
         self.footer_checks()
 
 class AskACompanyTests(BarnivoreTests):
+    """Verify that expected text is displayed when selecting different languages and entering brand and personal information on the Ask a Company page
+    """
 
     def suite_setup(self):
         self.brand_name = "Victory"
