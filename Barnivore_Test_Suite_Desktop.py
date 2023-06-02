@@ -258,8 +258,7 @@ class AskACompanyTests(BarnivoreTests):
     
     def test_setup(self):
         self.ask_a_company_page = AskACompanyPage()
-        self.navigate_to_page("barnivore.com")
-        self.load_page(self.ask_a_company_page.header_title)
+        self.navigate_to_page(f"barnivore.com/{CommonPageElements.url_mapping.get(self.ask_a_company_page.header_title)}")
         return super().test_setup()
 
     @Moonrise.test
