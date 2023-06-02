@@ -9,7 +9,7 @@ class BarnivoreTests(BarnivoreTestSteps):
     Moonrise.default_timeout = 5
 
     def suite_setup(self):
-        self.open_browser("chrome", "--headless", "--no-sandbox")
+        self.open_browser("chrome", "--headless", "--no-sandbox", shutter_speed=0.2)
         self.moon_driver.set_window_size(360, 800)
         return super().suite_setup()
     
