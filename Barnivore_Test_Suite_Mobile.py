@@ -247,6 +247,11 @@ class ProductEvaluationTests(BarnivoreTests):
         self.footer_checks()
 
 class AskACompanyTests(BarnivoreTests):
+
+    def suite_setup(self):
+        self.brand_name = "Victory"
+        self.your_name = "Barnivore User"
+        return super().suite_setup()
     
     def test_setup(self):
         self.ask_a_company_page = AskACompanyPage(mobile=True)
@@ -259,145 +264,199 @@ class AskACompanyTests(BarnivoreTests):
     @Moonrise.test
     def english(self):
         language = "English"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def french(self):
         language = "French"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def hebrew(self):
         language = "Hebrew"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def danish(self):
         language = "Danish"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def ukrainian(self):
         language = "Ukrainian"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def arabic(self):
         language = "Arabic"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def brazilian_portuguese(self):
         language = "Brazilian Portuguese"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def croat(self):
         language = "Croat"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def dutch(self):
         language = "Dutch"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def finnish(self):
         language = "Finnish"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def german(self):
         language = "German"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def greek(self):
         language = "Greek"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def hindi(self):
         language = "Hindi"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def icelandic(self):
         language = "Icelandic"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def italian(self):
         language = "Italian"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def japanese(self):
         language = "Japanese"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def korean(self):
         language = "Korean"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def norwegian(self):
         language = "Norwegian"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def polish(self):
         language = "Polish"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def portuguese(self):
         language = "Portuguese"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def russian(self):
         language = "Russian"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def slovak(self):
         language = "Slovak"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def slovenian(self):
         language = "Slovenian"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def spanish(self):
         language = "Spanish"
-        self.set_question_language(self.ask_a_company_page, language)
-        self.set_non_vegan_response(self.ask_a_company_page, language)
-        self.set_vegan_response(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = True
+        vegan_response_available = True
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
 
     @Moonrise.test
     def swedish(self):
         language = "Swedish"
-        self.set_question_language(self.ask_a_company_page, language)
+        question_available = True
+        non_vegan_response_available = False
+        vegan_response_available = False
+        self.ask_a_company_test_steps(self.ask_a_company_page, language, self.brand_name, self.your_name, question_available, non_vegan_response_available, vegan_response_available)
