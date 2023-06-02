@@ -252,6 +252,9 @@ class AskACompanyTests(BarnivoreTests):
     def test_setup(self):
         self.ask_a_company_page = AskACompanyPage(mobile=True)
         self.navigate_to_page(f"barnivore.com/{CommonPageElements.url_mapping.get(self.ask_a_company_page.header_title)}")
+        self.company_text_checks(self.ask_a_company_page)
+        self.search_elements_check(self.ask_a_company_page.search_widget, find_booze=True)
+        self.footer_checks()
         return super().test_setup()
 
     @Moonrise.test
