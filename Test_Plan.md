@@ -11,6 +11,9 @@
   - [Product Evaluation Test Suite](#product-evaluation-test-suite)
     - [Product Evaluation Preconditions](#product-evaluation-preconditions)
     - [Product Evaluation Test Cases](#product-evaluation-test-cases)
+  - [Ask A Company Page Test Suite](#ask-a-company-page-test-suite)
+    - [Ask A Company Page Preconditions](#ask-a-company-page-preconditions)
+    - [Ask A Company Page Test Cases](#ask-a-company-page-test-cases)
   - [Data Validation Test Suite](#data-validation-test-suite)
     - [Data Validation Preconditions](#data-validation-preconditions)
     - [Data Validation Test Cases](#data-validation-test-cases)
@@ -234,6 +237,23 @@ Verify that when products are selected from a search list, they display expected
 - "Please Drink Responsibly" is at the bottom of the page
 - Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
 - "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+## Ask A Company Page Test Suite
+Verify that expected text is displayed when selecting different languages and entering brand and personal information on the Ask a Company page 
+
+### Ask A Company Page Preconditions
+1. Open a web browser to [barnivore.com/askacompany](https://www.barnivore.com/askacompany)
+2. Expected text appears in "The Question" and "The Response" areas of the page
+3. Language selectors for the question, non-vegan response, and vegan response areas are present
+4. Brand Name and Your Name inputs are present
+5. "Find Booze:" with a search bar and search button is displayed
+6. "Please Drink Responsibly" is at the bottom of the page
+7. Links for "Vegan Beer", "Vegan Wine", and "Vegan Liquor" are at the bottom of the page
+8. "Contents copyright © 2023 Thrust Labs. All rights reserved. Contact Us | Terms of Use/Privacy Policy" is at the bottom of the page
+
+### Ask A Company Page Test Cases
+1. English
+- 
 
 ## Data Validation Test Suite
 Validatate that filters on the "Beer", "Cider", "Wine", and "Liquor" pages correctly filter available product data and that this data is presented alphabetically
