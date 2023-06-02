@@ -253,7 +253,297 @@ Verify that expected text is displayed when selecting different languages and en
 
 ### Ask A Company Page Test Cases
 1. English
-- 
+- Set the "Question" language to English
+- Verify that the question text is in English
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to English
+- Verify that the non vegan response text is in English
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to English
+- Verify that the vegan response text is in English
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+2. French
+- Set the "Question" language to French
+- Verify that the question text is in French
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to French
+- Verify that the non vegan response text is in French
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to French
+- Verify that the vegan response text is in French
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+3. Hebrew
+- Set the "Question" language to Hebrew
+- Verify that the question text is in Hebrew
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+4. Danish
+- Set the "Question" language to Danish
+- Verify that the question text is in Danish
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Danish
+- Verify that the non vegan response text is in Danish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Danish
+- Verify that the vegan response text is in Danish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+5. Ukrainian
+- Set the "Question" language to Ukrainian
+- Verify that the question text is in Ukrainian
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Ukrainian
+- Verify that the non vegan response text is in Ukrainian
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Ukrainian
+- Verify that the vegan response text is in Ukrainian
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+6. Arabic
+- Set the "Question" language to Arabic
+- Verify that the question text is in Arabic
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+7. Brazilian Portuguese
+- Set the "Question" language to Brazilian Portuguese
+- Verify that the question text is in Brazilian Portuguese
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Brazilian Portuguese
+- Verify that the non vegan response text is in Brazilian Portuguese
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+
+8. Croat
+- Set the "Question" language to Croat
+- Verify that the question text is in Croat
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+9. Dutch
+- Set the "Question" language to Dutch
+- Verify that the question text is in Dutch
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Dutch
+- Verify that the non vegan response text is in Dutch
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Dutch
+- Verify that the vegan response text is in Dutch
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+10. Finnish
+- Set the "Question" language to Finnish
+- Verify that the question text is in Finnish
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Finnish
+- Verify that the non vegan response text is in Finnish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+
+11. German
+- Set the "Question" language to German
+- Verify that the question text is in German
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to German
+- Verify that the non vegan response text is in German
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to German
+- Verify that the vegan response text is in German
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+12. Greek
+- Set the "Question" language to Greek
+- Verify that the question text is in Greek
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+13. Hindi
+- Set the "Question" language to Hindi
+- Verify that the question text is in Hindi
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+14. Icelandic
+- Set the "Question" language to Icelandic
+- Verify that the question text is in Icelandic
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+15. Italian
+- Set the "Question" language to Italian
+- Verify that the question text is in Italian
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Italian
+- Verify that the non vegan response text is in Italian
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+
+16. Japanese
+- Set the "Question" language to Japanese
+- Verify that the question text is in Japanese
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+17. Korean
+- Set the "Question" language to Korean
+- Verify that the question text is in Korean
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+18. Norwegian
+- Set the "Question" language to Norwegian
+- Verify that the question text is in Norwegian
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+19. Polish
+- Set the "Question" language to Polish
+- Verify that the question text is in Polish
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+20. Portuguese
+- Set the "Question" language to Portuguese
+- Verify that the question text is in Portuguese
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Portuguese
+- Verify that the non vegan response text is in Portuguese
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Portuguese
+- Verify that the vegan response text is in Portuguese
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+21. Russian
+- Set the "Question" language to Russian
+- Verify that the question text is in Russian
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Russian
+- Verify that the non vegan response text is in Russian
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Russian
+- Verify that the vegan response text is in Russian
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+22. Slovak
+- Set the "Question" language to Slovak
+- Verify that the question text is in Slovak
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+23. Slovenian
+- Set the "Question" language to Slovenian
+- Verify that the question text is in Slovenian
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+
+24. Spanish
+- Set the "Question" language to Spanish
+- Verify that the question text is in Spanish
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Spanish
+- Verify that the non vegan response text is in Spanish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Spanish
+- Verify that the vegan response text is in Spanish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
+
+25. Swedish
+- Set the "Question" language to Swedish
+- Verify that the question text is in Swedish
+- Verify that "[BRAND NAME]" and/or "[YOUR NAME]" populate the question text in appropriate places
+- Set the "Non Vegan Response" language to Swedish
+- Verify that the non vegan response text is in Swedish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the non vegan response text in appropriate places
+- Set the "Vegan Response" language to Swedish
+- Verify that the vegan response text is in Swedish
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" populate the vegan response text in appropriate places 
+- Change the "Brand Name:" field to a desired value
+- Change the "Your Name:" field to a desired value
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the question text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the non vegan response text are replaced by the entered brand name and your name, respectively
+- Verify that the "[BRAND NAME]" and/or "[YOUR NAME]" sections of the vegan response text are replaced by the entered brand name and your name, respectively
 
 ## Data Validation Test Suite
 Validatate that filters on the "Beer", "Cider", "Wine", and "Liquor" pages correctly filter available product data and that this data is presented alphabetically
