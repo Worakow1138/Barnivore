@@ -1,7 +1,6 @@
 from moonrise import Moonrise
 from Barnivore_Test_Steps import BarnivoreTestSteps
 from Barnivore_Elements import *
-from typing import Union
 
 
 class BarnivoreTests(BarnivoreTestSteps):
