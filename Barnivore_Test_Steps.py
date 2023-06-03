@@ -5,12 +5,12 @@ from typing import Union
 
 class BarnivoreTestSteps(Moonrise):
 
-    def load_page(self, header_title):
+    def load_page(self, header_title: str):
         """Attempt to select a link with a given header_title
         """
         self.click_element(f"link:{header_title}")
 
-    def page_url_check(self, header_title):
+    def page_url_check(self, header_title: str):
         """Verify if the current URL matches the expected URL for the given header_title
         """
         assert self.moon_driver.current_url == f"https://www.barnivore.com/{CommonPageElements.url_mapping.get(header_title)}", "The current URL does not match the expected URL"
@@ -48,7 +48,7 @@ class BarnivoreTestSteps(Moonrise):
         assert re.search(f"(Displaying products 1 - 50 of .* in total)", self.get_text(page.list_widget.displaying_products)), "List subtitle did not display correctly"
         assert len(self.get_web_elements(page.list_widget.list_items)) == 50, "Number of listed items did not equal 50"
 
-    def search_elements_check(self, search_widget: SearchBarElements, value="", find_booze=False):
+    def search_elements_check(self, search_widget: SearchBarElements, value: str = "", find_booze: bool = False):
         """Verify that the search elements are present, with or without a pre-loaded value or the "Find Booze:" label
         """
         self.get_web_element(search_widget.search_bar)
@@ -122,13 +122,13 @@ class BarnivoreTestSteps(Moonrise):
         self.get_web_element(CommonPageElements.vegan_liquor_label)
         assert self.get_text(CommonPageElements.copyright_label) == 'Contents copyright © 2023 Thrust Labs. All rights reserved.\nContact Us | Terms of Use/Privacy Policy'
 
-    def search_for_product(self, search_widget: SearchBarElements, product):
+    def search_for_product(self, search_widget: SearchBarElements, product: str):
         """Search for a specific product via the search bar
         """
         self.input_text(search_widget.search_bar, product)
         self.click_element(search_widget.search_button)
 
-    def results_are_from_company(self, company_name, list_widget: ListElements):
+    def results_are_from_company(self, company_name: str, list_widget: ListElements):
         """Verify that all displayed products are from a specific company
         """
         for product in self.get_web_elements(list_widget.list_items):
@@ -193,7 +193,7 @@ class BarnivoreTestSteps(Moonrise):
         """Verify that a given list of products are all labeled as coming from a specified country_name
         """
         for product in products:
-            assert country_name in list_widget.get_company_name(product), f"{list_widget.get_product_name(product)} does not have {country_name} in title"
+            assert country_name in list_widget.get_company_name(product), f"{list_widget.get_product_name(product)} does not have {country_name} in {list_widget.get_company_name(product)}"
 
     def verify_results_are_vegan(self, list_widget: ListElements, products: list):
         """Verify that all products within a given list are label as Vegan Friendly
