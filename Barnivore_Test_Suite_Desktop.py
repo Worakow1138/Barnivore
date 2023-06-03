@@ -146,7 +146,7 @@ class CompanySearchTests(BarnivoreTests):
     
     def company_search_test_steps(self, company_name, home_page: HomePage, search_page: SearchResultsPage):
         self.search_for_product(home_page.search_widget, company_name)
-        assert self.get_text(search_page.list_widget.list_header) == f"Search results for {company_name}"
+        assert self.get_text(search_page.list_widget.list_header) == f"Search results for {company_name}", f"{self.get_text(search_page.list_widget.list_header)} did not contain 'Search results for {company_name}'"
         self.search_elements_check(search_page.search_widget, company_name, find_booze=True)
         self.results_are_from_company(company_name, search_page.list_widget)
         self.results_have_links_to_products(search_page.list_widget)
@@ -198,9 +198,9 @@ class CompanySearchTests(BarnivoreTests):
     def non_existent_company(self):
         company_name = "Purple Drink, LLC"
         self.search_for_product(self.home_page.search_widget, company_name)
-        assert self.get_text(self.search_page.list_widget.list_header) == f"Search results for {company_name}"
+        assert self.get_text(self.search_page.list_widget.list_header) == f"Search results for {company_name}", f"{self.get_text(self.search_page.list_widget.list_header)} did not contain 'Search results for {company_name}'"
         self.search_elements_check(self.search_page.search_widget, company_name, find_booze=True)
-        assert self.search_page.invalid_entry_text in self.get_text(CommonPageElements.main_content_element)
+        assert self.search_page.invalid_entry_text in self.get_text(CommonPageElements.main_content_element), f"Invalid Entry Text was not found on the Search page"
 
 class ProductEvaluationTests(BarnivoreTests):
     """Verify that when products are selected from a search list, they display expected information
