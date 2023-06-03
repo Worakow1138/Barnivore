@@ -227,7 +227,7 @@ class WinePageTestsUSA(DataValidationTestSuite):
     def u_z_filter_vegan(self):
         self.filter_test_steps(self.wine_page, self.wine_page.filter_widget.u_z_filter, self.country, vegan_only=True)
 
-class LiquorPageTestsUSA(DataValidationTestSuite):
+class LiquorPageTests(DataValidationTestSuite):
 
     def suite_setup(self):
         self.liquor_page = LiquorPage()
