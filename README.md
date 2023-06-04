@@ -1,12 +1,11 @@
 # Automated Tests for [Barnivore](https://www.barnivore.com/)
 
 ## What is Barnivore?
-Barnivore is a comprehensive directory of vegan friendly alcoholic beverages. It aims to assist individuals who follow a vegan lifestyle in making informed choices about the alcoholic beverages they consume. 
-The website offers a platform where users can access a vast collection of information on various alcoholic products, including beers, ciders, wines, and spirits, to determine whether they are suitable for their dietary preferences. 
+Barnivore is a comprehensive directory of vegan-friendly alcoholic beverages. It aims to assist individuals who follow a vegan lifestyle in making informed choices about the alcoholic beverages they consume. 
+The website offers a platform where users can access a vast collection of information on various alcoholic products, including beers, ciders, wines, and spirits, to determine whether they are suitable for consumption. 
 Barnivore gets its data from users and provides helpful templates for emailing companies to ask whether body parts or secretions of animals are used in their production process. 
 The website is a valuable resource for vegans seeking to find cruelty-free options within the realm of alcoholic beverages.
-
-You can support Barnivore on [Patreon](https://www.patreon.com/barnivore/overview)
+Support Barnivore on [Patreon](https://www.patreon.com/barnivore/overview)!
 
 ## What this repo is:
 A repository of automated tests to validate some of the core functionality of the Barnivore site.
